@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel to Tanzania – Adventure & Safaris</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C8920A; --gold-light: #F0B429;
+    --dark-green: #1A3A2A; --mid-green: #2D5A3D;
+    --cream: #F5EDD8; --warm-white: #FBF7EF;
+    --dark: #0E1E16; --text-muted: #7A8C7E;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Montserrat',sans-serif; background:var(--warm-white); color:var(--dark); overflow-x:hidden; }
+
+  /* ===== LANGUAGE SWITCHER ===== */
+  .lang-bar {
+    position:fixed; top:0; left:0; right:0; z-index:200;
+    background:var(--dark-green);
+    border-bottom:1px solid rgba(200,146,10,0.4);
+    display:flex; align-items:center; justify-content:flex-end;
+    padding:0.35rem 4rem; gap:0.5rem;
+  }
+  .lang-bar-label { font-size:0.6rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-right:0.5rem; }
+  .lang-btn {
+    background:none; border:1px solid rgba(200,146,10,0.3);
+    color:rgba(255,255,255,0.7); padding:0.2rem 0.55rem;
+    border-radius:2px; font-size:0.6rem; font-weight:600;
+    letter-spacing:1px; cursor:pointer; transition:all 0.2s;
+    font-family:'Montserrat',sans-serif;
+  }
+  .lang-btn:hover, .lang-btn.active { background:var(--gold); color:#fff; border-color:var(--gold); }
+
+  /* ===== SOCIAL SIDEBAR ===== */
+  .social-sidebar {
+    position:fixed; right:0; top:50%; transform:translateY(-50%);
+    z-index:150; display:flex; flex-direction:column;
+    gap:0; overflow:hidden; border-radius:4px 0 0 4px;
+  }
+  .social-btn {
+    width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+    text-decoration:none; font-size:1.1rem; transition:width 0.3s, opacity 0.2s;
+    position:relative; overflow:hidden;
+  }
+  .social-btn:hover { width:130px; }
+  .social-btn .s-label {
+    position:absolute; right:44px; white-space:nowrap;
+    font-size:0.65rem; font-weight:700; letter-spacing:1px;
+    color:#fff; opacity:0; transition:opacity 0.2s 0.1s;
+    text-transform:uppercase;
+  }
+  .social-btn:hover .s-label { opacity:1; }
+  .sb-fb   { background:#1877F2; }
+  .sb-ig   { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+  .sb-yt   { background:#FF0000; }
+  .sb-tw   { background:#000; }
+  .sb-li   { background:#0A66C2; }
+  .sb-tk   { background:#010101; }
+
+  /* ===== NAV ===== */
+  nav {
+    position:fixed; top:2rem; left:0; right:0; z-index:100;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 4rem;
+    background:rgba(14,30,22,0.93);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(200,146,10,0.3);
+  }
+  .nav-logo { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:var(--gold-light); letter-spacing:1px; }
+  .nav-logo span { color:#fff; font-style:italic; }
+  .nav-links { display:flex; gap:2.5rem; list-style:none; }
+  .nav-links a { color:rgba(255,255,255,0.8); text-decoration:none; font-size:0.78rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; transition:color 0.3s; }
+  .nav-links a:hover { color:var(--gold-light); }
+  .nav-right { display:flex; align-items:center; gap:1rem; }
+  .nav-cta { background:var(--gold); color:#fff; padding:0.6rem 1.6rem; border-radius:2px; text-decoration:none; font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; transition:background 0.3s; }
+  .nav-cta:hover { background:var(--gold-light); }
+
+  /* ===== HERO ===== */
+  .hero { height:100vh; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .hero-bg {
+    position:absolute; inset:0;
+    background: linear-gradient(to bottom,rgba(14,30,22,0.6) 0%,rgba(14,30,22,0.2) 40%,rgba(14,30,22,0.7) 100%),
+      url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1800&q=80') center/cover no-repeat;
+    transform:scale(1.05); animation:heroZoom 12s ease-out forwards;
+  }
+  @keyframes heroZoom { from{transform:scale(1.05)} to{transform:scale(1)} }
+  .zanzibar-badge {
+    position:absolute; top:8.5rem; left:4rem;
+    background:var(--dark-green); border:2px solid var(--gold); border-radius:50%;
+    width:110px; height:110px; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center; z-index:10;
+    animation:fadeInLeft 1s 0.5s both;
+  }
+  .zanzibar-badge .now { font-size:0.55rem; letter-spacing:2px; color:var(--gold-light); text-transform:uppercase; }
+  .zanzibar-badge .operating { font-size:0.5rem; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin:2px 0; }
+  .zanzibar-badge .zan-name { font-family:'Playfair Display',serif; font-size:0.95rem; font-weight:700; color:var(--gold-light); }
+  .zanzibar-badge .palm { font-size:1rem; margin-top:4px; }
+  @keyframes fadeInLeft { from{opacity:0;transform:translateX(-30px)} to{opacity:1;transform:translateX(0)} }
+  .tagline-top { position:absolute; top:9rem; right:4rem; font-family:'Playfair Display',serif; font-style:italic; font-size:1.1rem; color:var(--gold-light); text-align:right; line-height:1.4; z-index:10; animation:fadeInRight 1s 0.5s both; }
+  @keyframes fadeInRight { from{opacity:0;transform:translateX(30px)} to{opacity:1;transform:translateX(0)} }
+  .hero-content { position:relative; z-index:10; text-align:center; color:#fff; animation:fadeInUp 1s 0.3s both; }
+  @keyframes fadeInUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+  .hero-subtitle { font-size:0.75rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.5rem; }
+  .hero-title { font-family:'Playfair Display',serif; font-size:clamp(4rem,10vw,9rem); font-weight:900; line-height:0.9; text-transform:uppercase; letter-spacing:-2px; text-shadow:0 4px 30px rgba(0,0,0,0.5); }
+  .hero-title .travel { font-size:0.4em; font-weight:400; font-style:italic; letter-spacing:3px; display:block; margin-bottom:0.2rem; }
+  .hero-tagline { font-family:'Cormorant Garamond',serif; font-size:1.1rem; letter-spacing:3px; color:rgba(255,255,255,0.85); margin-top:1rem; }
+  .hero-whatsapp { display:inline-flex; align-items:center; gap:0.8rem; background:rgba(37,211,102,0.15); border:1px solid rgba(37,211,102,0.5); padding:0.9rem 2rem; border-radius:4px; color:#fff; text-decoration:none; font-size:1rem; font-weight:600; margin-top:2.5rem; transition:all 0.3s; backdrop-filter:blur(8px); }
+  .hero-whatsapp:hover { background:rgba(37,211,102,0.3); transform:translateY(-2px); }
+  .hero-scroll { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.6); font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; }
+  .hero-scroll-line { width:1px; height:50px; background:linear-gradient(to bottom,rgba(200,146,10,0.8),transparent); animation:scrollPulse 2s ease-in-out infinite; }
+  @keyframes scrollPulse { 0%,100%{opacity:0.4;height:50px} 50%{opacity:1;height:70px} }
+
+  /* ===== SECTIONS ===== */
+  section { padding:6rem 4rem; }
+  .section-label { font-size:0.65rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; }
+  .section-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:700; line-height:1.1; color:var(--dark-green); }
+  .section-title em { font-style:italic; color:var(--gold); }
+  .section-body { font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:#5A6B5E; line-height:1.8; max-width:560px; }
+  .ornament { display:flex; align-items:center; justify-content:center; gap:1rem; margin:1.5rem auto; color:var(--gold); }
+  .ornament-line { width:60px; height:1px; background:currentColor; opacity:0.5; }
+  .ornament-diamond { width:8px; height:8px; background:currentColor; transform:rotate(45deg); }
+
+  /* ABOUT */
+  .about { background:var(--dark-green); display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; padding:6rem 6rem; }
+  .about-text .section-title { color:var(--cream); }
+  .about-text .section-body { color:rgba(245,237,216,0.75); max-width:100%; }
+  .about-stats { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:2.5rem; }
+  .stat-item { border-left:2px solid var(--gold); padding-left:1.2rem; }
+  .stat-num { font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:700; color:var(--gold-light); line-height:1; }
+  .stat-label { font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:rgba(245,237,216,0.6); margin-top:0.3rem; }
+  .about-visual { position:relative; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:0.8rem; height:420px; }
+  .about-img { border-radius:3px; overflow:hidden; position:relative; }
+  .about-img img { width:100%; height:100%; object-fit:cover; }
+  .about-img:first-child { grid-row:1/3; }
+  .about-img-label { position:absolute; bottom:0.6rem; left:0.6rem; background:rgba(14,30,22,0.85); color:var(--gold-light); font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; padding:0.3rem 0.6rem; border-radius:2px; font-weight:600; }
+
+  /* SERVICES */
+  .services { background:var(--cream); }
+  .services-header { text-align:center; margin-bottom:4rem; }
+  .services-header .section-body { margin:1rem auto 0; text-align:center; max-width:500px; }
+  .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:1100px; margin:0 auto; }
+  .service-card { background:#fff; padding:2.5rem 2rem; border-radius:4px; position:relative; overflow:hidden; transition:transform 0.3s,box-shadow 0.3s; }
+  .service-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(to right,var(--gold),var(--gold-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.3s; }
+  .service-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(26,58,42,0.12); }
+  .service-card:hover::before { transform:scaleX(1); }
+  .service-icon { font-size:2.2rem; margin-bottom:1.2rem; }
+  .service-name { font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--dark-green); margin-bottom:0.8rem; }
+  .service-desc { font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--text-muted); line-height:1.7; }
+
+  /* DESTINATIONS */
+  .destinations { background:var(--dark); padding:6rem 4rem; }
+  .destinations-header { text-align:center; margin-bottom:4rem; }
+  .dest-grid { display:grid; grid-template-columns:2fr 1fr 1fr; grid-template-rows:280px 280px; gap:1rem; max-width:1100px; margin:0 auto; }
+  .dest-card { position:relative; overflow:hidden; border-radius:4px; cursor:pointer; }
+  .dest-card:first-child { grid-row:1/3; }
+  .dest-card img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
+  .dest-card:hover img { transform:scale(1.05); }
+  .dest-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(14,30,22,0.9) 0%,transparent 60%); display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; }
+  .dest-name { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:#fff; font-style:italic; }
+  .dest-tag { font-size:0.6rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.3rem; }
+
+  /* ARRANGEMENTS */
+  .arrange { background:var(--mid-green); padding:5rem 6rem; }
+  .arrange-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr 1fr; gap:3rem; align-items:start; }
+  .arrange-header { grid-column:1/4; text-align:center; margin-bottom:1rem; }
+  .arrange-card { background:rgba(255,255,255,0.08); border:1px solid rgba(200,146,10,0.25); border-radius:4px; padding:2rem; transition:background 0.3s; }
+  .arrange-card:hover { background:rgba(255,255,255,0.14); }
+  .arrange-icon { font-size:2rem; margin-bottom:1rem; }
+  .arrange-name { font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--gold-light); margin-bottom:0.6rem; }
+  .arrange-desc { font-family:'Cormorant Garamond',serif; font-size:1rem; color:rgba(245,237,216,0.7); line-height:1.7; }
+
+  /* CONTACT */
+  .contact { background:var(--cream); padding:7rem 4rem; text-align:center; }
+  .contact .section-title { margin:0.5rem 0 1.5rem; }
+  .contact-details { display:flex; justify-content:center; flex-wrap:wrap; gap:2rem; margin-top:3rem; }
+  .contact-item { display:flex; align-items:center; gap:0.8rem; font-size:0.85rem; color:var(--dark-green); font-weight:600; }
+  .contact-item .ci-icon { width:42px; height:42px; border-radius:50%; background:var(--dark-green); color:var(--gold-light); display:flex; align-items:center; justify-content:center; font-size:1rem; }
+  .contact-item a { color:inherit; text-decoration:none; }
+  .contact-item a:hover { color:var(--gold); }
+  .cta-buttons { display:flex; justify-content:center; gap:1rem; margin-top:2.5rem; flex-wrap:wrap; }
+  .btn-primary { background:var(--dark-green); color:var(--gold-light); padding:1rem 2.5rem; border-radius:3px; text-decoration:none; font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; border:2px solid var(--dark-green); transition:all 0.3s; }
+  .btn-primary:hover { background:transparent; color:var(--dark-green); }
+  .btn-secondary { background:transparent; color:var(--dark-green); padding:1rem 2.5rem; border-radius:3px; text-decoration:none; font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; border:2px solid var(--dark-green); transition:all 0.3s; }
+  .btn-secondary:hover { background:var(--dark-green); color:var(--gold-light); }
+
+  /* SOCIAL SECTION IN CONTACT */
+  .social-section { margin-top:3rem; }
+  .social-section-label { font-size:0.65rem; letter-spacing:4px; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.2rem; }
+  .social-icons-row { display:flex; justify-content:center; gap:0.8rem; flex-wrap:wrap; }
+  .social-icon-btn {
+    display:flex; align-items:center; gap:0.6rem;
+    padding:0.65rem 1.2rem; border-radius:30px;
+    text-decoration:none; color:#fff;
+    font-size:0.72rem; font-weight:700; letter-spacing:1px;
+    text-transform:uppercase; transition:transform 0.2s, box-shadow 0.2s;
+  }
+  .social-icon-btn:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.2); }
+  .sib-fb   { background:#1877F2; }
+  .sib-ig   { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+  .sib-yt   { background:#FF0000; }
+  .sib-tw   { background:#000; }
+  .sib-li   { background:#0A66C2; }
+  .sib-tk   { background:#010101; }
+  .social-icon-btn svg { width:16px; height:16px; fill:#fff; flex-shrink:0; }
+
+  /* FOOTER */
+  footer { background:var(--dark); color:rgba(255,255,255,0.5); padding:1.5rem 4rem; display:flex; justify-content:space-between; align-items:center; font-size:0.72rem; letter-spacing:1px; flex-wrap:wrap; gap:1rem; }
+  footer .footer-logo { font-family:'Playfair Display',serif; font-size:1rem; color:var(--gold-light); }
+  footer a { color:rgba(255,255,255,0.4); text-decoration:none; }
+  footer a:hover { color:var(--gold-light); }
+  .footer-social { display:flex; gap:0.8rem; }
+  .footer-social a { width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.1); transition:background 0.2s; }
+  .footer-social a:hover { background:var(--gold); }
+  .footer-social svg { width:14px; height:14px; fill:rgba(255,255,255,0.7); }
+
+  /* RESPONSIVE */
+  @media (max-width:768px) {
+    .lang-bar { padding:0.35rem 1rem; flex-wrap:wrap; justify-content:center; }
+    nav { padding:1rem 1.5rem; top:2.5rem; }
+    .nav-links { display:none; }
+    .hero-title { font-size:3.5rem; }
+    .about { grid-template-columns:1fr; padding:4rem 2rem; }
+    .about-visual { height:280px; }
+    .services-grid { grid-template-columns:1fr; }
+    section { padding:4rem 1.5rem; }
+    .dest-grid { grid-template-columns:1fr; grid-template-rows:auto; }
+    .dest-card { height:220px; }
+    .dest-card:first-child { grid-row:auto; }
+    .arrange-inner { grid-template-columns:1fr; }
+    .arrange-header { grid-column:1; }
+    .arrange { padding:4rem 2rem; }
+    footer { flex-direction:column; text-align:center; padding:1.5rem 2rem; }
+    .zanzibar-badge { width:80px; height:80px; top:7rem; left:1rem; }
+    .tagline-top { top:7.5rem; right:1rem; font-size:0.85rem; }
+    .social-sidebar { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span class="lang-bar-label">🌍 Language:</span>
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('sw')">SW</button>
+  <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" onclick="setLang('de')">DE</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
+  <button class="lang-btn" onclick="setLang('it')">IT</button>
+  <button class="lang-btn" onclick="setLang('pt')">PT</button>
+  <button class="lang-btn" onclick="setLang('zh')">中文</button>
+  <button class="lang-btn" onclick="setLang('ar')">AR</button>
+  <button class="lang-btn" onclick="setLang('ja')">JA</button>
+</div>
+
+<!-- SOCIAL SIDEBAR -->
+<div class="social-sidebar">
+  <a href="https://facebook.com/traveltotanzania" target="_blank" class="social-btn sb-fb">
+    <span class="s-label">Facebook</span>
+    <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+  </a>
+  <a href="https://instagram.com/traveltotanzania" target="_blank" class="social-btn sb-ig">
+    <span class="s-label">Instagram</span>
+    <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="none" stroke="#fff" stroke-width="2" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line fill="none" stroke="#fff" stroke-width="2" x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  </a>
+  <a href="https://youtube.com/@traveltotanzania" target="_blank" class="social-btn sb-yt">
+    <span class="s-label">YouTube</span>
+    <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#FF0000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+  </a>
+  <a href="https://twitter.com/traveltanzania" target="_blank" class="social-btn sb-tw">
+    <span class="s-label">Twitter / X</span>
+    <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </a>
+  <a href="https://linkedin.com/company/traveltotanzania" target="_blank" class="social-btn sb-li">
+    <span class="s-label">LinkedIn</span>
+    <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+  <a href="https://tiktok.com/@traveltotanzania" target="_blank" class="social-btn sb-tk">
+    <span class="s-label">TikTok</span>
+    <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+  </a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><span>Travel to</span> Tanzania</div>
+  <ul class="nav-links">
+    <li><a href="#services" data-i18n="nav_services">Services</a></li>
+    <li><a href="#destinations" data-i18n="nav_destinations">Destinations</a></li>
+    <li><a href="#arrange" data-i18n="nav_arrange">Arrangements</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://wa.me/255755054750
+    " class="nav-cta" target="_blank" data-i18n="nav_book">Book Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="zanzibar-badge">
+    <span class="now" data-i18n="badge_now">Now</span>
+    <span class="operating" data-i18n="badge_operating">Operating in</span>
+    <span class="zan-name">ZANZIBAR</span>
+    <span class="palm">🌴</span>
+  </div>
+  <div class="tagline-top" data-i18n="tagline_top">Your Adventure.<br><strong>Our Passion.</strong></div>
+  <div class="hero-content">
+    <p class="hero-subtitle" data-i18n="hero_subtitle">Adventure &amp; Safaris</p>
+    <h1 class="hero-title">
+      <span class="travel" data-i18n="hero_travel">Travel to</span>
+      TANZANIA
+    </h1>
+    <p class="hero-tagline" data-i18n="hero_tagline">Explore. Discover. Experience Tanzania.</p>
+    <a href="https://wa.me/255755054750" class="hero-whatsapp" target="_blank">
+      <span>💬</span> WhatsApp: +255 755 054 750
+    </a>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span data-i18n="scroll">Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-text">
+    <p class="section-label" data-i18n="about_label">About Us</p>
+    <h2 class="section-title" data-i18n="about_title">We Create<br><em>Memorable Journeys</em></h2>
+    <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+    <p class="section-body" data-i18n="about_body">From the wild beauty of Tanzania's national parks to the white sand beaches of Zanzibar, we make every moment unforgettable. Our expert local guides are passionate about sharing the magic of East Africa with you.</p>
+    <div class="about-stats">
+      <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label" data-i18n="stat_travelers">Happy Travelers</div></div>
+      <div class="stat-item"><div class="stat-num">10+</div><div class="stat-label" data-i18n="stat_years">Years Experience</div></div>
+      <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label" data-i18n="stat_dest">Safari Destinations</div></div>
+      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label" data-i18n="stat_safe">Safe & Reliable</div></div>
+    </div>
+  </div>
+  <div class="about-visual">
+    <div class="about-img"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80" alt="Serengeti"><div class="about-img-label">Serengeti</div></div>
+    <div class="about-img"><img src="https://images.unsplash.com/photo-1580392943462-e4e3c7e0282c?w=600&q=80" alt="Zanzibar"><div class="about-img-label">Zanzibar</div></div>
+    <div class="about-img"><img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&q=80" alt="Kilimanjaro"><div class="about-img-label">Kilimanjaro</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <p class="section-label" data-i18n="srv_label">What We Offer</p>
+    <h2 class="section-title" data-i18n="srv_title">Our <em>Services</em></h2>
+    <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+    <p class="section-body" data-i18n="srv_intro">Tailored experiences for every kind of adventurer — from wildlife lovers to beach seekers.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">🦁</div><div class="service-name" data-i18n="s1_name">Wildlife Safaris</div><p class="service-desc" data-i18n="s1_desc">Unforgettable safari experiences in the best national parks of Tanzania — Serengeti, Ngorongoro, Tarangire and more.</p></div>
+    <div class="service-card"><div class="service-icon">⛰️</div><div class="service-name" data-i18n="s2_name">Mountain Trekking</div><p class="service-desc" data-i18n="s2_desc">Climb Africa's highest peak — Mount Kilimanjaro — with our experienced, certified mountain guides.</p></div>
+    <div class="service-card"><div class="service-icon">🥁</div><div class="service-name" data-i18n="s3_name">Cultural Tours</div><p class="service-desc" data-i18n="s3_desc">Discover local cultures, traditions and communities. Meet the Maasai, visit local villages, and connect authentically.</p></div>
+    <div class="service-card"><div class="service-icon">🏝️</div><div class="service-name" data-i18n="s4_name">Zanzibar Experiences</div><p class="service-desc" data-i18n="s4_desc">Beach holidays, Stone Town tours, spice farm tours, and island adventures in the Spice Island of Africa.</p></div>
+    <div class="service-card"><div class="service-icon">🛡️</div><div class="service-name" data-i18n="s5_name">Safe & Reliable</div><p class="service-desc" data-i18n="s5_desc">Your safety and satisfaction are our absolute priority. All our tours are carefully planned with professional standards.</p></div>
+    <div class="service-card"><div class="service-icon">🧭</div><div class="service-name" data-i18n="s6_name">Expert Local Guides</div><p class="service-desc" data-i18n="s6_desc">Professional, friendly and deeply knowledgeable guides who bring Tanzania's stories to life at every step.</p></div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="destinations" id="destinations">
+  <div class="destinations-header">
+    <p class="section-label" style="color:var(--gold)" data-i18n="dest_label">Where We Go</p>
+    <h2 class="section-title" style="color:var(--cream)" data-i18n="dest_title">Our <em style="color:var(--gold-light)">Destinations</em></h2>
+    <div class="ornament" style="color:var(--gold)"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+    <p class="section-body" style="color:rgba(245,237,216,0.6);margin:0 auto;" data-i18n="dest_body">Tanzania's most breathtaking landscapes, wildlife parks and island gems.</p>
+  </div>
+  <div class="dest-grid">
+    <div class="dest-card"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900&q=80" alt="Serengeti"><div class="dest-overlay"><span class="dest-tag" data-i18n="dest_np">National Park</span><div class="dest-name">Serengeti</div></div></div>
+    <div class="dest-card"><img src="https://images.unsplash.com/photo-1580392943462-e4e3c7e0282c?w=600&q=80" alt="Zanzibar"><div class="dest-overlay"><span class="dest-tag" data-i18n="dest_ip">Island Paradise</span><div class="dest-name">Zanzibar</div></div></div>
+    <div class="dest-card"><img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&q=80" alt="Kilimanjaro"><div class="dest-overlay"><span class="dest-tag" data-i18n="dest_kili">Africa's Highest Peak</span><div class="dest-name">Kilimanjaro</div></div></div>
+    <div class="dest-card"><img src="https://images.unsplash.com/photo-1553355664-f9e25df35c6a?w=600&q=80" alt="Ngorongoro"><div class="dest-overlay"><span class="dest-tag" data-i18n="dest_wh">World Heritage</span><div class="dest-name">Ngorongoro</div></div></div>
+    <div class="dest-card"><img src="https://images.unsplash.com/photo-1534759926787-d4b2c34f65b6?w=600&q=80" alt="Stone Town"><div class="dest-overlay"><span class="dest-tag" data-i18n="dest_un">UNESCO Heritage</span><div class="dest-name">Stone Town</div></div></div>
+  </div>
+</section>
+
+<!-- ARRANGEMENTS -->
+<section class="arrange" id="arrange">
+  <div class="arrange-inner">
+    <div class="arrange-header">
+      <p class="section-label" style="color:var(--gold-light)" data-i18n="arr_label">We Also Arrange</p>
+      <h2 class="section-title" style="color:var(--cream)" data-i18n="arr_title">Additional <em style="color:var(--gold-light)">Services</em></h2>
+    </div>
+    <div class="arrange-card"><div class="arrange-icon">🚗</div><div class="arrange-name" data-i18n="arr1_name">Car Rental</div><p class="arrange-desc" data-i18n="arr1_desc">Wide range of well-maintained vehicles available for self-drive or with a professional driver — Toyota Land Cruisers, minibuses and more.</p></div>
+    <div class="arrange-card"><div class="arrange-icon">✈️</div><div class="arrange-name" data-i18n="arr2_name">Transfers</div><p class="arrange-desc" data-i18n="arr2_desc">Airport transfers, hotel transfers and intercity transfers — punctual, comfortable and reliable, on time every time.</p></div>
+    <div class="arrange-card"><div class="arrange-icon">🏨</div><div class="arrange-name" data-i18n="arr3_name">Accommodation</div><p class="arrange-desc" data-i18n="arr3_desc">We help you find and book lodges, camps, beach resorts and hotels at every budget level across Tanzania and Zanzibar.</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <p class="section-label" data-i18n="contact_label">Get In Touch</p>
+  <h2 class="section-title" data-i18n="contact_title">Start Your <em>Adventure</em> Today</h2>
+  <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+  <p class="section-body" style="margin:0 auto 1rem;text-align:center;" data-i18n="contact_body">Ready to explore Tanzania? Reach out to our team and we'll craft the perfect journey for you.</p>
+  <div class="cta-buttons">
+    <a href="https://wa.me/255625342924" class="btn-primary" target="_blank" data-i18n="contact_wa">💬 WhatsApp Us Now</a>
+    <a href="mailto:info@traveltotanzania.com" class="btn-secondary" data-i18n="contact_email">✉️ Send Email</a>
+  </div>
+  <div class="contact-details">
+    <div class="contact-item"><div class="ci-icon">🌐</div><a href="https://www.traveltotanzania.com" target="_blank">www.traveltotanzania.com</a></div>
+    <div class="contact-item"><div class="ci-icon">✉️</div><a href="mailto:info@traveltotanzania.com">info@traveltotanzania.com</a></div>
+    <div class="contact-item"><div class="ci-icon">📞</div><a href="tel:+255754794844">+255 754 794 844</a></div>
+    <div class="contact-item"><div class="ci-icon">💬</div><a href="https://wa.me/255625342924" target="_blank">+255 625 342 924</a></div>
+    <div class="contact-item"><div class="ci-icon">📍</div><span>Arusha, Tanzania</span></div>
+  </div>
+
+  <!-- SOCIAL MEDIA SECTION -->
+  <div class="social-section">
+    <p class="social-section-label" data-i18n="social_label">Follow Us On Social Media</p>
+    <div class="social-icons-row">
+      <a href="https://facebook.com/traveltotanzania" target="_blank" class="social-icon-btn sib-fb">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook
+      </a>
+      <a href="https://instagram.com/traveltotanzania" target="_blank" class="social-icon-btn sib-ig">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="none" stroke="#fff" stroke-width="2" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line fill="none" stroke="#fff" stroke-width="2" x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+      <a href="https://youtube.com/@traveltotanzania" target="_blank" class="social-icon-btn sib-yt">
+        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        YouTube
+      </a>
+      <a href="https://twitter.com/traveltanzania" target="_blank" class="social-icon-btn sib-tw">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Twitter / X
+      </a>
+      <a href="https://linkedin.com/company/traveltotanzania" target="_blank" class="social-icon-btn sib-li">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://tiktok.com/@traveltotanzania" target="_blank" class="social-icon-btn sib-tk">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+        TikTok
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Travel to Tanzania</div>
+  <div>© 2026 Travel to Tanzania Adventure & Safaris. All rights reserved.</div>
+  <div class="footer-social">
+    <a href="https://facebook.com/traveltotanzania" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+    <a href="https://instagram.com/traveltotanzania" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+    <a href="https://youtube.com/@traveltotanzania" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff"/></svg></a>
+    <a href="https://twitter.com/traveltanzania" target="_blank" title="Twitter/X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://linkedin.com/company/traveltotanzania" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://tiktok.com/@traveltotanzania" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.77 0 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.13 6.33 6.34 6.34 0 0 0 12.67 0V8.69a8.19 8.19 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg></a>
+  </div>
+</footer>
+
+<script>
+// ==================== TRANSLATIONS ====================
+const translations = {
+  en: {
+    nav_services:"Services", nav_destinations:"Destinations", nav_arrange:"Arrangements", nav_contact:"Contact", nav_book:"Book Now",
+    badge_now:"Now", badge_operating:"Operating in",
+    tagline_top:"Your Adventure.<br><strong>Our Passion.</strong>",
+    hero_subtitle:"Adventure & Safaris", hero_travel:"Travel to",
+    hero_tagline:"Explore. Discover. Experience Tanzania.", scroll:"Scroll",
+    about_label:"About Us", about_title:"We Create<br><em>Memorable Journeys</em>",
+    about_body:"From the wild beauty of Tanzania's national parks to the white sand beaches of Zanzibar, we make every moment unforgettable. Our expert local guides are passionate about sharing the magic of East Africa with you.",
+    stat_travelers:"Happy Travelers", stat_years:"Years Experience", stat_dest:"Safari Destinations", stat_safe:"Safe & Reliable",
+    srv_label:"What We Offer", srv_title:"Our <em>Services</em>",
+    srv_intro:"Tailored experiences for every kind of adventurer — from wildlife lovers to beach seekers.",
+    s1_name:"Wildlife Safaris", s1_desc:"Unforgettable safari experiences in the best national parks of Tanzania — Serengeti, Ngorongoro, Tarangire and more.",
+    s2_name:"Mountain Trekking", s2_desc:"Climb Africa's highest peak — Mount Kilimanjaro — with our experienced, certified mountain guides.",
+    s3_name:"Cultural Tours", s3_desc:"Discover local cultures, traditions and communities. Meet the Maasai, visit local villages, and connect authentically.",
+    s4_name:"Zanzibar Experiences", s4_desc:"Beach holidays, Stone Town tours, spice farm tours, and island adventures in the Spice Island of Africa.",
+    s5_name:"Safe & Reliable", s5_desc:"Your safety and satisfaction are our absolute priority. All our tours are carefully planned with professional standards.",
+    s6_name:"Expert Local Guides", s6_desc:"Professional, friendly and deeply knowledgeable guides who bring Tanzania's stories to life at every step.",
+    dest_label:"Where We Go", dest_title:"Our <em>Destinations</em>",
+    dest_body:"Tanzania's most breathtaking landscapes, wildlife parks and island gems.",
+    dest_np:"National Park", dest_ip:"Island Paradise", dest_kili:"Africa's Highest Peak", dest_wh:"World Heritage", dest_un:"UNESCO Heritage",
+    arr_label:"We Also Arrange", arr_title:"Additional <em>Services</em>",
+    arr1_name:"Car Rental", arr1_desc:"Wide range of well-maintained vehicles available for self-drive or with a professional driver — Toyota Land Cruisers, minibuses and more.",
+    arr2_name:"Transfers", arr2_desc:"Airport transfers, hotel transfers and intercity transfers — punctual, comfortable and reliable, on time every time.",
+    arr3_name:"Accommodation", arr3_desc:"We help you find and book lodges, camps, beach resorts and hotels at every budget level across Tanzania and Zanzibar.",
+    contact_label:"Get In Touch", contact_title:"Start Your <em>Adventure</em> Today",
+    contact_body:"Ready to explore Tanzania? Reach out to our team and we'll craft the perfect journey for you.",
+    contact_wa:"💬 WhatsApp Us Now", contact_email:"✉️ Send Email",
+    social_label:"Follow Us On Social Media"
+  },
+  sw: {
+    nav_services:"Huduma", nav_destinations:"Maeneo", nav_arrange:"Mpangilio", nav_contact:"Wasiliana", nav_book:"Weka Nafasi",
+    badge_now:"Sasa", badge_operating:"Tunafanya kazi",
+    tagline_top:"Safari Yako.<br><strong>Shauku Yetu.</strong>",
+    hero_subtitle:"Matukio & Safari", hero_travel:"Safari ya",
+    hero_tagline:"Gundua. Tembelea. Pata uzoefu wa Tanzania.", scroll:"Sogeza",
+    about_label:"Kuhusu Sisi", about_title:"Tunaunda<br><em>Safari za Kukumbukwa</em>",
+    about_body:"Kutoka msitu mzuri wa mbuga za Tanzania hadi pwani nyeupe za Zanzibar, tunafanya kila wakati usiosahaulika. Wataalam wetu wa ndani ni wenye shauku ya kushiriki uchawi wa Afrika Mashariki nawe.",
+    stat_travelers:"Wasafiri Furaha", stat_years:"Miaka ya Uzoefu", stat_dest:"Maeneo ya Safari", stat_safe:"Salama & Imara",
+    srv_label:"Tunachotoa", srv_title:"Huduma <em>Zetu</em>",
+    srv_intro:"Uzoefu uliobinafsishwa kwa kila aina ya msafiri — kutoka wapenzi wa wanyama hadi wapenzi wa pwani.",
+    s1_name:"Safari za Wanyama", s1_desc:"Uzoefu wa safari usiosahaulika katika mbuga bora za Tanzania — Serengeti, Ngorongoro, Tarangire na zaidi.",
+    s2_name:"Kupanda Mlima", s2_desc:"Panda kilele cha juu zaidi Afrika — Mlima Kilimanjaro — na waongoza wetu wenye uzoefu.",
+    s3_name:"Ziara za Utamaduni", s3_desc:"Gundua tamaduni za ndani, mila na jamii. Kutana na Maasai, tembelea vijiji vya ndani.",
+    s4_name:"Uzoefu wa Zanzibar", s4_desc:"Likizo za pwani, ziara za Mji wa Mawe, ziara za mashamba ya viungo, na matukio ya kisiwa.",
+    s5_name:"Salama & Imara", s5_desc:"Usalama na ridhaa yako ni kipaumbele chetu. Safari zetu zote zimepangwa kwa makini.",
+    s6_name:"Waongoza wa Ndani", s6_desc:"Waongoza wenye ujuzi, wa kirafiki ambao wanaipa maisha hadithi za Tanzania.",
+    dest_label:"Tunakokwenda", dest_title:"Maeneo <em>Yetu</em>",
+    dest_body:"Mandhari mazuri zaidi ya Tanzania, mbuga za wanyama na vito vya kisiwa.",
+    dest_np:"Mbuga ya Taifa", dest_ip:"Pepo ya Kisiwa", dest_kili:"Kilele cha Juu Afrika", dest_wh:"Urithi wa Dunia", dest_un:"Urithi wa UNESCO",
+    arr_label:"Pia Tunapanga", arr_title:"Huduma <em>za Ziada</em>",
+    arr1_name:"Kukodisha Gari", arr1_desc:"Aina mbalimbali za magari yaliyotunzwa vizuri kwa kuendesha mwenyewe au na dereva — Toyota Land Cruisers, mabasi na zaidi.",
+    arr2_name:"Uhamisho", arr2_desc:"Uhamisho wa uwanja wa ndege, wa hoteli na wa miji — kwa wakati, kwa starehe na kwa uaminifu.",
+    arr3_name:"Malazi", arr3_desc:"Tunakusaidia kupata na kuweka nafasi katika nyumba za kulala, kambi, mapumziko ya pwani na mahoteli kote Tanzania na Zanzibar.",
+    contact_label:"Wasiliana", contact_title:"Anza <em>Safari</em> Yako Leo",
+    contact_body:"Uko tayari kuchunguza Tanzania? Wasiliana na timu yetu nasi tutaunda safari kamili kwako.",
+    contact_wa:"💬 Tupigie WhatsApp", contact_email:"✉️ Tuma Barua pepe",
+    social_label:"Tufuate Kwenye Mitandao ya Kijamii"
+  },
+  fr: {
+    nav_services:"Services", nav_destinations:"Destinations", nav_arrange:"Organisation", nav_contact:"Contact", nav_book:"Réserver",
+    badge_now:"Maintenant", badge_operating:"En activité à",
+    tagline_top:"Votre Aventure.<br><strong>Notre Passion.</strong>",
+    hero_subtitle:"Aventure & Safaris", hero_travel:"Voyager en",
+    hero_tagline:"Explorer. Découvrir. Vivre la Tanzanie.", scroll:"Défiler",
+    about_label:"À Propos", about_title:"Nous Créons<br><em>des Voyages Inoubliables</em>",
+    about_body:"Des beautés sauvages des parcs nationaux tanzaniens aux plages de sable blanc de Zanzibar, nous rendons chaque moment inoubliable. Nos guides locaux experts partagent avec passion la magie de l'Afrique de l'Est.",
+    stat_travelers:"Voyageurs Heureux", stat_years:"Années d'Expérience", stat_dest:"Destinations Safari", stat_safe:"Sûr & Fiable",
+    srv_label:"Ce Que Nous Offrons", srv_title:"Nos <em>Services</em>",
+    srv_intro:"Des expériences sur mesure pour chaque type d'aventurier.",
+    s1_name:"Safaris Animaliers", s1_desc:"Des expériences safari inoubliables dans les meilleurs parcs nationaux — Serengeti, Ngorongoro, Tarangire et plus encore.",
+    s2_name:"Trekking en Montagne", s2_desc:"Gravissez le plus haut sommet d'Afrique — le Kilimandjaro — avec nos guides certifiés.",
+    s3_name:"Tours Culturels", s3_desc:"Découvrez les cultures locales, les traditions et les communautés. Rencontrez les Maasaï.",
+    s4_name:"Expériences Zanzibar", s4_desc:"Vacances à la plage, visites de Stone Town, tours de fermes d'épices et aventures insulaires.",
+    s5_name:"Sûr & Fiable", s5_desc:"Votre sécurité et votre satisfaction sont notre priorité absolue.",
+    s6_name:"Guides Locaux Experts", s6_desc:"Des guides professionnels, amicaux et très compétents qui donnent vie aux histoires de Tanzanie.",
+    dest_label:"Nos Itinéraires", dest_title:"Nos <em>Destinations</em>",
+    dest_body:"Les paysages les plus époustouflants de Tanzanie, parcs animaliers et joyaux insulaires.",
+    dest_np:"Parc National", dest_ip:"Paradis Insulaire", dest_kili:"Plus Haut Sommet d'Afrique", dest_wh:"Patrimoine Mondial", dest_un:"Patrimoine UNESCO",
+    arr_label:"Nous Organisons Aussi", arr_title:"Services <em>Supplémentaires</em>",
+    arr1_name:"Location de Voiture", arr1_desc:"Large gamme de véhicules bien entretenus disponibles en libre-service ou avec chauffeur.",
+    arr2_name:"Transferts", arr2_desc:"Transferts aéroport, hôtel et interurbains — ponctuels, confortables et fiables.",
+    arr3_name:"Hébergement", arr3_desc:"Nous vous aidons à trouver et réserver des lodges, campements, resorts et hôtels dans toute la Tanzanie.",
+    contact_label:"Nous Contacter", contact_title:"Commencez Votre <em>Aventure</em> Aujourd'hui",
+    contact_body:"Prêt à explorer la Tanzanie? Contactez notre équipe et nous créerons le voyage parfait pour vous.",
+    contact_wa:"💬 WhatsApp Maintenant", contact_email:"✉️ Envoyer un Email",
+    social_label:"Suivez-Nous sur les Réseaux Sociaux"
+  },
+  de: {
+    nav_services:"Leistungen", nav_destinations:"Reiseziele", nav_arrange:"Arrangements", nav_contact:"Kontakt", nav_book:"Jetzt Buchen",
+    badge_now:"Jetzt", badge_operating:"Tätig in",
+    tagline_top:"Ihr Abenteuer.<br><strong>Unsere Leidenschaft.</strong>",
+    hero_subtitle:"Abenteuer & Safaris", hero_travel:"Reise nach",
+    hero_tagline:"Erkunden. Entdecken. Tansania erleben.", scroll:"Scrollen",
+    about_label:"Über Uns", about_title:"Wir Schaffen<br><em>Unvergessliche Reisen</em>",
+    about_body:"Von der wilden Schönheit der Nationalparks Tansanias bis zu den weißen Sandstränden Sansibars machen wir jeden Moment unvergesslich.",
+    stat_travelers:"Glückliche Reisende", stat_years:"Jahre Erfahrung", stat_dest:"Safari-Ziele", stat_safe:"Sicher & Zuverlässig",
+    srv_label:"Unser Angebot", srv_title:"Unsere <em>Leistungen</em>",
+    srv_intro:"Maßgeschneiderte Erlebnisse für jeden Abenteurer.",
+    s1_name:"Wildtier-Safaris", s1_desc:"Unvergessliche Safari-Erlebnisse in den besten Nationalparks Tansanias.",
+    s2_name:"Bergwandern", s2_desc:"Besteigen Sie Afrikas höchsten Gipfel — den Kilimandscharo — mit unseren erfahrenen Bergführern.",
+    s3_name:"Kulturtouren", s3_desc:"Entdecken Sie lokale Kulturen, Traditionen und Gemeinschaften. Treffen Sie die Maasai.",
+    s4_name:"Sansibar-Erlebnisse", s4_desc:"Strandurlaub, Stone-Town-Touren, Gewürzfarmen-Touren und Inselabenteuer.",
+    s5_name:"Sicher & Zuverlässig", s5_desc:"Ihre Sicherheit und Zufriedenheit haben für uns höchste Priorität.",
+    s6_name:"Lokale Experten-Guides", s6_desc:"Professionelle, freundliche und sehr kompetente Guides, die Tansanias Geschichten zum Leben erwecken.",
+    dest_label:"Wohin Wir Gehen", dest_title:"Unsere <em>Reiseziele</em>",
+    dest_body:"Tansanias atemberaubendste Landschaften, Wildtierparks und Inselperlen.",
+    dest_np:"Nationalpark", dest_ip:"Inselparadies", dest_kili:"Afrikas Höchster Gipfel", dest_wh:"Weltkulturerbe", dest_un:"UNESCO-Erbe",
+    arr_label:"Wir Arrangieren Auch", arr_title:"Zusätzliche <em>Leistungen</em>",
+    arr1_name:"Autovermietung", arr1_desc:"Große Auswahl an gepflegten Fahrzeugen zur Selbstfahrt oder mit Fahrer.",
+    arr2_name:"Transfers", arr2_desc:"Flughafen-, Hotel- und Stadtverbindungs-Transfers — pünktlich und zuverlässig.",
+    arr3_name:"Unterkunft", arr3_desc:"Wir helfen Ihnen, Lodges, Camps, Strandresorts und Hotels in ganz Tansania zu finden.",
+    contact_label:"Kontakt", contact_title:"Starten Sie Ihr <em>Abenteuer</em> Heute",
+    contact_body:"Bereit, Tansania zu erkunden? Kontaktieren Sie unser Team und wir planen die perfekte Reise für Sie.",
+    contact_wa:"💬 WhatsApp Uns", contact_email:"✉️ E-Mail Senden",
+    social_label:"Folgen Sie Uns in den Sozialen Medien"
+  },
+  es: {
+    nav_services:"Servicios", nav_destinations:"Destinos", nav_arrange:"Arreglos", nav_contact:"Contacto", nav_book:"Reservar Ahora",
+    badge_now:"Ahora", badge_operating:"Operando en",
+    tagline_top:"Tu Aventura.<br><strong>Nuestra Pasión.</strong>",
+    hero_subtitle:"Aventura y Safaris", hero_travel:"Viaje a",
+    hero_tagline:"Explorar. Descubrir. Vivir Tanzania.", scroll:"Desplazar",
+    about_label:"Quiénes Somos", about_title:"Creamos<br><em>Viajes Memorables</em>",
+    about_body:"Desde la belleza salvaje de los parques nacionales de Tanzania hasta las playas de arena blanca de Zanzíbar, hacemos cada momento inolvidable.",
+    stat_travelers:"Viajeros Felices", stat_years:"Años de Experiencia", stat_dest:"Destinos Safari", stat_safe:"Seguro y Confiable",
+    srv_label:"Lo Que Ofrecemos", srv_title:"Nuestros <em>Servicios</em>",
+    srv_intro:"Experiencias personalizadas para todo tipo de aventurero.",
+    s1_name:"Safaris de Vida Silvestre", s1_desc:"Experiencias de safari inolvidables en los mejores parques nacionales de Tanzania.",
+    s2_name:"Senderismo en Montaña", s2_desc:"Escale el pico más alto de África — el Kilimanjaro — con nuestros guías certificados.",
+    s3_name:"Tours Culturales", s3_desc:"Descubra culturas, tradiciones y comunidades locales. Conozca a los Maasai.",
+    s4_name:"Experiencias en Zanzíbar", s4_desc:"Vacaciones en la playa, tours por Stone Town, tours de granjas de especias y aventuras insulares.",
+    s5_name:"Seguro y Confiable", s5_desc:"Su seguridad y satisfacción son nuestra prioridad absoluta.",
+    s6_name:"Guías Locales Expertos", s6_desc:"Guías profesionales, amigables y muy conocedores que dan vida a las historias de Tanzania.",
+    dest_label:"A Dónde Vamos", dest_title:"Nuestros <em>Destinos</em>",
+    dest_body:"Los paisajes más impresionantes de Tanzania, parques de vida silvestre y gemas insulares.",
+    dest_np:"Parque Nacional", dest_ip:"Paraíso Insular", dest_kili:"Pico Más Alto de África", dest_wh:"Patrimonio Mundial", dest_un:"Patrimonio UNESCO",
+    arr_label:"También Organizamos", arr_title:"Servicios <em>Adicionales</em>",
+    arr1_name:"Alquiler de Autos", arr1_desc:"Gran variedad de vehículos bien mantenidos disponibles para conducción propia o con conductor.",
+    arr2_name:"Traslados", arr2_desc:"Traslados aeropuerto, hotel e interurbanos — puntuales, cómodos y confiables.",
+    arr3_name:"Alojamiento", arr3_desc:"Le ayudamos a encontrar y reservar lodges, campamentos, resorts de playa y hoteles en toda Tanzania.",
+    contact_label:"Contáctenos", contact_title:"Comience Su <em>Aventura</em> Hoy",
+    contact_body:"¿Listo para explorar Tanzania? Contáctenos y crearemos el viaje perfecto para usted.",
+    contact_wa:"💬 WhatsApp Ahora", contact_email:"✉️ Enviar Email",
+    social_label:"Síguenos en Redes Sociales"
+  },
+  it: {
+    nav_services:"Servizi", nav_destinations:"Destinazioni", nav_arrange:"Organizzazione", nav_contact:"Contatto", nav_book:"Prenota Ora",
+    badge_now:"Ora", badge_operating:"Operativo a",
+    tagline_top:"La Tua Avventura.<br><strong>La Nostra Passione.</strong>",
+    hero_subtitle:"Avventura e Safari", hero_travel:"Viaggia in",
+    hero_tagline:"Esplora. Scopri. Vivi la Tanzania.", scroll:"Scorri",
+    about_label:"Chi Siamo", about_title:"Creiamo<br><em>Viaggi Memorabili</em>",
+    about_body:"Dalla bellezza selvaggia dei parchi nazionali tanzaniani alle bianche spiagge di Zanzibar, rendiamo ogni momento indimenticabile.",
+    stat_travelers:"Viaggiatori Felici", stat_years:"Anni di Esperienza", stat_dest:"Destinazioni Safari", stat_safe:"Sicuro & Affidabile",
+    srv_label:"Cosa Offriamo", srv_title:"I Nostri <em>Servizi</em>",
+    srv_intro:"Esperienze su misura per ogni tipo di avventuriero.",
+    s1_name:"Safari Naturalistici", s1_desc:"Esperienze safari indimenticabili nei migliori parchi nazionali della Tanzania.",
+    s2_name:"Trekking in Montagna", s2_desc:"Scalate la vetta più alta d'Africa — il Kilimangiaro — con le nostre guide certificate.",
+    s3_name:"Tour Culturali", s3_desc:"Scoprite culture locali, tradizioni e comunità. Incontrate i Maasai.",
+    s4_name:"Esperienze a Zanzibar", s4_desc:"Vacanze al mare, tour di Stone Town, tour delle piantagioni di spezie e avventure sull'isola.",
+    s5_name:"Sicuro & Affidabile", s5_desc:"La vostra sicurezza e soddisfazione sono la nostra priorità assoluta.",
+    s6_name:"Guide Locali Esperte", s6_desc:"Guide professionali, cordiali e competenti che danno vita alle storie della Tanzania.",
+    dest_label:"Dove Andiamo", dest_title:"Le Nostre <em>Destinazioni</em>",
+    dest_body:"I paesaggi più mozzafiato della Tanzania, parchi naturali e gemme insulari.",
+    dest_np:"Parco Nazionale", dest_ip:"Paradiso Insulare", dest_kili:"Vetta più Alta d'Africa", dest_wh:"Patrimonio Mondiale", dest_un:"Patrimonio UNESCO",
+    arr_label:"Organizziamo Anche", arr_title:"Servizi <em>Aggiuntivi</em>",
+    arr1_name:"Noleggio Auto", arr1_desc:"Ampia gamma di veicoli ben tenuti disponibili per la guida autonoma o con autista.",
+    arr2_name:"Trasferimenti", arr2_desc:"Trasferimenti aeroporto, hotel e intercity — puntuali, confortevoli e affidabili.",
+    arr3_name:"Alloggio", arr3_desc:"Vi aiutiamo a trovare e prenotare lodge, camp, resort e hotel in tutta la Tanzania.",
+    contact_label:"Contattaci", contact_title:"Inizia la Tua <em>Avventura</em> Oggi",
+    contact_body:"Pronti a esplorare la Tanzania? Contattateci e creeremo il viaggio perfetto per voi.",
+    contact_wa:"💬 WhatsApp Ora", contact_email:"✉️ Invia Email",
+    social_label:"Seguici sui Social Media"
+  },
+  pt: {
+    nav_services:"Serviços", nav_destinations:"Destinos", nav_arrange:"Organização", nav_contact:"Contato", nav_book:"Reservar Agora",
+    badge_now:"Agora", badge_operating:"Operando em",
+    tagline_top:"Sua Aventura.<br><strong>Nossa Paixão.</strong>",
+    hero_subtitle:"Aventura e Safáris", hero_travel:"Viaje para",
+    hero_tagline:"Explorar. Descobrir. Viver a Tanzânia.", scroll:"Rolar",
+    about_label:"Sobre Nós", about_title:"Criamos<br><em>Viagens Memoráveis</em>",
+    about_body:"Da beleza selvagem dos parques nacionais da Tanzânia às praias de areia branca de Zanzibar, tornamos cada momento inesquecível.",
+    stat_travelers:"Viajantes Felizes", stat_years:"Anos de Experiência", stat_dest:"Destinos Safari", stat_safe:"Seguro & Confiável",
+    srv_label:"O Que Oferecemos", srv_title:"Nossos <em>Serviços</em>",
+    srv_intro:"Experiências personalizadas para todo tipo de aventureiro.",
+    s1_name:"Safáris de Vida Selvagem", s1_desc:"Experiências de safári inesquecíveis nos melhores parques nacionais da Tanzânia.",
+    s2_name:"Trekking na Montanha", s2_desc:"Escale o pico mais alto da África — o Kilimanjaro — com nossos guias certificados.",
+    s3_name:"Passeios Culturais", s3_desc:"Descubra culturas, tradições e comunidades locais. Conheça os Maasai.",
+    s4_name:"Experiências em Zanzibar", s4_desc:"Férias na praia, passeios por Stone Town, tours de fazendas de especiarias e aventuras na ilha.",
+    s5_name:"Seguro & Confiável", s5_desc:"Sua segurança e satisfação são nossa prioridade absoluta.",
+    s6_name:"Guias Locais Especializados", s6_desc:"Guias profissionais, amigáveis e muito conhecedores que dão vida às histórias da Tanzânia.",
+    dest_label:"Para Onde Vamos", dest_title:"Nossos <em>Destinos</em>",
+    dest_body:"As paisagens mais deslumbrantes da Tanzânia, parques de vida selvagem e joias insulares.",
+    dest_np:"Parque Nacional", dest_ip:"Paraíso Insular", dest_kili:"Pico Mais Alto da África", dest_wh:"Patrimônio Mundial", dest_un:"Patrimônio UNESCO",
+    arr_label:"Também Organizamos", arr_title:"Serviços <em>Adicionais</em>",
+    arr1_name:"Aluguel de Carro", arr1_desc:"Grande variedade de veículos bem conservados disponíveis para autocondutor ou com motorista.",
+    arr2_name:"Transfers", arr2_desc:"Transfers para aeroporto, hotel e intercidades — pontuais, confortáveis e confiáveis.",
+    arr3_name:"Acomodação", arr3_desc:"Ajudamos a encontrar e reservar lodges, acampamentos, resorts de praia e hotéis em toda a Tanzânia.",
+    contact_label:"Entre em Contato", contact_title:"Comece Sua <em>Aventura</em> Hoje",
+    contact_body:"Pronto para explorar a Tanzânia? Entre em contato com nossa equipe.",
+    contact_wa:"💬 WhatsApp Agora", contact_email:"✉️ Enviar Email",
+    social_label:"Siga-nos nas Redes Sociais"
+  },
+  zh: {
+    nav_services:"服务", nav_destinations:"目的地", nav_arrange:"安排", nav_contact:"联系", nav_book:"立即预订",
+    badge_now:"现在", badge_operating:"运营于",
+    tagline_top:"您的冒险。<br><strong>我们的热情。</strong>",
+    hero_subtitle:"探险与野生动物园", hero_travel:"前往",
+    hero_tagline:"探索。发现。体验坦桑尼亚。", scroll:"滚动",
+    about_label:"关于我们", about_title:"我们打造<br><em>难忘的旅程</em>",
+    about_body:"从坦桑尼亚国家公园的野性美景到桑给巴尔的白沙海滩，我们让每一刻都令人难忘。",
+    stat_travelers:"满意旅客", stat_years:"年经验", stat_dest:"野生动物园目的地", stat_safe:"安全可靠",
+    srv_label:"我们提供", srv_title:"我们的<em>服务</em>",
+    srv_intro:"为每种类型的探险者量身定制体验。",
+    s1_name:"野生动物园", s1_desc:"在坦桑尼亚最佳国家公园体验难忘的野生动物园。",
+    s2_name:"登山徒步", s2_desc:"与我们经验丰富的认证向导攀登非洲最高峰——乞力马扎罗山。",
+    s3_name:"文化之旅", s3_desc:"探索当地文化、传统和社区。与马赛人相遇，参观当地村庄。",
+    s4_name:"桑给巴尔体验", s4_desc:"海滩度假、石头城游览、香料农场游览和岛屿探险。",
+    s5_name:"安全可靠", s5_desc:"您的安全和满意是我们的首要任务。",
+    s6_name:"本地专业向导", s6_desc:"专业、友好、知识丰富的向导，让坦桑尼亚的故事生动呈现。",
+    dest_label:"我们去哪里", dest_title:"我们的<em>目的地</em>",
+    dest_body:"坦桑尼亚最令人叹为观止的风景、野生动物园和岛屿珍宝。",
+    dest_np:"国家公园", dest_ip:"岛屿天堂", dest_kili:"非洲最高峰", dest_wh:"世界遗产", dest_un:"联合国教科文组织遗产",
+    arr_label:"我们还安排", arr_title:"额外<em>服务</em>",
+    arr1_name:"租车", arr1_desc:"提供多种保养良好的车辆，可自驾或配司机——丰田路虎、小型巴士等。",
+    arr2_name:"接送服务", arr2_desc:"机场、酒店和城市间接送——准时、舒适、可靠。",
+    arr3_name:"住宿", arr3_desc:"我们帮您在坦桑尼亚和桑给巴尔各地找到并预订各种预算的住宿。",
+    contact_label:"联系我们", contact_title:"今天开始您的<em>冒险</em>",
+    contact_body:"准备好探索坦桑尼亚了吗？联系我们的团队，我们将为您定制完美旅程。",
+    contact_wa:"💬 WhatsApp联系", contact_email:"✉️ 发送邮件",
+    social_label:"在社交媒体上关注我们"
+  },
+  ar: {
+    nav_services:"الخدمات", nav_destinations:"الوجهات", nav_arrange:"الترتيبات", nav_contact:"اتصل بنا", nav_book:"احجز الآن",
+    badge_now:"الآن", badge_operating:"نعمل في",
+    tagline_top:"مغامرتك.<br><strong>شغفنا.</strong>",
+    hero_subtitle:"المغامرة والسفاري", hero_travel:"سافر إلى",
+    hero_tagline:"استكشف. اكتشف. عش تجربة تنزانيا.", scroll:"التمرير",
+    about_label:"من نحن", about_title:"نحن نصنع<br><em>رحلات لا تُنسى</em>",
+    about_body:"من الجمال البري لحدائق تنزانيا الوطنية إلى شواطئ زنجبار البيضاء، نجعل كل لحظة لا تُنسى.",
+    stat_travelers:"مسافر سعيد", stat_years:"سنوات خبرة", stat_dest:"وجهات سفاري", stat_safe:"آمن وموثوق",
+    srv_label:"ما نقدمه", srv_title:"خدماتنا <em>المتميزة</em>",
+    srv_intro:"تجارب مصممة لكل نوع من المغامرين.",
+    s1_name:"سفاري الحياة البرية", s1_desc:"تجارب سفاري لا تُنسى في أفضل المتنزهات الوطنية في تنزانيا.",
+    s2_name:"التسلق الجبلي", s2_desc:"اتسلق أعلى قمة في أفريقيا — جبل كليمنجارو — مع مرشدينا المعتمدين.",
+    s3_name:"الجولات الثقافية", s3_desc:"اكتشف الثقافات المحلية والتقاليد والمجتمعات. التقِ بالماساي.",
+    s4_name:"تجارب زنجبار", s4_desc:"عطلات شاطئية وجولات في مدينة ستون تاون وجولات مزارع التوابل.",
+    s5_name:"آمن وموثوق", s5_desc:"سلامتك ورضاك هما أولويتنا المطلقة.",
+    s6_name:"مرشدون محليون خبراء", s6_desc:"مرشدون محترفون وودودون ومتمرسون يجسدون قصص تنزانيا.",
+    dest_label:"أين نذهب", dest_title:"وجهاتنا <em>السياحية</em>",
+    dest_body:"أكثر المناظر الطبيعية روعة في تنزانيا ومحميات الحياة البرية والجزر.",
+    dest_np:"متنزه وطني", dest_ip:"جنة الجزيرة", dest_kili:"أعلى قمة في أفريقيا", dest_wh:"التراث العالمي", dest_un:"تراث اليونسكو",
+    arr_label:"نرتب أيضاً", arr_title:"خدمات <em>إضافية</em>",
+    arr1_name:"تأجير السيارات", arr1_desc:"مجموعة واسعة من المركبات المصانة متاحة للقيادة الذاتية أو مع سائق.",
+    arr2_name:"النقل", arr2_desc:"نقل المطار والفندق ونقل بين المدن — في الوقت المحدد وموثوق.",
+    arr3_name:"الإقامة", arr3_desc:"نساعدك في إيجاد وحجز النزل والمخيمات والمنتجعات والفنادق في كل أنحاء تنزانيا.",
+    contact_label:"تواصل معنا", contact_title:"ابدأ <em>مغامرتك</em> اليوم",
+    contact_body:"هل أنت مستعد لاستكشاف تنزانيا؟ تواصل مع فريقنا وسنصمم رحلتك المثالية.",
+    contact_wa:"💬 واتساب الآن", contact_email:"✉️ إرسال بريد إلكتروني",
+    social_label:"تابعنا على وسائل التواصل الاجتماعي"
+  },
+  ja: {
+    nav_services:"サービス", nav_destinations:"目的地", nav_arrange:"手配", nav_contact:"お問合せ", nav_book:"今すぐ予約",
+    badge_now:"現在", badge_operating:"運営中",
+    tagline_top:"あなたの冒険。<br><strong>私たちの情熱。</strong>",
+    hero_subtitle:"アドベンチャー＆サファリ", hero_travel:"タンザニアへ",
+    hero_tagline:"探検。発見。タンザニアを体験。", scroll:"スクロール",
+    about_label:"私たちについて", about_title:"忘れられない<br><em>旅を創ります</em>",
+    about_body:"タンザニアの国立公園の大自然からザンジバルの白砂ビーチまで、すべての瞬間を忘れられないものにします。",
+    stat_travelers:"満足した旅行者", stat_years:"年の経験", stat_dest:"サファリ目的地", stat_safe:"安全で信頼性が高い",
+    srv_label:"提供サービス", srv_title:"私たちの<em>サービス</em>",
+    srv_intro:"すべてのタイプの冒険家向けにカスタマイズされた体験。",
+    s1_name:"野生動物サファリ", s1_desc:"タンザニアの最高の国立公園での忘れられないサファリ体験。",
+    s2_name:"山岳トレッキング", s2_desc:"経験豊富な認定ガイドとアフリカ最高峰キリマンジャロに登頂。",
+    s3_name:"文化ツアー", s3_desc:"地域の文化、伝統、コミュニティを発見。マサイ族と出会い、地元の村を訪問。",
+    s4_name:"ザンジバル体験", s4_desc:"ビーチバカンス、ストーンタウンツアー、スパイス農場ツアー、島の冒険。",
+    s5_name:"安全で信頼性が高い", s5_desc:"お客様の安全と満足が私たちの最優先事項です。",
+    s6_name:"地元専門ガイド", s6_desc:"タンザニアの物語を生き生きと語る、プロで親切で知識豊富なガイド。",
+    dest_label:"目的地", dest_title:"私たちの<em>目的地</em>",
+    dest_body:"タンザニアの最も息をのむ風景、野生動物公園、島の宝石。",
+    dest_np:"国立公園", dest_ip:"島の楽園", dest_kili:"アフリカ最高峰", dest_wh:"世界遺産", dest_un:"ユネスコ遺産",
+    arr_label:"手配サービス", arr_title:"追加<em>サービス</em>",
+    arr1_name:"レンタカー", arr1_desc:"セルフドライブまたはドライバー付きで利用可能な、よく整備された幅広い車両。",
+    arr2_name:"送迎サービス", arr2_desc:"空港、ホテル、都市間の送迎 — 時間通り、快適、信頼性抜群。",
+    arr3_name:"宿泊施設", arr3_desc:"タンザニアとザンジバル全域のロッジ、キャンプ、ビーチリゾート、ホテルを探してご予約いたします。",
+    contact_label:"お問い合わせ", contact_title:"今日から<em>冒険</em>を始めよう",
+    contact_body:"タンザニアを探検する準備はできていますか？チームにご連絡ください。",
+    contact_wa:"💬 WhatsAppで連絡", contact_email:"✉️ メール送信",
+    social_label:"ソーシャルメディアでフォローしてください"
+  }
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+  if (!t) return;
+
+  // Update RTL for Arabic
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+  // Update all elements with data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      el.innerHTML = t[key];
+    }
+  });
+
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang || btn.onclick.toString().includes(`'${lang}'`));
+  });
+}
+</script>
+</body>
+</html>
