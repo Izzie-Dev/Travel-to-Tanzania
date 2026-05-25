@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Browse all Tanzania safari packages – Wildlife Safaris, Kilimanjaro Trekking, Zanzibar Tours, Day Trips and Combo Packages.">
+<title>Safari Packages – Travel to Tanzania</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --gold:#C8920A;--gold-light:#F0B429;
+  --dg:#1A3A2A;--mg:#2D5A3D;
+  --cream:#F5EDD8;--warm:#FBF7EF;--dark:#0E1E16;
+  --muted:#6B7B70;
+  --radius:8px;--shadow:0 4px 24px rgba(14,30,22,.13);
+  --trans:.3s ease;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:var(--warm);color:var(--dark);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* TOPBAR */
+.topbar{background:var(--dg);padding:.45rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.topbar-left{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+.topbar-left a{color:rgba(255,255,255,.75);font-size:.72rem;display:flex;align-items:center;gap:.4rem;transition:color var(--trans);}
+.topbar-left a:hover{color:var(--gold-light);}
+.topbar-left i{color:var(--gold-light);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:250;background:rgba(14,30,22,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(200,146,10,.25);}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:.85rem 4rem;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--gold-light);letter-spacing:1px;}
+.nav-logo span{color:#fff;font-style:italic;}
+.nav-menu{display:flex;list-style:none;gap:.25rem;align-items:center;}
+.nav-menu>li>a{color:rgba(255,255,255,.82);font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:.55rem .85rem;border-radius:3px;transition:all .2s;}
+.nav-menu>li>a:hover{color:var(--gold-light);background:rgba(200,146,10,.08);}
+.nav-cta{background:var(--gold);color:#fff!important;padding:.55rem 1.4rem!important;border-radius:3px!important;}
+.nav-cta:hover{background:var(--gold-light)!important;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:.4rem;}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;}
+
+/* PAGE HERO */
+.page-hero{position:relative;height:380px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.page-hero-bg{position:absolute;inset:0;background:linear-gradient(rgba(14,30,22,.65),rgba(14,30,22,.65)),url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1600&q=80') center/cover no-repeat;}
+.page-hero-content{position:relative;z-index:2;text-align:center;color:#fff;}
+.breadcrumb{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.8rem;}
+.breadcrumb a{color:var(--gold-light);}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;}
+.page-hero h1 em{font-style:italic;color:var(--gold-light);}
+.page-hero p{font-size:.9rem;color:rgba(255,255,255,.75);margin-top:.8rem;letter-spacing:2px;}
+
+/* COMMON */
+.sec-label{font-size:.62rem;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--dg);}
+.sec-title em{font-style:italic;color:var(--gold);}
+.orn{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1.2rem auto;color:var(--gold);}
+.orn-line{width:50px;height:1px;background:currentColor;opacity:.5;}
+.orn-dia{width:7px;height:7px;background:currentColor;transform:rotate(45deg);}
+
+/* CATEGORY TABS */
+.cat-tabs{background:#fff;border-bottom:2px solid #f0ebe0;position:sticky;top:62px;z-index:200;}
+.cat-tabs-inner{max-width:1200px;margin:0 auto;display:flex;gap:0;overflow-x:auto;padding:0 2rem;}
+.cat-tab{padding:1.1rem 1.6rem;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .25s;display:flex;align-items:center;gap:.5rem;}
+.cat-tab:hover{color:var(--dg);}
+.cat-tab.active{color:var(--dg);border-bottom-color:var(--gold);}
+.cat-tab i{font-size:1rem;color:var(--gold);}
+
+/* MAIN CONTENT */
+.main-content{max-width:1200px;margin:0 auto;padding:3.5rem 2rem 5rem;}
+
+/* CATEGORY PANEL */
+.cat-panel{display:none;}
+.cat-panel.active{display:block;}
+
+/* CATEGORY HEADER */
+.cat-header{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3.5rem;background:var(--dg);border-radius:12px;overflow:hidden;}
+.cat-header-img{height:280px;overflow:hidden;}
+.cat-header-img img{width:100%;height:100%;object-fit:cover;}
+.cat-header-text{padding:2.5rem 2.5rem 2.5rem 0;}
+.cat-header-text .sec-label{color:var(--gold-light);}
+.cat-header-text .sec-title{color:var(--cream);}
+.cat-header-text p{color:rgba(245,237,216,.72);font-size:.88rem;line-height:1.8;margin-top:1rem;}
+.cat-header-text .highlights{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem;}
+.cat-header-text .highlight{background:rgba(200,146,10,.15);border:1px solid rgba(200,146,10,.3);color:var(--gold-light);font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.3rem .7rem;border-radius:20px;}
+
+/* TOURS GRID */
+.tours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.tour-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .3s;display:flex;flex-direction:column;cursor:pointer;}
+.tour-card:hover{transform:translateY(-7px);box-shadow:0 16px 50px rgba(14,30,22,.18);}
+.tc-img{position:relative;height:200px;overflow:hidden;}
+.tc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.tour-card:hover .tc-img img{transform:scale(1.07);}
+.tc-badge{position:absolute;top:.7rem;left:.7rem;background:var(--gold);color:#fff;font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.28rem .65rem;border-radius:20px;}
+.tc-price{position:absolute;bottom:.7rem;right:.7rem;background:var(--dg);color:var(--gold-light);font-size:.72rem;font-weight:700;padding:.3rem .7rem;border-radius:3px;}
+.tc-body{padding:1.3rem;flex:1;display:flex;flex-direction:column;}
+.tc-cat{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;}
+.tc-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dg);line-height:1.3;margin-bottom:.5rem;}
+.tc-loc{font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:.35rem;margin-bottom:.5rem;}
+.tc-stars{color:#F0B429;font-size:.72rem;margin-bottom:.8rem;}
+.tc-stars span{color:var(--muted);font-size:.68rem;margin-left:.3rem;}
+.tc-meta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:.8rem;}
+.tc-meta span{font-size:.68rem;color:var(--muted);display:flex;align-items:center;gap:.3rem;}
+.tc-meta i{color:var(--gold);font-size:.6rem;}
+.tc-footer{margin-top:auto;padding-top:.8rem;border-top:1px solid #f0ebe0;display:flex;justify-content:space-between;align-items:center;}
+.tc-days{font-size:.68rem;font-weight:600;color:var(--muted);}
+.tc-btn{background:var(--dg);color:var(--gold-light);padding:.45rem 1.1rem;border-radius:3px;font-size:.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all .3s;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;}
+.tc-btn:hover{background:var(--gold);color:#fff;}
+
+/* MOBILE NAV */
+.mobile-nav{position:fixed;top:0;left:0;bottom:0;width:290px;background:var(--dg);z-index:400;transform:translateX(-100%);transition:transform .35s;overflow-y:auto;padding:2rem 1.5rem;}
+.mobile-nav.open{transform:translateX(0);}
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:350;opacity:0;pointer-events:none;transition:opacity .3s;}
+.mobile-overlay.show{opacity:1;pointer-events:all;}
+.mob-close{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;margin-bottom:1.5rem;}
+.mobile-nav ul{list-style:none;}
+.mobile-nav ul li a{display:block;color:rgba(255,255,255,.82);font-size:.85rem;font-weight:600;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.08);}
+
+/* FLOAT WA */
+.float-wa{position:fixed;bottom:2rem;right:2rem;z-index:500;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 6px 25px rgba(37,211,102,.45);animation:waPulse 2.5s ease-in-out infinite;}
+@keyframes waPulse{0%,100%{box-shadow:0 6px 25px rgba(37,211,102,.45)}50%{box-shadow:0 6px 35px rgba(37,211,102,.75)}}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.55);padding:2.5rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.f-logo{font-family:'Playfair Display',serif;font-size:1rem;color:var(--gold-light);}
+.f-logo span{color:#fff;font-style:italic;}
+footer p{font-size:.72rem;}
+.f-links{display:flex;gap:1.5rem;}
+.f-links a{font-size:.7rem;color:rgba(255,255,255,.38);transition:color .2s;}
+.f-links a:hover{color:var(--gold-light);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .topbar{padding:.4rem 1.5rem;}.topbar-left{display:none;}
+  .nav-inner{padding:.75rem 1.5rem;}
+  .nav-menu{display:none;}.hamburger{display:flex;}
+  .cat-header{grid-template-columns:1fr;}
+  .cat-header-img{height:200px;}
+  .cat-header-text{padding:1.5rem;}
+  .tours-grid{grid-template-columns:1fr 1fr;}
+  footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;}
+}
+@media(max-width:580px){
+  .tours-grid{grid-template-columns:1fr;}
+  .main-content{padding:2rem 1rem 4rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMob()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
+  <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);margin-bottom:1.5rem;"><span style="color:#fff;font-style:italic;">Travel to</span> Tanzania</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="safaris.html" style="color:var(--gold-light);">Safari Packages</a></li>
+    <li><a href="index.html#destinations">Destinations</a></li>
+    <li><a href="index.html#group">Join a Group</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="tel:+255754794844"><i class="fas fa-phone"></i>+255 754 794 844</a>
+    <a href="https://wa.me/255625342924" target="_blank"><i class="fab fa-whatsapp"></i>+255 625 342 924</a>
+    <a href="mailto:info@traveltotanzania.com"><i class="fas fa-envelope"></i>info@traveltotanzania.com</a>
+    <a href="#"><i class="fas fa-clock"></i>Mon–Sun: Always Open</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span>Travel to</span> Tanzania</a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safaris.html" style="color:var(--gold-light);">Safaris</a></li>
+      <li><a href="index.html#destinations">Destinations</a></li>
+      <li><a href="index.html#group">Join Group</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="hamburger" onclick="openMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Safari Packages</span></div>
+    <h1>Our <em>Packages</em></h1>
+    <p>Wildlife Safaris · Trekking · Zanzibar · Day Trips · Combos</p>
+  </div>
+</div>
+
+<!-- CATEGORY TABS -->
+<div class="cat-tabs">
+  <div class="cat-tabs-inner">
+    <div class="cat-tab active" onclick="showCat('wildlife',this)"><i class="fas fa-paw"></i> Wildlife Safaris</div>
+    <div class="cat-tab" onclick="showCat('trekking',this)"><i class="fas fa-mountain"></i> Trekking</div>
+    <div class="cat-tab" onclick="showCat('zanzibar',this)"><i class="fas fa-umbrella-beach"></i> Zanzibar</div>
+    <div class="cat-tab" onclick="showCat('daytrips',this)"><i class="fas fa-sun"></i> Day Trips</div>
+    <div class="cat-tab" onclick="showCat('combo',this)"><i class="fas fa-layer-group"></i> Combo Packages</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main-content">
+
+  <!-- ===== WILDLIFE ===== -->
+  <div class="cat-panel active" id="cat-wildlife">
+    <div class="cat-header">
+      <div class="cat-header-img"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=80" alt="Wildlife Safari Tanzania"></div>
+      <div class="cat-header-text">
+        <p class="sec-label">Tanzania's Best</p>
+        <h2 class="sec-title" style="color:var(--cream);">Wildlife <em style="color:var(--gold-light);">Safaris</em></h2>
+        <p>Experience the raw, untamed beauty of Tanzania's iconic national parks. From the vast Serengeti plains to the dramatic Ngorongoro Crater, our wildlife safaris offer unforgettable encounters with Africa's Big Five and the world-famous Great Wildebeest Migration.</p>
+        <div class="highlights">
+          <span class="highlight"><i class="fas fa-check"></i> Expert Guides</span>
+          <span class="highlight"><i class="fas fa-check"></i> 4×4 Safari Vehicles</span>
+          <span class="highlight"><i class="fas fa-check"></i> All Meals Included</span>
+          <span class="highlight"><i class="fas fa-check"></i> Park Fees Included</span>
+        </div>
+      </div>
+    </div>
+    <div class="tours-grid">
+      <div class="tour-card" onclick="goTour('2-days-budget-safari')">
+        <div class="tc-img"><img src="img/imagesss (1).jpg" alt="2 Days Safari"><span class="tc-badge">Popular</span></div>
+        <div class="tc-body">
+          <div class="tc-cat">Wildlife Safari</div>
+          <div class="tc-name">2 Days Tanzania Budget Wildlife Safari</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Tarangire, Lake Manyara</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 2 Days / 1 Night</span><span><i class="fas fa-users"></i> Min 2 pax</span></div>
+          <div class="tc-stars">★★★★★ <span>(48 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $710/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('3-days-serengeti-migration')">
+        <div class="tc-img"><img src="img/images 44.jpg" alt="3 Days Safari"><span class="tc-badge">Top Rated</span></div>
+        <div class="tc-body">
+          <div class="tc-cat">Wildlife Safari</div>
+          <div class="tc-name">3 Days Serengeti Migration Safari</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Serengeti, Ngorongoro</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 3 Days / 2 Nights</span><span><i class="fas fa-users"></i> Min 2 pax</span></div>
+          <div class="tc-stars">★★★★★ <span>(72 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $1,160/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('4-days-big-five')">
+        <div class="tc-img"><img src="img/images 22.jpg" alt="4 Days Safari"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Wildlife Safari</div>
+          <div class="tc-name">4 Days Tanzania Big Five Safari</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Serengeti, Ngorongoro, Tarangire</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights</span><span><i class="fas fa-users"></i> Min 2 pax</span></div>
+          <div class="tc-stars">★★★★★ <span>(55 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $1,290/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('5-days-ngorongoro-lake-natron')">
+        <div class="tc-img"><img src="img/imagesss (12).jpg" alt="5 Days Safari"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Wildlife Safari</div>
+          <div class="tc-name">5 Days Ngorongoro Highlands & Lake Natron</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Ngorongoro, Empakai, Lake Natron</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 5 Days / 4 Nights</span><span><i class="fas fa-users"></i> Min 2 pax</span></div>
+          <div class="tc-stars">★★★★★ <span>(35 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $1,400/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('6-days-camping-safari')">
+        <div class="tc-img"><img src="img/imagesss (16).jpg" alt="6 Days Camping"><span class="tc-badge">Best Value</span></div>
+        <div class="tc-body">
+          <div class="tc-cat">Wildlife Safari</div>
+          <div class="tc-name">6 Days Camping Safari – Full Tanzania</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Manyara, Serengeti, Tarangire</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 6 Days / 5 Nights</span><span><i class="fas fa-users"></i> Min 2 pax</span></div>
+          <div class="tc-stars">★★★★★ <span>(61 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $1,595/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('7-days-full-tanzania')">
+        <div class="tc-img"><img src="img/imagesss (13).jpg" alt="7 Days Safari"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Wildlife Safari</div>
+          <div class="tc-name">7 Days Full Tanzania Safari Experience</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> All Major Parks</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 7 Days / 6 Nights</span><span><i class="fas fa-users"></i> Min 2 pax</span></div>
+          <div class="tc-stars">★★★★★ <span>(43 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $2,100/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TREKKING ===== -->
+  <div class="cat-panel" id="cat-trekking">
+    <div class="cat-header">
+      <div class="cat-header-img"><img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=700&q=80" alt="Kilimanjaro Trekking"></div>
+      <div class="cat-header-text">
+        <p class="sec-label">Africa's Highest Peak</p>
+        <h2 class="sec-title" style="color:var(--cream);">Kilimanjaro <em style="color:var(--gold-light);">Trekking</em></h2>
+        <p>Conquer Mount Kilimanjaro — Africa's highest peak at 5,895m. Whether you choose the classic Marangu route or the scenic Lemosho route, our certified guides will get you to Uhuru Peak safely and unforgettably.</p>
+        <div class="highlights">
+          <span class="highlight">Certified Guides</span>
+          <span class="highlight">Wilderness First Aid</span>
+          <span class="highlight">All Equipment</span>
+          <span class="highlight">High Success Rate</span>
+        </div>
+      </div>
+    </div>
+    <div class="tours-grid">
+      <div class="tour-card" onclick="goTour('5-days-marangu')">
+        <div class="tc-img"><img src="img/mountain kilimajaro 1.jpg" alt="Marangu Route"><span class="tc-badge">Popular</span></div>
+        <div class="tc-body">
+          <div class="tc-cat">Kilimanjaro Trek</div>
+          <div class="tc-name">5 Days Marangu Route – Kilimanjaro Climb</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Mount Kilimanjaro</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 5 Days / 4 Nights</span><span><i class="fas fa-mountain"></i> 5,895m Summit</span></div>
+          <div class="tc-stars">★★★★★ <span>(91 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('6-days-machame')">
+        <div class="tc-img"><img src="img/mountain kilimajaro 2.jpg" alt="Machame Route"><span class="tc-badge">Top Rated</span></div>
+        <div class="tc-body">
+          <div class="tc-cat">Kilimanjaro Trek</div>
+          <div class="tc-name">6 Days Machame Route – Kilimanjaro Climb</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Mount Kilimanjaro</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 6 Days / 5 Nights</span><span><i class="fas fa-mountain"></i> 5,895m Summit</span></div>
+          <div class="tc-stars">★★★★★ <span>(84 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('7-days-machame')">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=500&q=75" alt="7 Days Machame"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Kilimanjaro Trek</div>
+          <div class="tc-name">7 Days Machame Route – Kilimanjaro Hiking</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Mount Kilimanjaro</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 7 Days / 6 Nights</span><span><i class="fas fa-mountain"></i> 5,895m Summit</span></div>
+          <div class="tc-stars">★★★★★ <span>(67 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('8-days-lemosho')">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=500&q=75" alt="Lemosho Route"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Kilimanjaro Trek</div>
+          <div class="tc-name">8 Days Lemosho Route – Kilimanjaro Hiking</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Mount Kilimanjaro</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 8 Days / 7 Nights</span><span><i class="fas fa-mountain"></i> 5,895m Summit</span></div>
+          <div class="tc-stars">★★★★★ <span>(52 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('9-days-northern-circuit')">
+        <div class="tc-img"><img src="img/mountain kilimanjari1 (1).jpg" alt="Northern Circuit"><span class="tc-badge">Best Success</span></div>
+        <div class="tc-body">
+          <div class="tc-cat">Kilimanjaro Trek</div>
+          <div class="tc-name">9 Days Northern Circuit – Kilimanjaro</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Mount Kilimanjaro</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 9 Days / 8 Nights</span><span><i class="fas fa-mountain"></i> 5,895m Summit</span></div>
+          <div class="tc-stars">★★★★★ <span>(29 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ZANZIBAR ===== -->
+  <div class="cat-panel" id="cat-zanzibar">
+    <div class="cat-header">
+      <div class="cat-header-img"><img src="img/gallery-9.jpg" alt="Zanzibar"></div>
+      <div class="cat-header-text">
+        <p class="sec-label">Island Paradise</p>
+        <h2 class="sec-title" style="color:var(--cream);">Zanzibar <em style="color:var(--gold-light);">Holidays</em></h2>
+        <p>Escape to the Spice Island of Africa. Zanzibar offers pristine white-sand beaches, crystal-clear turquoise waters, the historic UNESCO-listed Stone Town, spice farm tours and world-class snorkeling and diving experiences.</p>
+        <div class="highlights">
+          <span class="highlight">White Sand Beaches</span>
+          <span class="highlight">Stone Town Tour</span>
+          <span class="highlight">Spice Farm Visit</span>
+          <span class="highlight">Dolphin Watching</span>
+        </div>
+      </div>
+    </div>
+    <div class="tours-grid">
+      <div class="tour-card" onclick="goTour('3-days-zanzibar')">
+        <div class="tc-img"><img src="img/gallery-11.jpg" alt="3 Days Zanzibar"><span class="tc-badge">Popular</span></div>
+        <div class="tc-body">
+          <div class="tc-cat">Zanzibar</div>
+          <div class="tc-name">3 Days Zanzibar Beach Tour</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Zanzibar Island</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 3 Days / 2 Nights</span><span><i class="fas fa-umbrella-beach"></i> Beach & Culture</span></div>
+          <div class="tc-stars">★★★★★ <span>(67 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('4-days-zanzibar')">
+        <div class="tc-img"><img src="img/gallery-12.jpg" alt="4 Days Zanzibar"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Zanzibar</div>
+          <div class="tc-name">4 Days Zanzibar Beach & Stone Town Tour</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Zanzibar Island</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights</span><span><i class="fas fa-umbrella-beach"></i> Beach & Culture</span></div>
+          <div class="tc-stars">★★★★★ <span>(51 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('6-days-zanzibar')">
+        <div class="tc-img"><img src="img/atone tour.jpg" alt="6 Days Zanzibar"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Zanzibar</div>
+          <div class="tc-name">6 Days Zanzibar Full Experience</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Zanzibar Island</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 6 Days / 5 Nights</span><span><i class="fas fa-umbrella-beach"></i> Full Experience</span></div>
+          <div class="tc-stars">★★★★★ <span>(38 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('8-days-zanzibar')">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1559551409-dadc959f76b8?w=500&q=75" alt="8 Days Zanzibar"><span class="tc-badge">Best Value</span></div>
+        <div class="tc-body">
+          <div class="tc-cat">Zanzibar</div>
+          <div class="tc-name">8 Days Ultimate Zanzibar Holiday</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Zanzibar Island</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 8 Days / 7 Nights</span><span><i class="fas fa-umbrella-beach"></i> Ultimate Package</span></div>
+          <div class="tc-stars">★★★★★ <span>(44 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DAY TRIPS ===== -->
+  <div class="cat-panel" id="cat-daytrips">
+    <div class="cat-header">
+      <div class="cat-header-img"><img src="img/imagesss (10).jpg" alt="Day Trips Tanzania"></div>
+      <div class="cat-header-text">
+        <p class="sec-label">Short Adventures</p>
+        <h2 class="sec-title" style="color:var(--cream);">Day <em style="color:var(--gold-light);">Trips</em></h2>
+        <p>Perfect for travellers with limited time. Our day trips offer incredible experiences just a few hours from Arusha and Moshi — from hot springs and waterfalls to cultural visits and national park drives.</p>
+        <div class="highlights">
+          <span class="highlight">From Arusha & Moshi</span>
+          <span class="highlight">Transport Included</span>
+          <span class="highlight">Expert Guide</span>
+          <span class="highlight">Lunch Included</span>
+        </div>
+      </div>
+    </div>
+    <div class="tours-grid">
+      <div class="tour-card" onclick="goTour('kikuletwa-hot-spring')">
+        <div class="tc-img"><img src="img/kikuletwe image" alt="Kikuletwa"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Day Trip</div>
+          <div class="tc-name">Kikuletwa Hot Spring Day Trip</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Kikuletwa, near Arusha</div>
+          <div class="tc-meta"><span><i class="fas fa-clock"></i> Full Day</span><span><i class="fas fa-car"></i> Transport Included</span></div>
+          <div class="tc-stars">★★★★★ <span>(103 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $90/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('materuni-waterfalls')">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=500&q=75" alt="Materuni"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Day Trip</div>
+          <div class="tc-name">Materuni Waterfalls & Coffee Tour</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Materuni Village, Kilimanjaro</div>
+          <div class="tc-meta"><span><i class="fas fa-clock"></i> Full Day</span><span><i class="fas fa-car"></i> Transport Included</span></div>
+          <div class="tc-stars">★★★★★ <span>(88 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $80/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('lake-chala-kayak')">
+        <div class="tc-img"><img src="img/destination-7.jpg" alt="Lake Chala"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Day Trip</div>
+          <div class="tc-name">Lake Chala Kayak & Swim Day Trip</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Lake Chala, Kilimanjaro</div>
+          <div class="tc-meta"><span><i class="fas fa-clock"></i> Full Day</span><span><i class="fas fa-car"></i> Transport Included</span></div>
+          <div class="tc-stars">★★★★★ <span>(54 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $180/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('maasai-cultural-tour')">
+        <div class="tc-img"><img src="img/maasai culture.jpg" alt="Maasai Cultural"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Cultural Day Trip</div>
+          <div class="tc-name">Olpopongi Maasai Cultural Day Tour</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Arusha Region</div>
+          <div class="tc-meta"><span><i class="fas fa-clock"></i> Full Day</span><span><i class="fas fa-drum"></i> Cultural Experience</span></div>
+          <div class="tc-stars">★★★★★ <span>(71 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $75/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('arusha-national-park-day')">
+        <div class="tc-img"><img src="img/imagesss (3).jpg" alt="Arusha National Park"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Day Trip</div>
+          <div class="tc-name">Arusha National Park Day Safari</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Arusha National Park</div>
+          <div class="tc-meta"><span><i class="fas fa-clock"></i> Full Day</span><span><i class="fas fa-car"></i> 4×4 Vehicle</span></div>
+          <div class="tc-stars">★★★★★ <span>(62 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $160/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('tarangire-day-trip')">
+        <div class="tc-img"><img src="img/imagesss (4).jpg" alt="Tarangire"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Day Trip</div>
+          <div class="tc-name">Tarangire National Park Day Trip</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Tarangire National Park</div>
+          <div class="tc-meta"><span><i class="fas fa-clock"></i> Full Day</span><span><i class="fas fa-car"></i> 4×4 Vehicle</span></div>
+          <div class="tc-stars">★★★★★ <span>(49 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">from $200/pp</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== COMBO ===== -->
+  <div class="cat-panel" id="cat-combo">
+    <div class="cat-header">
+      <div class="cat-header-img"><img src="img/mountain kilimajaro 2.jpg" alt="Combo Packages"></div>
+      <div class="cat-header-text">
+        <p class="sec-label">Best of Everything</p>
+        <h2 class="sec-title" style="color:var(--cream);">Combo <em style="color:var(--gold-light);">Packages</em></h2>
+        <p>Why choose one when you can have it all? Our combo packages combine the best of Tanzania — summit Kilimanjaro then explore the Serengeti, or do a safari followed by a relaxing Zanzibar beach holiday.</p>
+        <div class="highlights">
+          <span class="highlight">Safari + Zanzibar</span>
+          <span class="highlight">Kili + Safari</span>
+          <span class="highlight">Best Value</span>
+          <span class="highlight">Fully Customizable</span>
+        </div>
+      </div>
+    </div>
+    <div class="tours-grid">
+      <div class="tour-card" onclick="goTour('kilimanjaro-safari-combo')">
+        <div class="tc-img"><img src="img/mountain kilimanjari1 (2).jpg" alt="Kili + Safari"><span class="tc-badge">Popular</span></div>
+        <div class="tc-body">
+          <div class="tc-cat">Combo Package</div>
+          <div class="tc-name">Kilimanjaro Trekking + Tanzania Wildlife Safari</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Kilimanjaro + Serengeti</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 10–14 Days</span><span><i class="fas fa-layer-group"></i> Trek + Safari</span></div>
+          <div class="tc-stars">★★★★★ <span>(38 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('safari-zanzibar-combo')">
+        <div class="tc-img"><img src="img/mountain kilimanjari1 (3).jpg" alt="Safari + Zanzibar"><span class="tc-badge">Best Value</span></div>
+        <div class="tc-body">
+          <div class="tc-cat">Combo Package</div>
+          <div class="tc-name">Tanzania Safari + Zanzibar Beach Holiday</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Serengeti + Zanzibar</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 7–12 Days</span><span><i class="fas fa-layer-group"></i> Safari + Beach</span></div>
+          <div class="tc-stars">★★★★★ <span>(55 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('kili-zanzibar-combo')">
+        <div class="tc-img"><img src="img/mountain kilimanjari1 (4).jpg" alt="Kili + Zanzibar"></div>
+        <div class="tc-body">
+          <div class="tc-cat">Combo Package</div>
+          <div class="tc-name">Kilimanjaro Trek + Zanzibar Relaxation</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Kilimanjaro + Zanzibar</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 9–13 Days</span><span><i class="fas fa-layer-group"></i> Trek + Beach</span></div>
+          <div class="tc-stars">★★★★★ <span>(27 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+      <div class="tour-card" onclick="goTour('ultimate-tanzania-combo')">
+        <div class="tc-img"><img src="img/mountain kilimanjari1 (5).jpg" alt="Ultimate Tanzania"><span class="tc-badge">Ultimate</span></div>
+        <div class="tc-body">
+          <div class="tc-cat">Combo Package</div>
+          <div class="tc-name">Ultimate Tanzania – Kili + Safari + Zanzibar</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Full Tanzania</div>
+          <div class="tc-meta"><span><i class="fas fa-calendar-alt"></i> 14–18 Days</span><span><i class="fas fa-layer-group"></i> Everything</span></div>
+          <div class="tc-stars">★★★★★ <span>(19 reviews)</span></div>
+          <div class="tc-footer"><span class="tc-days">Contact for Price</span><button class="tc-btn">View Details</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main-content -->
+
+<footer>
+  <p>© 2026 Travel to Tanzania Adventure & Safaris. All rights reserved.</p>
+  <p>Designed and developed by isaac , +255 755 054 750, isackisack578@gmail.com</p>
+  <div class="f-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/255625342924" target="_blank" class="float-wa"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+function showCat(id,el){
+  document.querySelectorAll('.cat-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('cat-'+id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo({top:document.querySelector('.cat-tabs').offsetTop-70,behavior:'smooth'});
+}
+
+// Tour data store
+const tourData={
+  '2-days-budget-safari':{name:'2 Days Tanzania Budget Wildlife Safari',cat:'Wildlife Safari',days:'2 Days / 1 Night',loc:'Tarangire & Lake Manyara',price:'from $710/person',img:'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80',badge:'Popular',overview:'This budget safari takes you through two of Tanzania\'s most remarkable parks. Tarangire National Park is famous for its massive elephant herds and iconic baobab trees, while Lake Manyara is known for its tree-climbing lions, flamingos and diverse birdlife. A perfect introduction to Tanzania\'s wildlife.',highlights:['Game drives in Tarangire & Lake Manyara','Expert licensed safari guide','4×4 pop-up roof safari vehicle','All park entrance fees included','Accommodation (lodge or camping)','All meals included']},
+  '3-days-serengeti-migration':{name:'3 Days Serengeti Migration Safari',cat:'Wildlife Safari',days:'3 Days / 2 Nights',loc:'Serengeti & Ngorongoro',price:'from $1,160/person',img:'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80',badge:'Top Rated',overview:'Witness Africa\'s most iconic wildlife spectacle — the Great Wildebeest Migration in the Serengeti. Descend into the world-famous Ngorongoro Crater, a UNESCO World Heritage Site and home to the highest concentration of wildlife on Earth, including lions, elephants, rhinos and hippos.',highlights:['Serengeti National Park game drives','Ngorongoro Crater full-day descent','Great Migration opportunity','Expert wildlife guide','All meals & park fees included','Comfortable lodge accommodation']},
+  '4-days-big-five':{name:'4 Days Tanzania Big Five Safari',cat:'Wildlife Safari',days:'4 Days / 3 Nights',loc:'Serengeti, Ngorongoro, Tarangire',price:'from $1,290/person',img:'https://images.unsplash.com/photo-1553355664-f9e25df35c6a?w=1200&q=80',badge:'',overview:'Search for Tanzania\'s Big Five — lion, elephant, buffalo, leopard and rhino — across three of Tanzania\'s finest national parks. With multiple game drives, you\'ll have ample opportunities to photograph and observe Africa\'s most iconic animals in their natural habitat.',highlights:['Big Five search across 3 parks','Tarangire, Serengeti & Ngorongoro','4×4 safari vehicle with pop-up roof','Expert guide, all meals & park fees','3 nights lodge accommodation','Sunset game drive included']},
+  '5-days-ngorongoro-lake-natron':{name:'5 Days Ngorongoro Highlands & Lake Natron',cat:'Wildlife Safari',days:'5 Days / 4 Nights',loc:'Ngorongoro, Empakai, Lake Natron',price:'from $1,400/person',img:'https://images.unsplash.com/photo-1612559550912-b9a49f4af9c8?w=1200&q=80',badge:'',overview:'An extraordinary off-the-beaten-path adventure through the volcanic Ngorongoro Highlands. Trek through Empakai Crater and witness the stunning pink flamingos at Lake Natron, an alkaline lake at the base of Ol Doinyo Lengai — an active volcano sacred to the Maasai people.',highlights:['Ngorongoro Crater game drive','Empakai Crater trekking','Lake Natron & flamingos','Ol Doinyo Lengai volcano view','Maasai village visit','All meals & accommodation included']},
+  '6-days-camping-safari':{name:'6 Days Camping Safari – Full Tanzania',cat:'Wildlife Safari',days:'6 Days / 5 Nights',loc:'Manyara, Serengeti, Tarangire, Ngorongoro',price:'from $1,595/person',img:'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80',badge:'Best Value',overview:'The ultimate Tanzania camping safari experience. Sleep under the stars in the heart of the Serengeti, wake up to lion roars and explore four of Tanzania\'s top parks. This immersive camping adventure puts you right in the middle of Africa\'s most spectacular wildlife.',highlights:['4 parks in 6 days','Serengeti, Ngorongoro, Manyara, Tarangire','Comfortable tented camp accommodation','All meals, park fees & guide','Early morning & evening game drives','Unforgettable stargazing experience']},
+  '7-days-full-tanzania':{name:'7 Days Full Tanzania Safari Experience',cat:'Wildlife Safari',days:'7 Days / 6 Nights',loc:'All Major Parks',price:'from $2,100/person',img:'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80',badge:'',overview:'The most comprehensive Tanzania wildlife safari — a full week exploring all of Tanzania\'s top national parks. From Tarangire\'s elephants to the Serengeti\'s lions, Ngorongoro\'s rhinos and Lake Manyara\'s flamingos, this is the definitive Tanzania experience.',highlights:['Complete Tanzania wildlife experience','All 5 major national parks','7 days of unlimited game drives','Luxury or mid-range lodge options','Full board – all meals included','Expert wildlife naturalist guide']},
+  '5-days-marangu':{name:'5 Days Marangu Route – Kilimanjaro Climb',cat:'Kilimanjaro Trek',days:'5 Days / 4 Nights',loc:'Mount Kilimanjaro (5,895m)',price:'Contact for Price',img:'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=80',badge:'Popular',overview:'The Marangu Route — also known as the "Coca-Cola Route" — is the most popular route on Kilimanjaro and the only route with hut accommodation. Suitable for most fitness levels, this 5-day climb takes you through rainforest, moorland and alpine desert to Uhuru Peak.',highlights:['Hut accommodation on the mountain','Summit at Uhuru Peak 5,895m','Certified Wilderness First Aid guide','Pulse oximeter health monitoring','Porters, cook & all meals included','Park fees & rescue fee included']},
+  '6-days-machame':{name:'6 Days Machame Route – Kilimanjaro Climb',cat:'Kilimanjaro Trek',days:'6 Days / 5 Nights',loc:'Mount Kilimanjaro (5,895m)',price:'Contact for Price',img:'https://images.unsplash.com/photo-1612559550912-b9a49f4af9c8?w=1200&q=80',badge:'Top Rated',overview:'The Machame Route — known as the "Whiskey Route" — is the most scenic and popular tented route on Kilimanjaro. It offers excellent acclimatization with the "climb high, sleep low" approach. Rated one of the most rewarding routes for its breathtaking views and diverse landscapes.',highlights:['Tent camping on the mountain','Scenic route through diverse ecosystems','Expert certified mountain guide','Daily health monitoring','All meals, porters & equipment','Highest success rate among routes']},
+  '7-days-machame':{name:'7 Days Machame Route – Kilimanjaro Hiking',cat:'Kilimanjaro Trek',days:'7 Days / 6 Nights',loc:'Mount Kilimanjaro (5,895m)',price:'Contact for Price',img:'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1200&q=80',badge:'',overview:'The 7-day Machame Route offers even better acclimatization than the 6-day option, giving climbers an extra day on the mountain to adjust to altitude. This significantly increases your summit success rate and makes for a more enjoyable, less rushed experience.',highlights:['Extra acclimatization day included','Higher summit success rate','All camping equipment provided','1 guide per 2 climbers ratio','Emergency oxygen on all climbs','All meals & park fees included']},
+  '8-days-lemosho':{name:'8 Days Lemosho Route – Kilimanjaro Hiking',cat:'Kilimanjaro Trek',days:'8 Days / 7 Nights',loc:'Mount Kilimanjaro (5,895m)',price:'Contact for Price',img:'https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80',badge:'',overview:'The Lemosho Route is widely considered the most scenic and best acclimatizing route on Kilimanjaro. Starting from the remote western side, it offers pristine wilderness, fewer crowds and excellent views. The 8-day itinerary provides outstanding acclimatization for maximum summit success.',highlights:['Most scenic route on Kilimanjaro','Fewest crowds on the mountain','Best overall acclimatization profile','Spectacular views from all angles','All meals, guides & porters included','Park rescue fee covered']},
+  '9-days-northern-circuit':{name:'9 Days Northern Circuit – Kilimanjaro',cat:'Kilimanjaro Trek',days:'9 Days / 8 Nights',loc:'Mount Kilimanjaro (5,895m)',price:'Contact for Price',img:'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=80',badge:'Best Success Rate',overview:'The Northern Circuit is the longest route on Kilimanjaro and has the highest success rate of all routes. It circumnavigates the entire northern side of the mountain, offering truly remote wilderness, 360° views and the best possible acclimatization for reaching Uhuru Peak.',highlights:['Highest summit success rate','Full circumnavigation of the mountain','9 days of incredible mountain scenery','Most remote & wilderness route','Expert certified guides & full crew','All equipment, meals & fees included']},
+  '3-days-zanzibar':{name:'3 Days Zanzibar Beach Tour',cat:'Zanzibar',days:'3 Days / 2 Nights',loc:'Zanzibar Island',price:'Contact for Price',img:'https://images.unsplash.com/photo-1580392943462-e4e3c7e0282c?w=1200&q=80',badge:'Popular',overview:'A perfect short escape to Zanzibar — the Spice Island. Enjoy the pristine white-sand beaches, swim in crystal-clear turquoise waters and explore the narrow alleys of historic Stone Town. Ideal for a quick beach getaway or as an extension to a Tanzania safari.',highlights:['Stone Town walking tour (UNESCO Heritage)','Spice farm tour','Pristine beach time','Snorkeling at Nakupenda sandbar','Sunset dhow cruise','Hotel accommodation & transfers']},
+  '4-days-zanzibar':{name:'4 Days Zanzibar Beach & Stone Town Tour',cat:'Zanzibar',days:'4 Days / 3 Nights',loc:'Zanzibar Island',price:'Contact for Price',img:'https://images.unsplash.com/photo-1534759926787-d4b2c34f65b6?w=1200&q=80',badge:'',overview:'Experience the best of both worlds in Zanzibar — the historic culture of Stone Town and the paradise beaches of the east and north coasts. Visit spice farms, go snorkeling, take a sunset dhow cruise and immerse yourself in the unique Swahili culture of this beautiful island.',highlights:['Stone Town guided tour','Spice farm visit','Dolphin watching excursion','Snorkeling at Mnemba Atoll','Sunset dhow cruise','3 nights beach hotel']},
+  '6-days-zanzibar':{name:'6 Days Zanzibar Full Experience',cat:'Zanzibar',days:'6 Days / 5 Nights',loc:'Zanzibar Island',price:'Contact for Price',img:'https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1200&q=80',badge:'',overview:'Immerse yourself completely in the Zanzibar experience. With 6 days, you have time to explore Stone Town in depth, visit multiple beaches, go on a full-day snorkeling trip to Mnemba Atoll, visit a spice farm and enjoy a traditional Swahili cooking class.',highlights:['Stone Town & Prison Island tour','Spice farm & cooking class','Mnemba Atoll snorkeling','Jozani Forest monkey tour','Multiple beach destinations','5 nights accommodation & transfers']},
+  '8-days-zanzibar':{name:'8 Days Ultimate Zanzibar Holiday',cat:'Zanzibar',days:'8 Days / 7 Nights',loc:'Zanzibar Island',price:'Contact for Price',img:'https://images.unsplash.com/photo-1559551409-dadc959f76b8?w=1200&q=80',badge:'Best Value',overview:'The ultimate Zanzibar experience. Eight days of pure island paradise — exploring the north, east and south coasts, diving at Mnemba Atoll, visiting Jozani Forest, experiencing Stone Town\'s vibrant culture and relaxing on some of the most beautiful beaches in the Indian Ocean.',highlights:['Full island exploration','Scuba diving & snorkeling','Jozani Forest red colobus monkeys','Spice farm & cultural experiences','Stone Town guided tour & night market','7 nights premium beach resort']},
+  'kikuletwa-hot-spring':{name:'Kikuletwa Hot Spring Day Trip',cat:'Day Trip',days:'1 Full Day',loc:'Kikuletwa, near Arusha',price:'from $90/person',img:'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80',badge:'Most Popular',overview:'One of the most popular day trips from Arusha and Moshi. Kikuletwa Hot Spring is a stunning natural oasis hidden in the middle of dry Maasai land — a beautifully clear, warm spring surrounded by ancient fig trees. You can swim, snorkel, and even walk in the shallow waters surrounded by nature.',highlights:['Warm crystal-clear spring water','Swimming & snorkeling','Surrounded by fig trees & nature','Maasai village visit en route','Transport from Arusha/Moshi','Lunch & local guide included']},
+  'materuni-waterfalls':{name:'Materuni Waterfalls & Coffee Tour',cat:'Day Trip',days:'1 Full Day',loc:'Materuni Village, Kilimanjaro',price:'from $80/person',img:'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=1200&q=80',badge:'',overview:'A beautiful hike through lush Kilimanjaro coffee farms to the stunning Materuni Waterfall — one of the highest waterfalls in Tanzania. Learn about traditional coffee cultivation, process your own coffee beans the traditional way, and swim in the refreshing pool below the waterfall.',highlights:['Hike through coffee farms','Visit the 80m Materuni Waterfall','Traditional coffee processing experience','Swim in the waterfall pool','Local Chagga guide','Lunch in the village included']},
+  'lake-chala-kayak':{name:'Lake Chala Kayak & Swim Day Trip',cat:'Day Trip',days:'1 Full Day',loc:'Lake Chala, Kilimanjaro',price:'from $180/person',img:'https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80',badge:'',overview:'Lake Chala is a stunning crater lake straddling the Tanzania-Kenya border at the eastern foot of Mount Kilimanjaro. The emerald-green water is dramatically surrounded by 100m-high crater walls. Kayak across this pristine lake, swim in its clear waters and enjoy breathtaking views of Kilimanjaro.',highlights:['Kayaking on Lake Chala','Swimming in the crater lake','Views of Mount Kilimanjaro','Hike around the crater rim','Transport & guide included','Lunch & refreshments included']},
+  'maasai-cultural-tour':{name:'Olpopongi Maasai Cultural Day Tour',cat:'Cultural Day Trip',days:'1 Full Day',loc:'Arusha Region',price:'from $75/person',img:'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80',badge:'',overview:'An immersive cultural experience with the iconic Maasai people. Visit the Olpopongi Cultural Village — a unique living museum — where you\'ll learn about Maasai traditions, customs, music and dance. Meet local families, try traditional food and buy authentic Maasai crafts.',highlights:['Authentic Maasai village visit','Traditional dances & ceremonies','Learn Maasai culture & history','Visit local Maasai families','Craft market & shopping','Transport from Arusha/Moshi']},
+  'arusha-national-park-day':{name:'Arusha National Park Day Safari',cat:'Day Trip',days:'1 Full Day',loc:'Arusha National Park',price:'from $160/person',img:'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80',badge:'',overview:'Arusha National Park is a hidden gem just 45 minutes from Arusha town. Game drive through diverse habitats — from montane forest and moorland to alkaline lakes. Spot giraffe, buffalo, zebra, colobus monkeys and over 400 bird species. Optional walking safaris with an armed ranger.',highlights:['Game drive in 4×4 safari vehicle','Spot giraffe, buffalo & colobus monkeys','Walking safari with armed ranger (optional)','Momela Lakes & flamingos','Views of Mount Kilimanjaro & Meru','All park fees & guide included']},
+  'tarangire-day-trip':{name:'Tarangire National Park Day Trip',cat:'Day Trip',days:'1 Full Day',loc:'Tarangire National Park',price:'from $200/person',img:'https://images.unsplash.com/photo-1553355664-f9e25df35c6a?w=1200&q=80',badge:'',overview:'Tarangire National Park is Tanzania\'s hidden treasure — famous for its massive elephant herds (the largest in Africa), ancient baobab trees and diverse wildlife. A full-day game drive gives you time to explore this beautiful park at your own pace with an expert guide.',highlights:['Full-day game drive in 4×4 vehicle','Tanzania\'s largest elephant herds','Iconic baobab tree landscapes','Lions, leopards, wildebeest & zebra','Expert licensed safari guide','All park fees, transport & lunch']},
+  'kilimanjaro-safari-combo':{name:'Kilimanjaro Trekking + Tanzania Wildlife Safari',cat:'Combo Package',days:'10–14 Days',loc:'Kilimanjaro + Serengeti',price:'Contact for Price',img:'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=80',badge:'Popular',overview:'The ultimate Tanzania experience — summit Africa\'s highest peak and then celebrate with a wildlife safari through the Serengeti. Conquer Kilimanjaro via your chosen route, then descend and head straight to the Serengeti for extraordinary wildlife encounters. The perfect combination of adventure and wildlife.',highlights:['Kilimanjaro climb on your chosen route','Post-trek Serengeti & Ngorongoro safari','Recovery day after the summit','Expert trek & safari guides','All meals throughout the journey','Fully customizable itinerary']},
+  'safari-zanzibar-combo':{name:'Tanzania Safari + Zanzibar Beach Holiday',cat:'Combo Package',days:'7–12 Days',loc:'Serengeti + Zanzibar',price:'Contact for Price',img:'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80',badge:'Best Value',overview:'The classic Tanzania combination — thrilling wildlife safaris followed by complete relaxation on the pristine beaches of Zanzibar. After days of game drives in the Serengeti and Ngorongoro, fly to Zanzibar for snorkeling, beach time, Stone Town exploration and total relaxation.',highlights:['Serengeti & Ngorongoro safari','Direct flight to Zanzibar included','Stone Town guided tour','Beach resort accommodation','Snorkeling & watersports','Fully flexible itinerary']},
+  'kili-zanzibar-combo':{name:'Kilimanjaro Trek + Zanzibar Relaxation',cat:'Combo Package',days:'9–13 Days',loc:'Kilimanjaro + Zanzibar',price:'Contact for Price',img:'https://images.unsplash.com/photo-1580392943462-e4e3c7e0282c?w=1200&q=80',badge:'',overview:'Conquer the roof of Africa and then recover in style on the beaches of Zanzibar. After the challenge of reaching Uhuru Peak, treat yourself to the warm Indian Ocean, white sands and Swahili culture of Zanzibar. The perfect reward after your Kilimanjaro achievement.',highlights:['Kilimanjaro climb via chosen route','Post-summit recovery day in Moshi','Flight to Zanzibar','Beach resort accommodation','Stone Town & spice farm tour','Fully customizable package']},
+  'ultimate-tanzania-combo':{name:'Ultimate Tanzania – Kili + Safari + Zanzibar',cat:'Combo Package',days:'14–18 Days',loc:'Full Tanzania',price:'Contact for Price',img:'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80',badge:'Ultimate',overview:'The complete Tanzania experience — everything in one epic journey. Summit Kilimanjaro, witness the Great Migration in the Serengeti, descend into the Ngorongoro Crater and then relax on the paradise beaches of Zanzibar. For the true Tanzania adventurer who wants it all.',highlights:['Kilimanjaro summit on chosen route','Full Tanzania wildlife safari','Zanzibar beach holiday','14–18 days of pure adventure','Expert guides throughout','Completely customizable']}
+};
+
+function goTour(id){
+  if(tourData[id]){
+    sessionStorage.setItem('selectedTour',JSON.stringify(tourData[id]));
+    window.location.href='tour-detail.html';
+  }
+}
+
+// Check URL for category param
+window.addEventListener('DOMContentLoaded',()=>{
+  const params=new URLSearchParams(window.location.search);
+  const cat=params.get('cat');
+  if(cat){
+    const tabMap={wildlife:'wildlife',trekking:'trekking',zanzibar:'zanzibar',daytrips:'daytrips',combo:'combo'};
+    if(tabMap[cat]){
+      const tabs=document.querySelectorAll('.cat-tab');
+      const idx={wildlife:0,trekking:1,zanzibar:2,daytrips:3,combo:4}[cat];
+      showCat(cat,tabs[idx]);
+    }
+  }
+});
+
+function openMob(){document.getElementById('mobileNav').classList.add('open');document.getElementById('mobileOverlay').classList.add('show');document.body.style.overflow='hidden';}
+function closeMob(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('mobileOverlay').classList.remove('show');document.body.style.overflow='';}
+</script>
+</body>
+</html>

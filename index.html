@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Travel to Tanzania Adventure & Safaris – Wildlife Safaris, Kilimanjaro Trekking, Zanzibar Tours, Day Trips. Your Adventure, Our Passion.">
+<title>Travel to Tanzania – Adventure & Safaris</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --gold:#C8920A; --gold-light:#F0B429; --gold-pale:#FDE68A;
+  --dg:#1A3A2A; --mg:#2D5A3D; --lg:#3D7A52;
+  --cream:#F5EDD8; --warm:#FBF7EF; --dark:#0E1E16;
+  --muted:#6B7B70; --white:#fff;
+  --radius:8px; --shadow:0 4px 24px rgba(14,30,22,.13);
+  --trans:.3s ease;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:var(--warm);color:var(--dark);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--dg);padding:.45rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;position:relative;z-index:300;}
+.topbar-left{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+.topbar-left a{color:rgba(255,255,255,.75);font-size:.72rem;display:flex;align-items:center;gap:.4rem;transition:color var(--trans);}
+.topbar-left a:hover{color:var(--gold-light);}
+.topbar-left i{color:var(--gold-light);}
+.topbar-right{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
+.lang-label{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);}
+.lang-btn{background:none;border:1px solid rgba(200,146,10,.3);color:rgba(255,255,255,.7);padding:.18rem .5rem;border-radius:2px;font-size:.6rem;font-weight:600;letter-spacing:1px;cursor:pointer;transition:all .2s;font-family:'Montserrat',sans-serif;}
+.lang-btn:hover,.lang-btn.active{background:var(--gold);color:#fff;border-color:var(--gold);}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:250;background:rgba(14,30,22,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(200,146,10,.25);transition:box-shadow var(--trans);}
+nav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.35);}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:.85rem 4rem;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--gold-light);letter-spacing:1px;white-space:nowrap;}
+.nav-logo span{color:#fff;font-style:italic;}
+.nav-menu{display:flex;list-style:none;gap:.25rem;align-items:center;}
+.nav-menu>li{position:relative;}
+.nav-menu>li>a{color:rgba(255,255,255,.82);font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:.55rem .85rem;border-radius:3px;display:flex;align-items:center;gap:.35rem;transition:all .2s;}
+.nav-menu>li>a:hover,.nav-menu>li.active>a{color:var(--gold-light);background:rgba(200,146,10,.08);}
+.nav-menu>li>a .chevron{font-size:.55rem;transition:transform .2s;}
+.nav-menu>li:hover>a .chevron{transform:rotate(180deg);}
+.nav-cta{background:var(--gold);color:#fff!important;padding:.55rem 1.4rem!important;border-radius:3px!important;}
+.nav-cta:hover{background:var(--gold-light)!important;}
+
+/* MEGA DROPDOWN */
+.dropdown{position:absolute;top:calc(100% + .5rem);left:0;background:#fff;border-radius:6px;box-shadow:0 12px 50px rgba(0,0,0,.18);min-width:780px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .25s;pointer-events:none;border-top:3px solid var(--gold);}
+.dropdown.single{grid-template-columns:repeat(2,1fr);min-width:480px;}
+.dropdown.mini{grid-template-columns:1fr;min-width:240px;}
+.nav-menu>li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);pointer-events:all;}
+.dd-col{padding:1.4rem 1.6rem;}
+.dd-col+.dd-col{border-left:1px solid #f0f0f0;}
+.dd-heading{font-size:.6rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:1px solid #f0f0f0;}
+.dd-col ul{list-style:none;}
+.dd-col ul li a{display:block;font-size:.77rem;color:#444;padding:.35rem 0;transition:color .2s;border-bottom:1px solid #fafafa;}
+.dd-col ul li a:hover{color:var(--dg);padding-left:.5rem;}
+.dd-about-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;padding:1.2rem 1.4rem;}
+.dd-about-card{border-radius:4px;overflow:hidden;position:relative;height:90px;cursor:pointer;}
+.dd-about-card img{width:100%;height:100%;object-fit:cover;}
+.dd-about-card span{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(14,30,22,.85));padding:.5rem .6rem;font-size:.7rem;font-weight:700;color:#fff;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:.4rem;}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;transition:all .3s;}
+
+/* ── HERO SLIDER ── */
+.hero{position:relative;height:100vh;overflow:hidden;}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;}
+.slide.active{opacity:1;}
+.slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.06);transition:transform 8s ease;}
+.slide.active .slide-bg{transform:scale(1);}
+.slide-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,30,22,.55) 0%,rgba(14,30,22,.15) 45%,rgba(14,30,22,.7) 100%);}
+.slide-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;}
+.slide-tag{font-size:.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--gold-light);margin-bottom:.8rem;animation:fadeUp .8s .2s both;}
+.slide-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,7.5rem);font-weight:900;color:#fff;line-height:.95;text-shadow:0 4px 30px rgba(0,0,0,.5);animation:fadeUp .8s .4s both;}
+.slide-title em{font-style:italic;color:var(--gold-light);}
+.slide-sub{font-size:1.05rem;color:rgba(255,255,255,.82);margin-top:1rem;letter-spacing:2px;animation:fadeUp .8s .6s both;}
+.slide-btns{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s .8s both;}
+.btn-gold{background:var(--gold);color:#fff;padding:.85rem 2.2rem;border-radius:4px;font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:all .3s;border:2px solid var(--gold);}
+.btn-gold:hover{background:transparent;color:var(--gold-light);border-color:var(--gold-light);}
+.btn-outline{background:transparent;color:#fff;padding:.85rem 2.2rem;border-radius:4px;font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:all .3s;border:2px solid rgba(255,255,255,.6);}
+.btn-outline:hover{background:#fff;color:var(--dg);}
+.hero-arrows{position:absolute;bottom:3rem;right:4rem;display:flex;gap:.7rem;z-index:10;}
+.hero-arr{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:rgba(255,255,255,.1);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .3s;backdrop-filter:blur(6px);}
+.hero-arr:hover{background:var(--gold);border-color:var(--gold);}
+.hero-dots{position:absolute;bottom:3.3rem;left:50%;transform:translateX(-50%);display:flex;gap:.6rem;z-index:10;}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all .3s;}
+.dot.active{background:var(--gold-light);transform:scale(1.3);}
+.zanzibar-badge{position:absolute;top:9rem;left:4rem;background:var(--dg);border:2px solid var(--gold);border-radius:50%;width:105px;height:105px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;}
+.zanzibar-badge .zb-now{font-size:.52rem;letter-spacing:2px;color:var(--gold-light);text-transform:uppercase;}
+.zanzibar-badge .zb-op{font-size:.48rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;margin:2px 0;}
+.zanzibar-badge .zb-name{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--gold-light);}
+.tagline-badge{position:absolute;top:9rem;right:4rem;font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:var(--gold-light);text-align:right;line-height:1.4;z-index:10;}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%) translateY(20px);opacity:0;display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.55);font-size:.6rem;letter-spacing:3px;text-transform:uppercase;z-index:10;transition:all 1s 1.5s;}
+.hero-scroll.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.scroll-line{width:1px;height:40px;background:linear-gradient(var(--gold),transparent);animation:scrollPulse 2s ease-in-out infinite;}
+@keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── WHY CHOOSE US ── */
+.why{background:var(--dg);padding:5rem 4rem;}
+.why-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.why-text .sec-label{color:var(--gold-light);}
+.why-text .sec-title{color:var(--cream);}
+.why-text .sec-body{color:rgba(245,237,216,.72);margin-top:1rem;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.5rem;}
+.why-card{background:rgba(255,255,255,.06);border:1px solid rgba(200,146,10,.2);border-radius:6px;padding:1.5rem;transition:all .3s;}
+.why-card:hover{background:rgba(255,255,255,.11);transform:translateY(-4px);}
+.why-card i{font-size:1.6rem;color:var(--gold-light);margin-bottom:.8rem;}
+.why-card h4{font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream);margin-bottom:.5rem;}
+.why-card p{font-size:.82rem;color:rgba(245,237,216,.62);line-height:1.6;}
+.why-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
+.stat-box{background:rgba(200,146,10,.1);border:1px solid rgba(200,146,10,.3);border-radius:6px;padding:1.8rem 1.4rem;text-align:center;}
+.stat-box .num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--gold-light);line-height:1;}
+.stat-box .lbl{font-size:.62rem;letter-spacing:2px;text-transform:uppercase;color:rgba(245,237,216,.55);margin-top:.4rem;}
+
+/* ── SECTION COMMON ── */
+.sec-label{font-size:.62rem;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.1;color:var(--dg);}
+.sec-title em{font-style:italic;color:var(--gold);}
+.sec-body{font-size:.92rem;color:var(--muted);line-height:1.8;max-width:560px;}
+.sec-hdr{text-align:center;margin-bottom:3.5rem;}
+.sec-hdr .sec-body{margin:.8rem auto 0;}
+.orn{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1.2rem auto;color:var(--gold);}
+.orn-line{width:50px;height:1px;background:currentColor;opacity:.5;}
+.orn-dia{width:7px;height:7px;background:currentColor;transform:rotate(45deg);}
+
+/* ── TOUR PACKAGE CARDS ── */
+.tours-section{padding:6rem 4rem;background:var(--cream);}
+.tab-pills{display:flex;justify-content:center;gap:.6rem;margin-bottom:3rem;flex-wrap:wrap;}
+.tab-pill{background:#fff;border:2px solid #e0d8c8;color:var(--muted);padding:.55rem 1.5rem;border-radius:30px;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .25s;}
+.tab-pill.active,.tab-pill:hover{background:var(--dg);border-color:var(--dg);color:#fff;}
+.tours-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;max-width:1200px;margin:0 auto;}
+.tour-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .3s;display:flex;flex-direction:column;}
+.tour-card:hover{transform:translateY(-7px);box-shadow:0 16px 50px rgba(14,30,22,.18);}
+.tc-img{position:relative;height:190px;overflow:hidden;}
+.tc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.tour-card:hover .tc-img img{transform:scale(1.07);}
+.tc-badge{position:absolute;top:.7rem;left:.7rem;background:var(--gold);color:#fff;font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.28rem .65rem;border-radius:20px;}
+.tc-price{position:absolute;bottom:.7rem;right:.7rem;background:var(--dg);color:var(--gold-light);font-size:.72rem;font-weight:700;padding:.3rem .7rem;border-radius:3px;}
+.tc-body{padding:1.2rem;flex:1;display:flex;flex-direction:column;}
+.tc-cat{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;}
+.tc-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--dg);line-height:1.3;margin-bottom:.5rem;}
+.tc-loc{font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:.35rem;margin-bottom:.6rem;}
+.tc-stars{color:#F0B429;font-size:.7rem;margin-bottom:.8rem;}
+.tc-stars span{color:var(--muted);font-size:.68rem;margin-left:.3rem;}
+.tc-footer{margin-top:auto;padding-top:.8rem;border-top:1px solid #f0ebe0;display:flex;justify-content:space-between;align-items:center;}
+.tc-days{font-size:.68rem;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:.3rem;}
+.tc-btn{background:var(--dg);color:var(--gold-light);padding:.42rem 1rem;border-radius:3px;font-size:.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all .3s;}
+.tc-btn:hover{background:var(--gold);color:#fff;}
+.tours-more{text-align:center;margin-top:2.5rem;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* ── DESTINATIONS GALLERY ── */
+.destinations{background:var(--dark);padding:6rem 4rem;}
+.dest-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:.9rem;max-width:1200px;margin:3rem auto 0;}
+.dest-card{position:relative;overflow:hidden;border-radius:var(--radius);cursor:pointer;}
+.dest-card:first-child{grid-row:1/3;}
+.dest-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.dest-card:hover img{transform:scale(1.07);}
+.dest-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,30,22,.9) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem;}
+.dest-tag{font-size:.58rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:.25rem;}
+.dest-name{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;color:#fff;font-style:italic;}
+
+/* ── JOIN GROUP ── */
+.join-group{background:linear-gradient(135deg,var(--dg) 0%,var(--mg) 100%);padding:5.5rem 4rem;}
+.jg-inner{max-width:1200px;margin:0 auto;}
+.jg-header{text-align:center;margin-bottom:3rem;}
+.jg-header .sec-title{color:var(--cream);}
+.jg-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.jg-card{background:rgba(255,255,255,.07);border:1px solid rgba(200,146,10,.25);border-radius:var(--radius);padding:2rem;transition:background .3s;}
+.jg-card:hover{background:rgba(255,255,255,.13);}
+.jg-card-title{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem;}
+.jg-card-title i{font-size:1.5rem;color:var(--gold-light);}
+.jg-card-title h3{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--cream);}
+.jg-item{display:flex;justify-content:space-between;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.jg-item:last-of-type{border-bottom:none;}
+.jg-item-info h4{font-size:.8rem;font-weight:600;color:var(--cream);}
+.jg-item-info p{font-size:.7rem;color:rgba(245,237,216,.55);margin-top:.2rem;}
+.jg-item-price{text-align:right;}
+.jg-item-price .price{font-family:'Playfair Display',serif;font-size:1rem;color:var(--gold-light);font-weight:700;}
+.jg-item-price .save{font-size:.58rem;background:rgba(200,146,10,.2);color:var(--gold-light);padding:.15rem .4rem;border-radius:10px;margin-top:.2rem;display:inline-block;}
+.jg-card-footer{margin-top:1.5rem;text-align:center;}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--cream);padding:6rem 4rem;}
+.testi-slider{max-width:900px;margin:3rem auto 0;position:relative;overflow:hidden;}
+.testi-track{display:flex;transition:transform .5s ease;}
+.testi-slide{min-width:100%;padding:.5rem;}
+.testi-card{background:#fff;border-radius:var(--radius);padding:2.5rem;box-shadow:var(--shadow);position:relative;}
+.testi-card::before{content:'\201C';font-family:'Playfair Display',serif;font-size:5rem;color:var(--gold-pale);position:absolute;top:1rem;left:1.5rem;line-height:1;}
+.testi-rating{color:var(--gold-light);font-size:.8rem;margin-bottom:1rem;}
+.testi-text{font-size:.95rem;color:var(--muted);line-height:1.8;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:1rem;margin-top:1.8rem;}
+.testi-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
+.testi-name{font-weight:700;font-size:.85rem;color:var(--dg);}
+.testi-origin{font-size:.7rem;color:var(--muted);display:flex;align-items:center;gap:.3rem;margin-top:.2rem;}
+.testi-ta{display:flex;align-items:center;gap:.4rem;margin-top:.4rem;}
+.testi-ta img{height:14px;}
+.testi-ta span{font-size:.62rem;color:var(--muted);}
+.testi-arrows{display:flex;justify-content:center;gap:1rem;margin-top:2rem;}
+.t-arr{width:42px;height:42px;border-radius:50%;border:2px solid var(--dg);background:transparent;color:var(--dg);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.t-arr:hover{background:var(--dg);color:#fff;}
+.testi-dots{display:flex;justify-content:center;gap:.5rem;margin-top:1rem;}
+.testi-dot{width:7px;height:7px;border-radius:50%;background:rgba(26,58,42,.25);cursor:pointer;transition:all .3s;}
+.testi-dot.active{background:var(--gold);transform:scale(1.3);}
+
+/* ── BLOG ── */
+.blog{padding:6rem 4rem;background:#fff;}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;max-width:1200px;margin:3rem auto 0;}
+.blog-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .3s;}
+.blog-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(14,30,22,.15);}
+.bc-img{height:200px;overflow:hidden;}
+.bc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.blog-card:hover .bc-img img{transform:scale(1.06);}
+.bc-body{padding:1.5rem;}
+.bc-cat{font-size:.6rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+.bc-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--dg);line-height:1.35;margin-bottom:.7rem;}
+.bc-meta{font-size:.7rem;color:var(--muted);display:flex;align-items:center;gap:.4rem;}
+.bc-read{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dg);border-bottom:1px solid var(--gold);padding-bottom:.15rem;transition:color .2s;}
+.bc-read:hover{color:var(--gold);}
+
+/* ── ABOUT SECTION ── */
+.about-sec{background:var(--dg);padding:6rem 4rem;}
+.about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;}
+.about-text .sec-title{color:var(--cream);}
+.about-text .sec-body{color:rgba(245,237,216,.72);margin-top:1rem;}
+.about-imgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:.8rem;height:400px;}
+.ab-img{border-radius:5px;overflow:hidden;position:relative;}
+.ab-img img{width:100%;height:100%;object-fit:cover;}
+.ab-img:first-child{grid-row:1/3;}
+.ab-lbl{position:absolute;bottom:.6rem;left:.6rem;background:rgba(14,30,22,.88);color:var(--gold-light);font-size:.6rem;letter-spacing:2px;text-transform:uppercase;padding:.28rem .6rem;border-radius:2px;font-weight:600;}
+
+/* ── CONTACT ── */
+.contact-sec{background:var(--cream);padding:6rem 4rem;}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.contact-form{background:#fff;border-radius:var(--radius);padding:2.5rem;box-shadow:var(--shadow);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dg);margin-bottom:.45rem;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.75rem 1rem;border:1.5px solid #e0d8c8;border-radius:4px;font-family:'Montserrat',sans-serif;font-size:.82rem;color:var(--dark);background:#fff;transition:border-color .2s;outline:none;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
+.form-group textarea{height:120px;resize:vertical;}
+.form-submit{width:100%;background:var(--dg);color:var(--gold-light);padding:1rem;border:none;border-radius:4px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;}
+.form-submit:hover{background:var(--gold);}
+.contact-info{padding-top:1rem;}
+.contact-info .sec-body{margin-top:1rem;}
+.ci-items{margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.ci-item{display:flex;align-items:flex-start;gap:1rem;}
+.ci-icon{width:44px;height:44px;min-width:44px;border-radius:50%;background:var(--dg);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:1rem;}
+.ci-text strong{display:block;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--dg);margin-bottom:.2rem;}
+.ci-text a,.ci-text span{font-size:.85rem;color:var(--muted);}
+.ci-text a:hover{color:var(--gold);}
+.social-row{display:flex;gap:.7rem;margin-top:2rem;flex-wrap:wrap;}
+.soc-btn{display:flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border-radius:25px;color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.5px;transition:transform .2s,box-shadow .2s;}
+.soc-btn:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.2);}
+.soc-fb{background:#1877F2;} .soc-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
+.soc-yt{background:#FF0000;} .soc-tw{background:#000;}
+.soc-li{background:#0A66C2;} .soc-tk{background:#010101;}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);color:rgba(255,255,255,.55);padding:4rem 4rem 2rem;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+.footer-brand .fl{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold-light);}
+.footer-brand .fl span{color:#fff;font-style:italic;}
+.footer-brand p{font-size:.8rem;line-height:1.7;margin-top:.8rem;color:rgba(255,255,255,.48);}
+.footer-brand .f-social{display:flex;gap:.6rem;margin-top:1.2rem;}
+.footer-brand .f-social a{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.85rem;transition:all .2s;}
+.footer-brand .f-social a:hover{background:var(--gold);color:#fff;}
+.footer-col h4{font-size:.65rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid rgba(200,146,10,.2);}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:.55rem;}
+.footer-col ul li a{font-size:.78rem;color:rgba(255,255,255,.48);transition:color .2s;display:flex;align-items:center;gap:.4rem;}
+.footer-col ul li a:hover{color:var(--gold-light);}
+.footer-col ul li a i{font-size:.6rem;color:var(--gold);opacity:.7;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-bottom p{font-size:.72rem;}
+.footer-bottom .fb-links{display:flex;gap:1.5rem;}
+.footer-bottom .fb-links a{font-size:.7rem;color:rgba(255,255,255,.38);transition:color .2s;}
+.footer-bottom .fb-links a:hover{color:var(--gold-light);}
+
+/* ── FLOATING BUTTONS ── */
+.float-wa{position:fixed;bottom:2rem;right:2rem;z-index:500;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 6px 25px rgba(37,211,102,.45);transition:all .3s;animation:waPulse 2.5s ease-in-out infinite;}
+.float-wa:hover{transform:scale(1.12);box-shadow:0 8px 30px rgba(37,211,102,.6);}
+@keyframes waPulse{0%,100%{box-shadow:0 6px 25px rgba(37,211,102,.45)}50%{box-shadow:0 6px 35px rgba(37,211,102,.75)}}
+.float-scroll{position:fixed;bottom:2rem;left:2rem;z-index:500;width:42px;height:42px;border-radius:50%;background:var(--dg);border:2px solid var(--gold);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:.85rem;cursor:pointer;transition:all .3s;opacity:0;pointer-events:none;}
+.float-scroll.show{opacity:1;pointer-events:all;}
+.float-scroll:hover{background:var(--gold);color:#fff;}
+
+/* ── SOCIAL SIDEBAR ── */
+.soc-sidebar{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;}
+.ssb{width:42px;height:42px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;transition:width .3s;position:relative;overflow:hidden;}
+.ssb:hover{width:120px;}
+.ssb .ssb-lbl{position:absolute;right:42px;font-size:.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;color:#fff;opacity:0;transition:opacity .2s .1s;}
+.ssb:hover .ssb-lbl{opacity:1;}
+.ssb-fb{background:#1877F2;} .ssb-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
+.ssb-yt{background:#FF0000;} .ssb-tw{background:#000;}
+.ssb-li{background:#0A66C2;} .ssb-tk{background:#010101;}
+
+/* ── MOBILE NAV ── */
+.mobile-nav{position:fixed;top:0;left:0;bottom:0;width:300px;background:var(--dg);z-index:400;transform:translateX(-100%);transition:transform .35s ease;overflow-y:auto;padding:2rem 1.5rem;}
+.mobile-nav.open{transform:translateX(0);}
+.mobile-nav-close{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;margin-bottom:1.5rem;}
+.mobile-nav ul{list-style:none;}
+.mobile-nav ul li a{display:block;color:rgba(255,255,255,.82);font-size:.85rem;font-weight:600;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.08);letter-spacing:1px;}
+.mobile-nav ul li a:hover{color:var(--gold-light);}
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:350;opacity:0;pointer-events:none;transition:opacity .3s;}
+.mobile-overlay.show{opacity:1;pointer-events:all;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){.tours-grid{grid-template-columns:repeat(2,1fr);}.footer-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:900px){
+  .topbar{padding:.4rem 1.5rem;}.topbar-left{display:none;}
+  .nav-inner{padding:.75rem 1.5rem;}
+  .nav-menu{display:none;}.hamburger{display:flex;}
+  .hero{height:90vh;}.slide-title{font-size:3rem;}
+  .zanzibar-badge{width:80px;height:80px;top:5.5rem;left:1.5rem;}.tagline-badge{display:none;}
+  .why-inner{grid-template-columns:1fr;}.why-stats{grid-template-columns:repeat(4,1fr);}
+  .dest-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}.dest-card:first-child{grid-row:auto;}
+  .dest-card{height:200px;}
+  .jg-grid{grid-template-columns:1fr;}
+  .about-inner{grid-template-columns:1fr;}.about-imgs{height:280px;}
+  .contact-inner{grid-template-columns:1fr;}
+  .blog-grid{grid-template-columns:1fr 1fr;}
+  .footer-top{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;text-align:center;}
+  .soc-sidebar{display:none;}
+  .hero-arrows{right:1.5rem;}
+}
+@media(max-width:600px){
+  .tours-grid{grid-template-columns:1fr;}
+  .blog-grid{grid-template-columns:1fr;}
+  .dest-grid{grid-template-columns:1fr;}
+  .why-stats{grid-template-columns:1fr 1fr;}
+  .form-row{grid-template-columns:1fr;}
+  section,.why,.join-group,.about-sec,.contact-sec,.blog,.testimonials,.destinations,.tours-section{padding:4rem 1.5rem;}
+  .footer-top{padding:0;gap:2rem;}
+  footer{padding:3rem 1.5rem 1.5rem;}
+  .topbar-right{flex-wrap:nowrap;overflow-x:auto;}
+}
+</style>
+</head>
+<body>
+
+<!-- SOCIAL SIDEBAR -->
+<div class="soc-sidebar">
+  <a href="https://facebook.com/traveltotanzania" target="_blank" class="ssb ssb-fb"><span class="ssb-lbl">Facebook</span><i class="fab fa-facebook-f"></i></a>
+  <a href="https://instagram.com/traveltotanzania" target="_blank" class="ssb ssb-ig"><span class="ssb-lbl">Instagram</span><i class="fab fa-instagram"></i></a>
+  <a href="https://youtube.com/@traveltotanzania" target="_blank" class="ssb ssb-yt"><span class="ssb-lbl">YouTube</span><i class="fab fa-youtube"></i></a>
+  <a href="https://twitter.com/traveltanzania" target="_blank" class="ssb ssb-tw"><span class="ssb-lbl">Twitter/X</span><i class="fab fa-x-twitter"></i></a>
+  <a href="https://linkedin.com/company/traveltotanzania" target="_blank" class="ssb ssb-li"><span class="ssb-lbl">LinkedIn</span><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://tiktok.com/@traveltotanzania" target="_blank" class="ssb ssb-tk"><span class="ssb-lbl">TikTok</span><i class="fab fa-tiktok"></i></a>
+</div>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+  <div style="margin-bottom:1.5rem;">
+    <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);"><span style="color:#fff;font-style:italic;">Travel to</span> Tanzania</div>
+  </div>
+  <ul>
+    <li><a href="#home" data-i18n="nav_home">Home</a></li>
+    <li><a href="#tours" data-i18n="nav_tours">Tour Packages</a></li>
+    <li><a href="#destinations" data-i18n="nav_destinations">Destinations</a></li>
+    <li><a href="#group" data-i18n="nav_group">Join a Group</a></li>
+    <li><a href="#testimonials" data-i18n="nav_reviews">Reviews</a></li>
+    <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+    <li><a href="#about" data-i18n="nav_about">About Us</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <div style="margin-top:2rem;">
+    <a href="https://wa.me/255755054750" target="_blank" style="display:flex;align-items:center;gap:.6rem;background:#25D366;color:#fff;padding:.85rem 1.2rem;border-radius:4px;font-size:.78rem;font-weight:700;">
+      <i class="fab fa-whatsapp" style="font-size:1.1rem;"></i> <span data-i18n="nav_book">Book via WhatsApp</span>
+    </a>
+  </div>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="tel:+255754794844"><i class="fas fa-phone"></i>+255 755 054 750</a>
+    <a href="tel:+255755054750"><i class="fab fa-whatsapp"></i>+255 755 054 750</a>
+    <a href="mailto:info@traveltotanzania.com"><i class="fas fa-envelope"></i>info@traveltotanzania.com</a>
+    <a href="#"><i class="fas fa-clock"></i><span data-i18n="topbar_hours">Mon–Sun: Always Open</span></a>
+  </div>
+  <div class="topbar-right">
+    <span class="lang-label">🌍</span>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('sw')">SW</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('de')">DE</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" onclick="setLang('it')">IT</button>
+    <button class="lang-btn" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" onclick="setLang('ar')">AR</button>
+    <button class="lang-btn" onclick="setLang('ja')">JA</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <div class="nav-logo"><span>Travel to</span> Tanzania</div>
+    <ul class="nav-menu">
+      <li><a href="#home" data-i18n="nav_home">Home</a></li>
+      <li>
+        <a href="#tours">Safari <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="dropdown">
+          <div class="dd-col">
+            <div class="dd-heading">Wildlife Safaris</div>
+            <ul>
+              <li><a href="safaris.html">2 Days Budget Safari</a></li>
+              <li><a href="safaris.html">3 Days Migration Safari</a></li>
+              <li><a href="safaris.html">4 Days Big Five Safari</a></li>
+              <li><a href="safaris.html">5 Days Ngorongoro & Lake Natron</a></li>
+              <li><a href="safaris.html">6 Days Camping Safari</a></li>
+              <li><a href="safaris.html">7 Days Tanzania Safari</a></li>
+            </ul>
+          </div>
+          <div class="dd-col">
+            <div class="dd-heading">Trekking</div>
+            <ul>
+              <li><a href="safaris.html">5 Days Marangu Route</a></li>
+              <li><a href="safaris.html">6 Days Machame Route</a></li>
+              <li><a href="safaris.html">7 Days Machame Route</a></li>
+              <li><a href="safaris.html">8 Days Lemosho Route</a></li>
+              <li><a href="safaris.html">9 Days Northern Circuit</a></li>
+            </ul>
+            <div class="dd-heading" style="margin-top:1rem;">Zanzibar</div>
+            <ul>
+              <li><a href="safaris.html">3 Days Zanzibar</a></li>
+              <li><a href="safaris.html">4 Days Zanzibar</a></li>
+              <li><a href="safaris.html">6 Days Zanzibar</a></li>
+              <li><a href="safaris.html">8 Days Zanzibar</a></li>
+            </ul>
+          </div>
+          <div class="dd-col">
+            <div class="dd-heading">Day Trips</div>
+            <ul>
+              <li><a href="safaris.html">Kikuletwa Hot Spring</a></li>
+              <li><a href="safaris.html">Materuni Waterfalls</a></li>
+              <li><a href="safaris.html">Lake Chala Day Trip</a></li>
+              <li><a href="safaris.html">Arusha National Park</a></li>
+              <li><a href="safaris.html">Tarangire Day Trip</a></li>
+              <li><a href="safaris.html">Maasai Cultural Tour</a></li>
+            </ul>
+            <div class="dd-heading" style="margin-top:1rem;">Combo Packages</div>
+            <ul>
+              <li><a href="safaris.html">Kilimanjaro + Safari</a></li>
+              <li><a href="safaris.html">Safari + Zanzibar</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="#destinations" data-i18n="nav_destinations">Destinations</a></li>
+      <li><a href="#group" data-i18n="nav_group">Join Group</a></li>
+      <li>
+        <a href="#about">About <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="dropdown dd-about-grid single" style="min-width:380px;display:grid;grid-template-columns:1fr 1fr;padding:1.2rem;gap:.8rem;">
+          <a class="dd-about-card" href="about.html">
+            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=300&q=70" alt="Our Team">
+            <span>Our Team</span>
+          </a>
+          <a class="dd-about-card" href="about.html">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=300&q=70" alt="Our Story">
+            <span>Our Story</span>
+          </a>
+          <a class="dd-about-card" href="about.html">
+            <img src="img/gallery-3.jpg" alt="Our Vision">
+            <span>Our Vision</span>
+          </a>
+          <a class="dd-about-card" href="about.html">
+            <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=300&q=70" alt="Responsible">
+            <span>Responsibility</span>
+          </a>
+        </div>
+      </li>
+      <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+      <li><a href="#contact" class="nav-cta" data-i18n="nav_book">Book Now</a></li>
+    </ul>
+    <button class="hamburger" onclick="openMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="hero" id="home">
+  <!-- Slide 1: Wildlife Safari -->
+  <div class="slide active">
+    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1800&q=80');"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <p class="slide-tag" data-i18n="s1_tag">Tanzania Wildlife Safari</p>
+      <h1 class="slide-title" data-i18n="s1_title">The <em>Serengeti</em><br>Awaits You</h1>
+      <p class="slide-sub" data-i18n="s1_sub">Witness the Great Wildebeest Migration</p>
+      <div class="slide-btns">
+        <a href="#tours" class="btn-gold" data-i18n="hero_explore">Explore Safaris</a>
+        <a href="https://wa.me/255625342924" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+  <!-- Slide 2: Kilimanjaro -->
+  <div class="slide">
+    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1800&q=80');"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <p class="slide-tag" data-i18n="s2_tag">Mountain Trekking</p>
+      <h1 class="slide-title" data-i18n="s2_title">Conquer<br><em>Kilimanjaro</em></h1>
+      <p class="slide-sub" data-i18n="s2_sub">Africa's Highest Peak — 5,895m</p>
+      <div class="slide-btns">
+        <a href="#tours" class="btn-gold" data-i18n="hero_trek">Explore Trekking</a>
+        <a href="https://wa.me/255625342924" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+  <!-- Slide 3: Zanzibar -->
+  <div class="slide">
+    <div class="slide-bg" style="background-image:url('img/destination-8.jpg');"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <p class="slide-tag" data-i18n="s3_tag">Zanzibar Holiday</p>
+      <h1 class="slide-title" data-i18n="s3_title"><em>Zanzibar</em><br>Island Paradise</h1>
+      <p class="slide-sub" data-i18n="s3_sub">White Sand Beaches & Turquoise Waters</p>
+      <div class="slide-btns">
+        <a href="#tours" class="btn-gold" data-i18n="hero_zanzibar">Explore Zanzibar</a>
+        <a href="https://wa.me/255625342924" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Badges -->
+  <div class="zanzibar-badge">
+    <span class="zb-now" data-i18n="badge_now">Now</span>
+    <span class="zb-op" data-i18n="badge_op">Operating in</span>
+    <span class="zb-name">ZANZIBAR</span>
+    <span style="font-size:.9rem;margin-top:3px;"></span>
+  </div>
+  <div class="tagline-badge" data-i18n="tagline_top">Your Adventure.<br><strong>Our Passion.</strong></div>
+
+  <!-- Controls -->
+  <div class="hero-dots" id="heroDots">
+    <div class="dot active" onclick="goSlide(0)"></div>
+    <div class="dot" onclick="goSlide(1)"></div>
+    <div class="dot" onclick="goSlide(2)"></div>
+  </div>
+  <div class="hero-arrows">
+    <button class="hero-arr" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+    <button class="hero-arr" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="hero-scroll" id="heroScroll">
+    <div class="scroll-line"></div>
+    <span data-i18n="scroll">Scroll</span>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why" id="why">
+  <div class="why-inner">
+    <div class="why-text">
+      <p class="sec-label" data-i18n="why_label">Why Choose Us</p>
+      <h2 class="sec-title" data-i18n="why_title">We Create <em>Experiences</em><br>for Lasting Memories</h2>
+      <div class="orn"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+      <p class="sec-body" data-i18n="why_body">Travel to Tanzania is a locally owned safari and trekking company based in Arusha. Our team of travel professionals are passionate about delivering authentic African experiences that suit all budgets and preferences.</p>
+      <div class="why-grid">
+        <div class="why-card"><i class="fas fa-shield-alt"></i><h4 data-i18n="wc1">Safety First</h4><p data-i18n="wc1d">We assure client safety on every trip. All safaris and treks are professionally planned for your protection.</p></div>
+        <div class="why-card"><i class="fas fa-leaf"></i><h4 data-i18n="wc2">Responsible Travel</h4><p data-i18n="wc2d">Environmentally and socially responsible. Fair treatment of all crew — no waste left behind.</p></div>
+        <div class="why-card"><i class="fas fa-car-side"></i><h4 data-i18n="wc3">Top Equipment</h4><p data-i18n="wc3d">4×4 safari vehicles built for rough roads, with pop-up roofs, power adapters and refrigerators.</p></div>
+        <div class="why-card"><i class="fas fa-binoculars"></i><h4 data-i18n="wc4">Expert Guides</h4><p data-i18n="wc4d">Passionate guides with deep knowledge of wildlife, trekking, and local culture. Off the beaten path.</p></div>
+      </div>
+    </div>
+    <div class="why-stats">
+      <div class="stat-box"><div class="num">500+</div><div class="lbl" data-i18n="stat1">Happy Travelers</div></div>
+      <div class="stat-box"><div class="num">10+</div><div class="lbl" data-i18n="stat2">Years Experience</div></div>
+      <div class="stat-box"><div class="num">20+</div><div class="lbl" data-i18n="stat3">Destinations</div></div>
+      <div class="stat-box"><div class="num">100%</div><div class="lbl" data-i18n="stat4">Safe & Reliable</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOUR PACKAGES -->
+<section class="tours-section" id="tours">
+  <div class="sec-hdr">
+    <p class="sec-label" data-i18n="tours_label">Our Packages</p>
+    <h2 class="sec-title" data-i18n="tours_title">Popular <em>Tour Packages</em></h2>
+    <div class="orn"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+    <p class="sec-body" data-i18n="tours_body">Choose from our most popular packages — crafted for unforgettable African adventures.</p>
+  </div>
+
+  <!-- Tab Pills -->
+  <div class="tab-pills">
+    <div class="tab-pill active" onclick="switchTab('safari',this)" data-i18n="tab_safari">Wildlife Safari</div>
+    <div class="tab-pill" onclick="switchTab('trekking',this)" data-i18n="tab_trek">Kilimanjaro Trek</div>
+    <div class="tab-pill" onclick="switchTab('zanzibar',this)" data-i18n="tab_zan">Zanzibar</div>
+    <div class="tab-pill" onclick="switchTab('daytrips',this)" data-i18n="tab_day">Day Trips</div>
+  </div>
+
+  <!-- Safari -->
+  <div class="tab-panel active" id="tab-safari">
+    <div class="tours-grid">
+      <div class="tour-card">
+        <div class="tc-img">
+          <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=500&q=75" alt="2 Days Safari">
+          <span class="tc-badge" data-i18n="badge_popular">Popular</span>
+        </div>
+        <div class="tc-body">
+          <div class="tc-cat" data-i18n="cat_safari">Wildlife Safari</div>
+          <div class="tc-name">2 Days Tanzania Budget Wildlife Safari</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Tarangire, Lake Manyara</div>
+          <div class="tc-stars">★★★★★ <span>(48 reviews)</span></div>
+          <div class="tc-footer">
+            <span class="tc-days"><i class="fas fa-calendar-alt"></i> 2 Days</span>
+            <a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img">
+          <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&q=75" alt="3 Days Safari">
+          <span class="tc-badge" data-i18n="badge_top">Top Rated</span>
+        </div>
+        <div class="tc-body">
+          <div class="tc-cat" data-i18n="cat_safari">Wildlife Safari</div>
+          <div class="tc-name">3 Days Serengeti Migration Safari</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Serengeti, Ngorongoro</div>
+          <div class="tc-stars">★★★★★ <span>(72 reviews)</span></div>
+          <div class="tc-footer">
+            <span class="tc-days"><i class="fas fa-calendar-alt"></i> 3 Days</span>
+            <a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img">
+          <img src="img/gallery-1.jpg" alt="5 Days Safari">
+        </div>
+        <div class="tc-body">
+          <div class="tc-cat" data-i18n="cat_safari">Wildlife Safari</div>
+          <div class="tc-name">5 Days Ngorongoro Highlands & Lake Natron</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Ngorongoro, Empakai</div>
+          <div class="tc-stars">★★★★★ <span>(35 reviews)</span></div>
+          <div class="tc-footer">
+            <span class="tc-days"><i class="fas fa-calendar-alt"></i> 5 Days</span>
+            <a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img">
+          <img src="img/gallery-2.jpg" alt="6 Days Safari">
+          <span class="tc-badge" data-i18n="badge_best">Best Value</span>
+        </div>
+        <div class="tc-body">
+          <div class="tc-cat" data-i18n="cat_safari">Wildlife Safari</div>
+          <div class="tc-name">6 Days Camping Safari — Full Tanzania</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Manyara, Serengeti, Tarangire</div>
+          <div class="tc-stars">★★★★★ <span>(61 reviews)</span></div>
+          <div class="tc-footer">
+            <span class="tc-days"><i class="fas fa-calendar-alt"></i> 6 Days</span>
+            <a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tours-more"><a href="#contact" class="btn-gold" data-i18n="more_safari">View All Safari Packages</a></div>
+  </div>
+
+  <!-- Trekking -->
+  <div class="tab-panel" id="tab-trekking">
+    <div class="tours-grid">
+      <div class="tour-card">
+        <div class="tc-img">
+          <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=500&q=75" alt="5 Days Marangu">
+          <span class="tc-badge" data-i18n="badge_popular">Popular</span>
+        </div>
+        <div class="tc-body">
+          <div class="tc-cat" data-i18n="cat_trek">Kilimanjaro Trek</div>
+          <div class="tc-name">5 Days Marangu Route — Kilimanjaro Climb</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Mount Kilimanjaro</div>
+          <div class="tc-stars">★★★★★ <span>(91 reviews)</span></div>
+          <div class="tc-footer">
+            <span class="tc-days"><i class="fas fa-calendar-alt"></i> 5 Days</span>
+            <a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img">
+          <img src="img/gallery-4.jpg" alt="6 Days Machame">
+          <span class="tc-badge" data-i18n="badge_top">Top Rated</span>
+        </div>
+        <div class="tc-body">
+          <div class="tc-cat" data-i18n="cat_trek">Kilimanjaro Trek</div>
+          <div class="tc-name">6 Days Machame Route — Kilimanjaro Climb</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Mount Kilimanjaro</div>
+          <div class="tc-stars">★★★★★ <span>(84 reviews)</span></div>
+          <div class="tc-footer">
+            <span class="tc-days"><i class="fas fa-calendar-alt"></i> 6 Days</span>
+            <a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img">
+          <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=500&q=75" alt="7 Days Lemosho">
+        </div>
+        <div class="tc-body">
+          <div class="tc-cat" data-i18n="cat_trek">Kilimanjaro Trek</div>
+          <div class="tc-name">7 Days Lemosho Route — Kilimanjaro Hiking</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Mount Kilimanjaro</div>
+          <div class="tc-stars">★★★★★ <span>(56 reviews)</span></div>
+          <div class="tc-footer">
+            <span class="tc-days"><i class="fas fa-calendar-alt"></i> 7 Days</span>
+            <a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img">
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=500&q=75" alt="9 Days Northern Circuit">
+          <span class="tc-badge" data-i18n="badge_best">Best Success</span>
+        </div>
+        <div class="tc-body">
+          <div class="tc-cat" data-i18n="cat_trek">Kilimanjaro Trek</div>
+          <div class="tc-name">9 Days Northern Circuit Route — Kilimanjaro</div>
+          <div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Mount Kilimanjaro</div>
+          <div class="tc-stars">★★★★★ <span>(29 reviews)</span></div>
+          <div class="tc-footer">
+            <span class="tc-days"><i class="fas fa-calendar-alt"></i> 9 Days</span>
+            <a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tours-more"><a href="#contact" class="btn-gold" data-i18n="more_trek">View All Trekking Packages</a></div>
+  </div>
+
+  <!-- Zanzibar -->
+  <div class="tab-panel" id="tab-zanzibar">
+    <div class="tours-grid">
+      <div class="tour-card">
+        <div class="tc-img"><img src="img/zanzibar beach tour.jpg" alt="3 Days Zanzibar"><span class="tc-badge" data-i18n="badge_popular">Popular</span></div>
+        <div class="tc-body"><div class="tc-cat" data-i18n="cat_zan">Zanzibar</div><div class="tc-name">3 Days Zanzibar Beach Tour</div><div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Zanzibar Island</div><div class="tc-stars">★★★★★ <span>(67 reviews)</span></div><div class="tc-footer"><span class="tc-days"><i class="fas fa-calendar-alt"></i> 3 Days</span><a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a></div></div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img"><img src="img/zanzibar beach.jpg" alt="4 Days Zanzibar"></div>
+        <div class="tc-body"><div class="tc-cat" data-i18n="cat_zan">Zanzibar</div><div class="tc-name">4 Days Zanzibar Beach & Stone Town Tour</div><div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Zanzibar Island</div><div class="tc-stars">★★★★★ <span>(51 reviews)</span></div><div class="tc-footer"><span class="tc-days"><i class="fas fa-calendar-alt"></i> 4 Days</span><a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a></div></div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=500&q=75" alt="6 Days Zanzibar"></div>
+        <div class="tc-body"><div class="tc-cat" data-i18n="cat_zan">Zanzibar</div><div class="tc-name">6 Days Zanzibar Full Experience</div><div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Zanzibar Island</div><div class="tc-stars">★★★★★ <span>(38 reviews)</span></div><div class="tc-footer"><span class="tc-days"><i class="fas fa-calendar-alt"></i> 6 Days</span><a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a></div></div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1559551409-dadc959f76b8?w=500&q=75" alt="8 Days Zanzibar"><span class="tc-badge" data-i18n="badge_best">Best Value</span></div>
+        <div class="tc-body"><div class="tc-cat" data-i18n="cat_zan">Zanzibar</div><div class="tc-name">8 Days Ultimate Zanzibar Holiday</div><div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Zanzibar Island</div><div class="tc-stars">★★★★★ <span>(44 reviews)</span></div><div class="tc-footer"><span class="tc-days"><i class="fas fa-calendar-alt"></i> 8 Days</span><a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a></div></div>
+      </div>
+    </div>
+    <div class="tours-more"><a href="#contact" class="btn-gold" data-i18n="more_zan">View All Zanzibar Packages</a></div>
+  </div>
+
+  <!-- Day Trips -->
+  <div class="tab-panel" id="tab-daytrips">
+    <div class="tours-grid">
+      <div class="tour-card">
+        <div class="tc-img"><img src="img/kikuletwe image" alt="Hot Spring"></div>
+        <div class="tc-body"><div class="tc-cat" data-i18n="cat_day">Day Trip</div><div class="tc-name">Kikuletwa Hot Spring Day Trip</div><div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Kikuletwa</div><div class="tc-stars">★★★★★ <span>(103 reviews)</span></div><div class="tc-footer"><span class="tc-days"><i class="fas fa-calendar-alt"></i> 1 Day</span><a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a></div></div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=500&q=75" alt="Materuni"></div>
+        <div class="tc-body"><div class="tc-cat" data-i18n="cat_day">Day Trip</div><div class="tc-name">Materuni Waterfalls & Coffee Tour</div><div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Materuni Village</div><div class="tc-stars">★★★★★ <span>(88 reviews)</span></div><div class="tc-footer"><span class="tc-days"><i class="fas fa-calendar-alt"></i> 1 Day</span><a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a></div></div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img"><img src="img/lake chala.jpg" alt="Lake Chala"></div>
+        <div class="tc-body"><div class="tc-cat" data-i18n="cat_day">Day Trip</div><div class="tc-name">Lake Chala Kayak & Swim Day Trip</div><div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Lake Chala</div><div class="tc-stars">★★★★★ <span>(54 reviews)</span></div><div class="tc-footer"><span class="tc-days"><i class="fas fa-calendar-alt"></i> 1 Day</span><a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a></div></div>
+      </div>
+      <div class="tour-card">
+        <div class="tc-img"><img src="img/maasai culture.jpg" alt="Maasai Cultural"></div>
+        <div class="tc-body"><div class="tc-cat" data-i18n="cat_day">Day Trip</div><div class="tc-name">Olpopongi Maasai Cultural Day Tour</div><div class="tc-loc"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.7rem;"></i> Arusha Region</div><div class="tc-stars">★★★★★ <span>(71 reviews)</span></div><div class="tc-footer"><span class="tc-days"><i class="fas fa-calendar-alt"></i> 1 Day</span><a href="#contact" class="tc-btn" data-i18n="btn_book">Book Now</a></div></div>
+      </div>
+    </div>
+    <div class="tours-more"><a href="#contact" class="btn-gold" data-i18n="more_day">View All Day Trips</a></div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="destinations" id="destinations">
+  <div class="sec-hdr">
+    <p class="sec-label" style="color:var(--gold)" data-i18n="dest_label">Where We Go</p>
+    <h2 class="sec-title" style="color:var(--cream)" data-i18n="dest_title">Our <em style="color:var(--gold-light)">Destinations</em></h2>
+    <div class="orn" style="color:var(--gold)"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+    <p class="sec-body" style="color:rgba(245,237,216,.6);margin:0 auto;" data-i18n="dest_body">Tanzania's most breathtaking landscapes, wildlife parks and island gems.</p>
+  </div>
+  <div class="dest-grid">
+    <div class="dest-card"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900&q=80" alt="Serengeti"><div class="dest-overlay"><span class="dest-tag" data-i18n="dest_np">National Park</span><div class="dest-name">Serengeti</div></div></div>
+    <div class="dest-card"><img src="img/zanzibar beach tour.jpg" alt="Zanzibar"><div class="dest-overlay"><span class="dest-tag" data-i18n="dest_ip">Island Paradise</span><div class="dest-name">Zanzibar</div></div></div>
+    <div class="dest-card"><img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&q=80" alt="Kilimanjaro"><div class="dest-overlay"><span class="dest-tag" data-i18n="dest_kili">Highest Peak</span><div class="dest-name">Kilimanjaro</div></div></div>
+    <div class="dest-card"><img src="img/gallery-7.jpg" alt="Ngorongoro"><div class="dest-overlay"><span class="dest-tag" data-i18n="dest_wh">World Heritage</span><div class="dest-name">Ngorongoro</div></div></div>
+    <div class="dest-card"><img src="img/atone tour.jpg" alt="Stone Town"><div class="dest-overlay"><span class="dest-tag" data-i18n="dest_un">UNESCO Heritage</span><div class="dest-name">Stone Town</div></div></div>
+  </div>
+</section>
+
+<!-- JOIN A GROUP -->
+<section class="join-group" id="group">
+  <div class="jg-inner">
+    <div class="jg-header">
+      <p class="sec-label" style="color:var(--gold-light)" data-i18n="jg_label">Save Up to 10%</p>
+      <h2 class="sec-title" style="color:var(--cream)" data-i18n="jg_title">Join a <em style="color:var(--gold-light)">Group Tour</em> — 2026</h2>
+      <div class="orn" style="color:var(--gold)"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+      <p style="color:rgba(245,237,216,.6);font-size:.9rem;max-width:600px;margin:.8rem auto 0;" data-i18n="jg_body">Solo traveler or couple? Join our scheduled group departures and save up to 10%. Departure guaranteed every day.</p>
+    </div>
+    <div class="jg-grid">
+      <!-- Kilimanjaro Groups -->
+      <div class="jg-card">
+        <div class="jg-card-title"><i class="fas fa-mountain"></i><h3 data-i18n="jg_kili">Join Group Kilimanjaro Climb</h3></div>
+        <div class="jg-item"><div class="jg-item-info"><h4>10–14 July · Marangu Route</h4><p>5 Days Climbing</p></div><div class="jg-item-price"><div class="price">$1,290<small style="font-size:.6rem;">/pp</small></div><span class="save">10% OFF</span></div></div>
+        <div class="jg-item"><div class="jg-item-info"><h4>20–26 July · Machame Route</h4><p>7 Days Climbing</p></div><div class="jg-item-price"><div class="price">$1,890<small style="font-size:.6rem;">/pp</small></div><span class="save">10% OFF</span></div></div>
+        <div class="jg-item"><div class="jg-item-info"><h4>6–12 Aug · Lemosho Route</h4><p>7 Days Climbing</p></div><div class="jg-item-price"><div class="price">$2,100<small style="font-size:.6rem;">/pp</small></div><span class="save">10% OFF</span></div></div>
+        <div class="jg-item"><div class="jg-item-info"><h4>21–27 Aug · Machame Route</h4><p>7 Days Climbing</p></div><div class="jg-item-price"><div class="price">$1,890<small style="font-size:.6rem;">/pp</small></div><span class="save">10% OFF</span></div></div>
+        <div class="jg-item"><div class="jg-item-info"><h4>3–7 Sept · Marangu Route</h4><p>5 Days Climbing</p></div><div class="jg-item-price"><div class="price">$1,290<small style="font-size:.6rem;">/pp</small></div><span class="save">10% OFF</span></div></div>
+        <div class="jg-card-footer"><a href="#contact" class="btn-gold" data-i18n="jg_join_trek">Join Trekking Group</a></div>
+      </div>
+      <!-- Safari Groups -->
+      <div class="jg-card">
+        <div class="jg-card-title"><i class="fas fa-paw"></i><h3 data-i18n="jg_safari">Join Group Safari Tanzania 2025</h3></div>
+        <div class="jg-item"><div class="jg-item-info"><h4>7 July · Arusha National Park</h4><p>1 Day Safari</p></div><div class="jg-item-price"><div class="price">$250–280<small style="font-size:.6rem;">/pp</small></div><span class="save">10% OFF</span></div></div>
+        <div class="jg-item"><div class="jg-item-info"><h4>9–10 Aug · Lake Manyara & Tarangire</h4><p>2 Days Safari</p></div><div class="jg-item-price"><div class="price">$700–750<small style="font-size:.6rem;">/pp</small></div><span class="save">10% OFF</span></div></div>
+        <div class="jg-item"><div class="jg-item-info"><h4>20–23 Aug · Tanzania Big Five</h4><p>4 Days Safari</p></div><div class="jg-item-price"><div class="price">$1,000–1,200<small style="font-size:.6rem;">/pp</small></div><span class="save">10% OFF</span></div></div>
+        <div class="jg-item"><div class="jg-item-info"><h4>21–23 Sept · Taste of Africa</h4><p>3 Days Safari</p></div><div class="jg-item-price"><div class="price">$799–999<small style="font-size:.6rem;">/pp</small></div><span class="save">10% OFF</span></div></div>
+        <div class="jg-item"><div class="jg-item-info"><h4>6–10 Sept · Serengeti Migration</h4><p>5 Days Safari</p></div><div class="jg-item-price"><div class="price">$1,350–1,450<small style="font-size:.6rem;">/pp</small></div><span class="save">10% OFF</span></div></div>
+        <div class="jg-card-footer"><a href="#contact" class="btn-gold" data-i18n="jg_join_safari">Join Safari Group</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="sec-hdr">
+    <p class="sec-label" data-i18n="testi_label">Client Reviews</p>
+    <h2 class="sec-title" data-i18n="testi_title">What Our <em>Travelers Say</em></h2>
+    <div class="orn"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+  </div>
+  <div class="testi-slider">
+    <div class="testi-track" id="testiTrack">
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-rating">★★★★★</div>
+          <p class="testi-text">"This really was a very special trip and everything was well organized down to the last detail. Nothing was left to chance. Our guide was incredibly knowledgeable and passionate. The Serengeti at sunrise is something I will never forget. Highly recommend Travel to Tanzania!"</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=70" alt="Daan G" class="testi-avatar">
+            <div>
+              <div class="testi-name">Daan G.</div>
+              <div class="testi-origin"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.6rem;"></i> Netherlands</div>
+              <div class="testi-ta"><i class="fab fa-tripadvisor" style="color:#34E0A1;font-size:.9rem;"></i><span>Reviewed on TripAdvisor</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-rating">★★★★★</div>
+          <p class="testi-text">"Let me start by saying that without this amazing team we wouldn't have achieved our goal of reaching Kilimanjaro summit. They were just fabulous right from the start. Professional, caring and always going the extra mile. The best travel company in Tanzania!"</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=70" alt="Ram S" class="testi-avatar">
+            <div>
+              <div class="testi-name">Ram S.</div>
+              <div class="testi-origin"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.6rem;"></i> India</div>
+              <div class="testi-ta"><i class="fab fa-tripadvisor" style="color:#34E0A1;font-size:.9rem;"></i><span>Reviewed on TripAdvisor</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-rating">★★★★★</div>
+          <p class="testi-text">"The Zanzibar package exceeded all our expectations. The accommodation was spectacular, beaches absolutely pristine, and our guide's knowledge of the spice farms was incredible. The Stone Town tour was the highlight. We're already planning our return trip!"</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=70" alt="Hanan F" class="testi-avatar">
+            <div>
+              <div class="testi-name">Hanan F.</div>
+              <div class="testi-origin"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.6rem;"></i> UAE</div>
+              <div class="testi-ta"><i class="fab fa-tripadvisor" style="color:#34E0A1;font-size:.9rem;"></i><span>Reviewed on TripAdvisor</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-card">
+          <div class="testi-rating">★★★★★</div>
+          <p class="testi-text">"We booked the 6-day camping safari and it was the best decision we ever made! Waking up in the Serengeti to lions roaring in the distance is something you simply cannot put a price on. The crew was warm, the food delicious, and the vehicle was perfectly equipped."</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=70" alt="Marcus W" class="testi-avatar">
+            <div>
+              <div class="testi-name">Marcus W.</div>
+              <div class="testi-origin"><i class="fas fa-map-marker-alt" style="color:var(--gold);font-size:.6rem;"></i> Germany</div>
+              <div class="testi-ta"><i class="fab fa-tripadvisor" style="color:#34E0A1;font-size:.9rem;"></i><span>Reviewed on TripAdvisor</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-arrows">
+      <button class="t-arr" onclick="prevTesti()"><i class="fas fa-chevron-left"></i></button>
+      <button class="t-arr" onclick="nextTesti()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="testi-dots" id="testiDots">
+      <div class="testi-dot active" onclick="goTesti(0)"></div>
+      <div class="testi-dot" onclick="goTesti(1)"></div>
+      <div class="testi-dot" onclick="goTesti(2)"></div>
+      <div class="testi-dot" onclick="goTesti(3)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="sec-hdr">
+    <p class="sec-label" data-i18n="blog_label">Travel Tips & Stories</p>
+    <h2 class="sec-title" data-i18n="blog_title">Our Recent <em>Blog Articles</em></h2>
+    <div class="orn"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="bc-img"><img src="img/serengeti.jpg" alt="Serengeti Plains"></div>
+      <div class="bc-body">
+        <div class="bc-cat" data-i18n="blog_cat1">Wildlife</div>
+        <div class="bc-title">The Serengeti Plains — Africa's Greatest Wildlife Show</div>
+        <div class="bc-meta"><i class="fas fa-calendar-alt" style="color:var(--gold);font-size:.65rem;"></i> Feb 17, 2023 &nbsp;·&nbsp; <i class="fas fa-eye" style="color:var(--gold);font-size:.65rem;"></i> 1.8K views</div>
+        <a href="#" class="bc-read" data-i18n="blog_read">Read Article <i class="fas fa-arrow-right" style="font-size:.6rem;"></i></a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="bc-img"><img src="img/grate animal migration.jpg" alt="Wildebeest Migration"></div>
+      <div class="bc-body">
+        <div class="bc-cat" data-i18n="blog_cat2">Migration</div>
+        <div class="bc-title">The Great Wildebeest Migration — Nature's Spectacle</div>
+        <div class="bc-meta"><i class="fas fa-calendar-alt" style="color:var(--gold);font-size:.65rem;"></i> Feb 17, 2023 &nbsp;·&nbsp; <i class="fas fa-eye" style="color:var(--gold);font-size:.65rem;"></i> 1.5K views</div>
+        <a href="#" class="bc-read" data-i18n="blog_read">Read Article <i class="fas fa-arrow-right" style="font-size:.6rem;"></i></a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="bc-img"><img src="img/talangire national park.jpg" alt="Tarangire National Park"></div>
+      <div class="bc-body">
+        <div class="bc-cat" data-i18n="blog_cat3">National Parks</div>
+        <div class="bc-title">Tarangire National Park — Tanzania's Hidden Gem</div>
+        <div class="bc-meta"><i class="fas fa-calendar-alt" style="color:var(--gold);font-size:.65rem;"></i> Feb 07, 2023 &nbsp;·&nbsp; <i class="fas fa-eye" style="color:var(--gold);font-size:.65rem;"></i> 1.4K views</div>
+        <a href="#" class="bc-read" data-i18n="blog_read">Read Article <i class="fas fa-arrow-right" style="font-size:.6rem;"></i></a>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2.5rem;"><a href="#" class="btn-gold" data-i18n="blog_more">Read More Articles</a></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-sec" id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <p class="sec-label" style="color:var(--gold-light)" data-i18n="about_label">About Us</p>
+      <h2 class="sec-title" style="color:var(--cream)" data-i18n="about_title">We Create <em style="color:var(--gold-light)">Memorable Journeys</em></h2>
+      <div class="orn" style="color:var(--gold)"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+      <p class="sec-body" style="color:rgba(245,237,216,.72);max-width:100%;" data-i18n="about_body">Travel to Tanzania Adventure & Safaris is a locally owned tour company based in Arusha, Tanzania. Our team of passionate travel professionals have been crafting unforgettable African experiences — from the wild Serengeti to the white sands of Zanzibar — for over a decade.</p>
+      <p class="sec-body" style="color:rgba(245,237,216,.72);max-width:100%;margin-top:1rem;" data-i18n="about_body2">We specialize in wildlife safaris, Kilimanjaro trekking, Zanzibar holidays, cultural tours and day trips — all tailored to your budget and preferences. Your safety, satisfaction and a smile on your face is our highest priority.</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="#contact" class="btn-gold" data-i18n="about_cta">Plan My Trip</a>
+        <a href="https://wa.me/255625342924" target="_blank" class="btn-outline" style="color:var(--cream);border-color:rgba(245,237,216,.4);"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+    <div class="about-imgs">
+      <div class="ab-img"><img src="img/serengeti animals.jpg" alt="Serengeti"><div class="ab-lbl">Serengeti</div></div>
+      <div class="ab-img"><img src="img/zanzibar beach  images.jpg" alt="Zanzibar"><div class="ab-lbl">Zanzibar</div></div>
+      <div class="ab-img"><img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&q=80" alt="Kilimanjaro"><div class="ab-lbl">Kilimanjaro</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <p class="sec-label" data-i18n="contact_label">Get In Touch</p>
+      <h2 class="sec-title" data-i18n="contact_title">Start Your <em>Adventure</em> Today</h2>
+      <div class="orn" style="justify-content:flex-start;"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+      <p class="sec-body" data-i18n="contact_body">Ready to explore Tanzania? Send us a message and our team will craft the perfect journey for you — whether it's a budget safari or a luxury Kilimanjaro climb.</p>
+      <div class="ci-items">
+        <div class="ci-item"><div class="ci-icon"><i class="fas fa-globe"></i></div><div class="ci-text"><strong>Website</strong><a href="https://www.traveltotanzania.com" target="_blank">www.traveltotanzania.com</a></div></div>
+        <div class="ci-item"><div class="ci-icon"><i class="fas fa-envelope"></i></div><div class="ci-text"><strong>Email</strong><a href="mailto:info@traveltotanzania.com">info@traveltotanzania.com</a></div></div>
+        <div class="ci-item"><div class="ci-icon"><i class="fas fa-phone"></i></div><div class="ci-text"><strong>Phone</strong><a href="tel:+255754794844">+255 754 794 844</a></div></div>
+        <div class="ci-item"><div class="ci-icon"><i class="fab fa-whatsapp"></i></div><div class="ci-text"><strong>WhatsApp</strong><a href="https://wa.me/255625342924" target="_blank">+255 625 342 924</a></div></div>
+        <div class="ci-item"><div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div><div class="ci-text"><strong>Location</strong><span>Arusha, Tanzania</span></div></div>
+      </div>
+      <p class="sec-label" style="margin-top:2rem;" data-i18n="social_label">Follow Us</p>
+      <div class="social-row">
+        <a href="https://facebook.com/traveltotanzania" target="_blank" class="soc-btn soc-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://instagram.com/traveltotanzania" target="_blank" class="soc-btn soc-ig"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://youtube.com/@traveltotanzania" target="_blank" class="soc-btn soc-yt"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://twitter.com/traveltanzania" target="_blank" class="soc-btn soc-tw"><i class="fab fa-x-twitter"></i> Twitter</a>
+        <a href="https://linkedin.com/company/traveltotanzania" target="_blank" class="soc-btn soc-li"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <a href="https://tiktok.com/@traveltotanzania" target="_blank" class="soc-btn soc-tk"><i class="fab fa-tiktok"></i> TikTok</a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dg);margin-bottom:1.5rem;" data-i18n="form_title">Send Us a Message</h3>
+      <div class="form-row">
+        <div class="form-group"><label data-i18n="form_name">Full Name</label><input type="text" placeholder="John Doe"></div>
+        <div class="form-group"><label data-i18n="form_email">Email Address</label><input type="email" placeholder="john@email.com"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label data-i18n="form_phone">Phone / WhatsApp</label><input type="text" placeholder="+1 234 567 890"></div>
+        <div class="form-group"><label data-i18n="form_people">No. of Travelers</label><input type="number" placeholder="2" min="1"></div>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_tour">Tour Interest</label>
+        <select>
+          <option value="">-- Select a Package --</option>
+          <option>Wildlife Safari</option>
+          <option>Kilimanjaro Trekking</option>
+          <option>Zanzibar Tour</option>
+          <option>Day Trip</option>
+          <option>Custom / Combined Package</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label data-i18n="form_date">Preferred Date</label><input type="date"></div>
+        <div class="form-group"><label data-i18n="form_budget">Budget (USD per person)</label><select><option>Under $500</option><option>$500–$1,000</option><option>$1,000–$2,000</option><option>$2,000–$3,000</option><option>$3,000+</option></select></div>
+      </div>
+      <div class="form-group"><label data-i18n="form_msg">Message</label><textarea placeholder="Tell us about your dream Tanzania adventure..."></textarea></div>
+      <button class="form-submit" onclick="submitForm()" data-i18n="form_submit">Send Inquiry</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="fl"><span>Travel to</span> Tanzania</div>
+      <p>Locally owned Tanzania safari & adventure company based in Arusha. Crafting unforgettable African experiences since 2014.</p>
+      <div class="f-social">
+        <a href="https://facebook.com/traveltotanzania" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/traveltotanzania" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@traveltotanzania" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://twitter.com/traveltanzania" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://linkedin.com/company/traveltotanzania" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://tiktok.com/@traveltotanzania" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="#tours"><i class="fas fa-chevron-right"></i> Tour Packages</a></li>
+        <li><a href="#destinations"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+        <li><a href="#group"><i class="fas fa-chevron-right"></i> Join a Group</a></li>
+        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Reviews</a></li>
+        <li><a href="#blog"><i class="fas fa-chevron-right"></i> Blog</a></li>
+        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="#tours"><i class="fas fa-chevron-right"></i> Wildlife Safaris</a></li>
+        <li><a href="#tours"><i class="fas fa-chevron-right"></i> Kilimanjaro Trek</a></li>
+        <li><a href="#tours"><i class="fas fa-chevron-right"></i> Zanzibar Tours</a></li>
+        <li><a href="#tours"><i class="fas fa-chevron-right"></i> Day Trips</a></li>
+        <li><a href="#tours"><i class="fas fa-chevron-right"></i> Cultural Tours</a></li>
+        <li><a href="#tours"><i class="fas fa-chevron-right"></i> Car Rental</a></li>
+        <li><a href="#tours"><i class="fas fa-chevron-right"></i> Airport Transfers</a></li>
+        <li><a href="#group"><i class="fas fa-chevron-right"></i> Group Joining</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <ul>
+        <li><a href="tel:+255754794844"><i class="fas fa-phone"></i> +255 754 794 844</a></li>
+        <li><a href="https://wa.me/255625342924" target="_blank"><i class="fab fa-whatsapp"></i> +255 625 342 924</a></li>
+        <li><a href="mailto:info@traveltotanzania.com"><i class="fas fa-envelope"></i> info@traveltotanzania.com</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Arusha, Tanzania</a></li>
+        <li><a href="#"><i class="fas fa-clock"></i> Mon–Sun: Always Open</a></li>
+        <li><a href="https://www.traveltotanzania.com" target="_blank"><i class="fas fa-globe"></i> www.traveltotanzania.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Travel to Tanzania Adventure & Safaris. All rights reserved.</p>
+    <p>Designed and developed by isaac , +255 755 054 750, isackisack578@gmail.com</p>
+    <div class="fb-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/255625342924" target="_blank" class="float-wa" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<button class="float-scroll" id="scrollTopBtn" onclick="scrollToTop()" title="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+// ── HERO SLIDER ──
+let slideIdx=0,slideTimer;
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.dot');
+function goSlide(n){slides[slideIdx].classList.remove('active');dots[slideIdx].classList.remove('active');slideIdx=n;slides[slideIdx].classList.add('active');dots[slideIdx].classList.add('active');resetTimer();}
+function nextSlide(){goSlide((slideIdx+1)%slides.length);}
+function prevSlide(){goSlide((slideIdx-1+slides.length)%slides.length);}
+function resetTimer(){clearInterval(slideTimer);slideTimer=setInterval(nextSlide,5500);}
+resetTimer();
+setTimeout(()=>{document.getElementById('heroScroll').classList.add('show');},1600);
+
+// ── TESTIMONIALS SLIDER ──
+let testiIdx=0;
+const testiTrack=document.getElementById('testiTrack');
+const testiDots=document.querySelectorAll('.testi-dot');
+function goTesti(n){testiIdx=n;testiTrack.style.transform=`translateX(-${n*100}%)`;testiDots.forEach((d,i)=>d.classList.toggle('active',i===n));}
+function nextTesti(){goTesti((testiIdx+1)%4);}
+function prevTesti(){goTesti((testiIdx-1+4)%4);}
+setInterval(nextTesti,6000);
+
+// ── TABS ──
+function switchTab(id,el){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-pill').forEach(p=>p.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');el.classList.add('active');}
+
+// ── MOBILE NAV ──
+function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.getElementById('mobileOverlay').classList.add('show');document.body.style.overflow='hidden';}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('mobileOverlay').classList.remove('show');document.body.style.overflow='';}
+
+// ── SCROLL EFFECTS ──
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('mainNav');
+  nav.classList.toggle('scrolled',window.scrollY>60);
+  const btn=document.getElementById('scrollTopBtn');
+  btn.classList.toggle('show',window.scrollY>400);
+});
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+
+// ── CONTACT FORM ──
+function submitForm(){alert('Thank you! We will contact you within 24 hours. You can also reach us directly on WhatsApp: +255 625 342 924');}
+
+// ── TRANSLATIONS ──
+const T={
+en:{topbar_hours:"Mon–Sun: Always Open",nav_home:"Home",nav_tours:"Tours",nav_destinations:"Destinations",nav_group:"Join Group",nav_reviews:"Reviews",nav_blog:"Blog",nav_about:"About",nav_contact:"Contact",nav_book:"Book Now",badge_now:"Now",badge_op:"Operating in",tagline_top:"Your Adventure.<br><strong>Our Passion.</strong>",s1_tag:"Tanzania Wildlife Safari",s1_title:"The <em>Serengeti</em><br>Awaits You",s1_sub:"Witness the Great Wildebeest Migration",s2_tag:"Mountain Trekking",s2_title:"Conquer<br><em>Kilimanjaro</em>",s2_sub:"Africa's Highest Peak — 5,895m",s3_tag:"Zanzibar Holiday",s3_title:"<em>Zanzibar</em><br>Island Paradise",s3_sub:"White Sand Beaches & Turquoise Waters",hero_explore:"Explore Safaris",hero_trek:"Explore Trekking",hero_zanzibar:"Explore Zanzibar",why_label:"Why Choose Us",why_title:"We Create <em>Experiences</em><br>for Lasting Memories",why_body:"Travel to Tanzania is a locally owned safari and trekking company based in Arusha. Our team of travel professionals are passionate about delivering authentic African experiences.",wc1:"Safety First",wc1d:"We assure client safety on every trip.",wc2:"Responsible Travel",wc2d:"Environmentally and socially responsible.",wc3:"Top Equipment",wc3d:"4×4 safari vehicles with pop-up roofs.",wc4:"Expert Guides",wc4d:"Passionate guides with deep local knowledge.",stat1:"Happy Travelers",stat2:"Years Experience",stat3:"Destinations",stat4:"Safe & Reliable",tours_label:"Our Packages",tours_title:"Popular <em>Tour Packages</em>",tours_body:"Choose from our most popular packages.",tab_safari:"Wildlife Safari",tab_trek:"Kilimanjaro Trek",tab_zan:"Zanzibar",tab_day:"Day Trips",badge_popular:"Popular",badge_top:"Top Rated",badge_best:"Best Value",cat_safari:"Wildlife Safari",cat_trek:"Kilimanjaro Trek",cat_zan:"Zanzibar",cat_day:"Day Trip",btn_book:"Book Now",more_safari:"View All Safari Packages",more_trek:"View All Trekking Packages",more_zan:"View All Zanzibar Packages",more_day:"View All Day Trips",dest_label:"Where We Go",dest_title:"Our <em>Destinations</em>",dest_body:"Tanzania's most breathtaking landscapes.",dest_np:"National Park",dest_ip:"Island Paradise",dest_kili:"Highest Peak",dest_wh:"World Heritage",dest_un:"UNESCO Heritage",jg_label:"Save Up to 10%",jg_title:"Join a <em>Group Tour</em> — 2025",jg_body:"Solo traveler or couple? Join our scheduled group departures and save up to 10%.",jg_kili:"Join Group Kilimanjaro Climb",jg_safari:"Join Group Safari Tanzania 2025",jg_join_trek:"Join Trekking Group",jg_join_safari:"Join Safari Group",testi_label:"Client Reviews",testi_title:"What Our <em>Travelers Say</em>",blog_label:"Travel Tips & Stories",blog_title:"Our Recent <em>Blog Articles</em>",blog_cat1:"Wildlife",blog_cat2:"Migration",blog_cat3:"National Parks",blog_read:"Read Article",blog_more:"Read More Articles",about_label:"About Us",about_title:"We Create <em>Memorable Journeys</em>",about_body:"Travel to Tanzania Adventure & Safaris is a locally owned tour company based in Arusha. Our team of passionate travel professionals craft unforgettable African experiences.",about_body2:"We specialize in wildlife safaris, Kilimanjaro trekking, Zanzibar holidays and day trips — tailored to your budget.",about_cta:"Plan My Trip",contact_label:"Get In Touch",contact_title:"Start Your <em>Adventure</em> Today",contact_body:"Ready to explore Tanzania? Send us a message and our team will craft the perfect journey for you.",social_label:"Follow Us",form_title:"Send Us a Message",form_name:"Full Name",form_email:"Email Address",form_phone:"Phone / WhatsApp",form_people:"No. of Travelers",form_tour:"Tour Interest",form_date:"Preferred Date",form_budget:"Budget (USD per person)",form_msg:"Message",form_submit:"Send Inquiry",scroll:"Scroll"},
+sw:{topbar_hours:"Jumatatu–Jumapili: Daima Wazi",nav_home:"Nyumbani",nav_tours:"Safari",nav_destinations:"Maeneo",nav_group:"Jiunge na Kikundi",nav_reviews:"Maoni",nav_blog:"Blogu",nav_about:"Kuhusu",nav_contact:"Wasiliana",nav_book:"Weka Nafasi",badge_now:"Sasa",badge_op:"Tunafanya kazi",tagline_top:"Safari Yako.<br><strong>Shauku Yetu.</strong>",s1_tag:"Safari za Wanyama Tanzania",s1_title:"<em>Serengeti</em><br>Inakungoja",s1_sub:"Shuhudia Uhamaji Mkuu wa Nyumbu",s2_tag:"Kupanda Mlima",s2_title:"Shinda<br><em>Kilimanjaro</em>",s2_sub:"Kilele cha Juu Afrika — 5,895m",s3_tag:"Likizo Zanzibar",s3_title:"<em>Zanzibar</em><br>Pepo ya Kisiwa",s3_sub:"Pwani Nyeupe na Bahari ya Buluu",hero_explore:"Chunguza Safari",hero_trek:"Chunguza Kupanda Mlima",hero_zanzibar:"Chunguza Zanzibar",why_label:"Kwa Nini Tuchague",why_title:"Tunaunda <em>Uzoefu</em><br>wa Kukumbukwa",why_body:"Travel to Tanzania ni kampuni ya ndani ya safari iliyoko Arusha. Timu yetu ya wataalamu wana shauku ya kutoa uzoefu wa kweli wa Afrika.",wc1:"Usalama Kwanza",wc1d:"Tunahakikisha usalama wa mteja katika kila safari.",wc2:"Usafiri Unaowajibika",wc2d:"Wajibu wa mazingira na kijamii.",wc3:"Vifaa Bora",wc3d:"Magari ya 4×4 yenye paa la wazi.",wc4:"Waongoza Wataalam",wc4d:"Waongoza wenye ujuzi wa wanyama na utamaduni.",stat1:"Wasafiri Furaha",stat2:"Miaka ya Uzoefu",stat3:"Maeneo",stat4:"Salama & Imara",tours_label:"Pakiti Zetu",tours_title:"Pakiti <em>Maarufu</em>",tours_body:"Chagua kutoka kwa pakiti zetu maarufu zaidi.",tab_safari:"Safari ya Wanyama",tab_trek:"Kupanda Kilimanjaro",tab_zan:"Zanzibar",tab_day:"Ziara za Siku Moja",badge_popular:"Maarufu",badge_top:"Inayopendwa",badge_best:"Bei Nzuri",cat_safari:"Safari ya Wanyama",cat_trek:"Kupanda Kilimanjaro",cat_zan:"Zanzibar",cat_day:"Ziara ya Siku Moja",btn_book:"Weka Nafasi",more_safari:"Ona Safari Zote",more_trek:"Ona Kupanda Mlima Zote",more_zan:"Ona Zanzibar Zote",more_day:"Ona Ziara Zote",dest_label:"Tunakokwenda",dest_title:"Maeneo <em>Yetu</em>",dest_body:"Mandhari mazuri zaidi ya Tanzania.",dest_np:"Mbuga ya Taifa",dest_ip:"Pepo ya Kisiwa",dest_kili:"Kilele cha Juu",dest_wh:"Urithi wa Dunia",dest_un:"Urithi wa UNESCO",jg_label:"Okoa Hadi 10%",jg_title:"Jiunge na <em>Kikundi cha Safari</em> — 2025",jg_body:"Msafiri peke yako? Jiunge na safari zetu za kikundi na uokoe hadi 10%.",jg_kili:"Jiunge na Kikundi cha Kilimanjaro",jg_safari:"Jiunge na Kikundi cha Safari 2025",jg_join_trek:"Jiunge na Kikundi cha Kupanda",jg_join_safari:"Jiunge na Kikundi cha Safari",testi_label:"Maoni ya Wateja",testi_title:"Wasafiri Wetu <em>Wanasema Nini</em>",blog_label:"Vidokezo & Hadithi",blog_title:"Makala Zetu <em>za Hivi Karibuni</em>",blog_cat1:"Wanyama",blog_cat2:"Uhamaji",blog_cat3:"Mbuga za Taifa",blog_read:"Soma Makala",blog_more:"Soma Makala Zaidi",about_label:"Kuhusu Sisi",about_title:"Tunaunda <em>Safari za Kukumbukwa</em>",about_body:"Travel to Tanzania ni kampuni ya ndani ya safari iliyoko Arusha. Timu yetu ya wataalamu wana shauku ya kutoa uzoefu wa kweli wa Afrika.",about_body2:"Tunabobea katika safari za wanyama, kupanda Kilimanjaro, likizo za Zanzibar na ziara za siku moja.",about_cta:"Panga Safari Yangu",contact_label:"Wasiliana",contact_title:"Anza <em>Safari</em> Yako Leo",contact_body:"Uko tayari kuchunguza Tanzania? Tuma ujumbe na timu yetu itatengeneza safari kamili kwako.",social_label:"Tufuate",form_title:"Tuma Ujumbe",form_name:"Jina Kamili",form_email:"Barua pepe",form_phone:"Simu / WhatsApp",form_people:"Idadi ya Wasafiri",form_tour:"Safari Unayotaka",form_date:"Tarehe Unayopendelea",form_budget:"Bajeti (USD kwa mtu)",form_msg:"Ujumbe",form_submit:"Tuma Ombi",scroll:"Sogeza"},
+fr:{topbar_hours:"Lun–Dim: Toujours Ouvert",nav_home:"Accueil",nav_tours:"Circuits",nav_destinations:"Destinations",nav_group:"Rejoindre un Groupe",nav_reviews:"Avis",nav_blog:"Blog",nav_about:"À Propos",nav_contact:"Contact",nav_book:"Réserver",badge_now:"Maintenant",badge_op:"En activité à",tagline_top:"Votre Aventure.<br><strong>Notre Passion.</strong>",s1_tag:"Safari Tanzanie",s1_title:"Le <em>Serengeti</em><br>Vous Attend",s1_sub:"Témoin de la Grande Migration",s2_tag:"Trekking en Montagne",s2_title:"Conquérir<br><em>le Kilimandjaro</em>",s2_sub:"Le Toit de l'Afrique — 5 895m",s3_tag:"Vacances à Zanzibar",s3_title:"<em>Zanzibar</em><br>Paradis Insulaire",s3_sub:"Plages de Sable Blanc & Eaux Turquoises",hero_explore:"Explorer les Safaris",hero_trek:"Explorer le Trekking",hero_zanzibar:"Explorer Zanzibar",why_label:"Pourquoi Nous Choisir",why_title:"Nous Créons des <em>Expériences</em><br>Inoubliables",why_body:"Travel to Tanzania est une entreprise de safari locale basée à Arusha.",wc1:"Sécurité d'abord",wc1d:"Nous assurons la sécurité du client.",wc2:"Voyage Responsable",wc2d:"Responsable sur le plan environnemental.",wc3:"Équipement de Pointe",wc3d:"Véhicules 4×4 avec toit escamotable.",wc4:"Guides Experts",wc4d:"Guides passionnés avec une connaissance approfondie.",stat1:"Voyageurs Heureux",stat2:"Ans d'Expérience",stat3:"Destinations",stat4:"Sûr & Fiable",tours_label:"Nos Forfaits",tours_title:"Forfaits <em>Populaires</em>",tours_body:"Choisissez parmi nos forfaits les plus populaires.",tab_safari:"Safari Animalier",tab_trek:"Trek Kilimandjaro",tab_zan:"Zanzibar",tab_day:"Excursions",badge_popular:"Populaire",badge_top:"Mieux Noté",badge_best:"Meilleure Valeur",cat_safari:"Safari Animalier",cat_trek:"Trek Kilimandjaro",cat_zan:"Zanzibar",cat_day:"Excursion",btn_book:"Réserver",more_safari:"Voir Tous les Safaris",more_trek:"Voir Tous les Treks",more_zan:"Voir Tous Zanzibar",more_day:"Voir Toutes Excursions",dest_label:"Nos Itinéraires",dest_title:"Nos <em>Destinations</em>",dest_body:"Les paysages les plus époustouflants de Tanzanie.",dest_np:"Parc National",dest_ip:"Paradis Insulaire",dest_kili:"Plus Haut Sommet",dest_wh:"Patrimoine Mondial",dest_un:"Patrimoine UNESCO",jg_label:"Économisez 10%",jg_title:"Rejoignez un <em>Groupe</em> — 2025",jg_body:"Voyageur solo? Rejoignez nos départs groupés et économisez jusqu'à 10%.",jg_kili:"Rejoindre Groupe Kilimandjaro",jg_safari:"Rejoindre Groupe Safari 2025",jg_join_trek:"Rejoindre le Groupe Trek",jg_join_safari:"Rejoindre le Groupe Safari",testi_label:"Avis Clients",testi_title:"Ce Que Disent Nos <em>Voyageurs</em>",blog_label:"Conseils & Histoires",blog_title:"Nos Derniers <em>Articles de Blog</em>",blog_cat1:"Faune",blog_cat2:"Migration",blog_cat3:"Parcs Nationaux",blog_read:"Lire l'Article",blog_more:"Lire Plus d'Articles",about_label:"À Propos",about_title:"Nous Créons des <em>Voyages Mémorables</em>",about_body:"Travel to Tanzania est une entreprise locale de safaris basée à Arusha.",about_body2:"Nous sommes spécialisés dans les safaris, le trekking, Zanzibar et les excursions.",about_cta:"Planifier Mon Voyage",contact_label:"Nous Contacter",contact_title:"Commencez Votre <em>Aventure</em>",contact_body:"Prêt à explorer la Tanzanie? Envoyez-nous un message.",social_label:"Suivez-Nous",form_title:"Envoyez-Nous un Message",form_name:"Nom Complet",form_email:"Adresse Email",form_phone:"Téléphone / WhatsApp",form_people:"Nombre de Voyageurs",form_tour:"Circuit d'Intérêt",form_date:"Date Préférée",form_budget:"Budget (USD par personne)",form_msg:"Message",form_submit:"Envoyer la Demande",scroll:"Défiler"},
+de:{topbar_hours:"Mo–So: Immer Geöffnet",nav_home:"Startseite",nav_tours:"Touren",nav_destinations:"Reiseziele",nav_group:"Gruppe Beitreten",nav_reviews:"Bewertungen",nav_blog:"Blog",nav_about:"Über Uns",nav_contact:"Kontakt",nav_book:"Jetzt Buchen",badge_now:"Jetzt",badge_op:"Tätig in",tagline_top:"Ihr Abenteuer.<br><strong>Unsere Leidenschaft.</strong>",s1_tag:"Tansania Safari",s1_title:"Die <em>Serengeti</em><br>Wartet auf Sie",s1_sub:"Erleben Sie die Große Gnuwanderung",s2_tag:"Bergwandern",s2_title:"Bezwingen Sie<br><em>den Kilimandscharo</em>",s2_sub:"Afrikas höchster Gipfel — 5.895m",s3_tag:"Sansibar Urlaub",s3_title:"<em>Sansibar</em><br>Inselparadies",s3_sub:"Weiße Sandstrände & Türkisfarbenes Wasser",hero_explore:"Safaris Erkunden",hero_trek:"Trekking Erkunden",hero_zanzibar:"Sansibar Erkunden",why_label:"Warum Wir",why_title:"Wir Schaffen <em>Erlebnisse</em><br>für die Ewigkeit",why_body:"Travel to Tanzania ist ein lokal geführtes Safari-Unternehmen mit Sitz in Arusha.",wc1:"Sicherheit Zuerst",wc1d:"Wir gewährleisten die Sicherheit auf jeder Reise.",wc2:"Verantwortungsvolles Reisen",wc2d:"Umwelt- und sozial verantwortlich.",wc3:"Top-Ausrüstung",wc3d:"4×4 Safarijahrzeuge mit Pop-up-Dächern.",wc4:"Expertenführer",wc4d:"Leidenschaftliche Guides mit tiefem Wissen.",stat1:"Glückliche Reisende",stat2:"Jahre Erfahrung",stat3:"Reiseziele",stat4:"Sicher & Zuverlässig",tours_label:"Unsere Pakete",tours_title:"Beliebte <em>Reisepakete</em>",tours_body:"Wählen Sie aus unseren beliebtesten Paketen.",tab_safari:"Wildtier-Safari",tab_trek:"Kilimandscharo-Trek",tab_zan:"Sansibar",tab_day:"Tagesausflüge",badge_popular:"Beliebt",badge_top:"Top Bewertet",badge_best:"Bestes Angebot",cat_safari:"Wildtier-Safari",cat_trek:"Kilimandscharo-Trek",cat_zan:"Sansibar",cat_day:"Tagesausflug",btn_book:"Jetzt Buchen",more_safari:"Alle Safaris Anzeigen",more_trek:"Alle Treks Anzeigen",more_zan:"Alle Sansibar Anzeigen",more_day:"Alle Ausflüge Anzeigen",dest_label:"Unsere Routen",dest_title:"Unsere <em>Reiseziele</em>",dest_body:"Tansanias atemberaubendste Landschaften.",dest_np:"Nationalpark",dest_ip:"Inselparadies",dest_kili:"Höchster Gipfel",dest_wh:"Welterbe",dest_un:"UNESCO-Erbe",jg_label:"10% Sparen",jg_title:"Einer <em>Gruppe</em> Beitreten — 2025",jg_body:"Alleinreisender? Treten Sie unseren Gruppenreisen bei und sparen Sie bis zu 10%.",jg_kili:"Kilimandscharo-Gruppe Beitreten",jg_safari:"Safari-Gruppe Beitreten 2025",jg_join_trek:"Trek-Gruppe Beitreten",jg_join_safari:"Safari-Gruppe Beitreten",testi_label:"Kundenbewertungen",testi_title:"Was Unsere <em>Reisenden Sagen</em>",blog_label:"Tipps & Geschichten",blog_title:"Unsere Neuesten <em>Blog-Artikel</em>",blog_cat1:"Tierwelt",blog_cat2:"Migration",blog_cat3:"Nationalparks",blog_read:"Artikel Lesen",blog_more:"Mehr Artikel Lesen",about_label:"Über Uns",about_title:"Wir Schaffen <em>Unvergessliche Reisen</em>",about_body:"Travel to Tanzania ist ein lokales Safari-Unternehmen in Arusha.",about_body2:"Wir sind spezialisiert auf Safaris, Trekking, Sansibar und Tagesausflüge.",about_cta:"Meine Reise Planen",contact_label:"Kontakt",contact_title:"Starten Sie Ihr <em>Abenteuer</em>",contact_body:"Bereit, Tansania zu erkunden? Senden Sie uns eine Nachricht.",social_label:"Folgen Sie Uns",form_title:"Senden Sie Uns eine Nachricht",form_name:"Vollständiger Name",form_email:"E-Mail-Adresse",form_phone:"Telefon / WhatsApp",form_people:"Anzahl der Reisenden",form_tour:"Reiseinteresse",form_date:"Bevorzugtes Datum",form_budget:"Budget (USD pro Person)",form_msg:"Nachricht",form_submit:"Anfrage Senden",scroll:"Scrollen"},
+es:{topbar_hours:"Lun–Dom: Siempre Abierto",nav_home:"Inicio",nav_tours:"Tours",nav_destinations:"Destinos",nav_group:"Unirse a Grupo",nav_reviews:"Reseñas",nav_blog:"Blog",nav_about:"Nosotros",nav_contact:"Contacto",nav_book:"Reservar",badge_now:"Ahora",badge_op:"Operando en",tagline_top:"Tu Aventura.<br><strong>Nuestra Pasión.</strong>",s1_tag:"Safari Tanzania",s1_title:"El <em>Serengeti</em><br>Te Espera",s1_sub:"Testigo de la Gran Migración",s2_tag:"Senderismo en Montaña",s2_title:"Conquista<br><em>el Kilimanjaro</em>",s2_sub:"El Techo de África — 5.895m",s3_tag:"Vacaciones en Zanzíbar",s3_title:"<em>Zanzíbar</em><br>Paraíso Insular",s3_sub:"Playas de Arena Blanca y Aguas Turquesa",hero_explore:"Explorar Safaris",hero_trek:"Explorar Senderismo",hero_zanzibar:"Explorar Zanzíbar",why_label:"¿Por Qué Elegirnos?",why_title:"Creamos <em>Experiencias</em><br>para el Recuerdo",why_body:"Travel to Tanzania es una empresa de safari local con sede en Arusha.",wc1:"Seguridad Primero",wc1d:"Garantizamos la seguridad en cada viaje.",wc2:"Viaje Responsable",wc2d:"Responsable ambiental y socialmente.",wc3:"Equipamiento Top",wc3d:"Vehículos 4×4 con techo emergente.",wc4:"Guías Expertos",wc4d:"Guías apasionados con profundo conocimiento.",stat1:"Viajeros Felices",stat2:"Años de Experiencia",stat3:"Destinos",stat4:"Seguro y Confiable",tours_label:"Nuestros Paquetes",tours_title:"Paquetes <em>Populares</em>",tours_body:"Elige entre nuestros paquetes más populares.",tab_safari:"Safari de Vida Silvestre",tab_trek:"Trek Kilimanjaro",tab_zan:"Zanzíbar",tab_day:"Excursiones",badge_popular:"Popular",badge_top:"Mejor Valorado",badge_best:"Mejor Precio",cat_safari:"Safari",cat_trek:"Kilimanjaro",cat_zan:"Zanzíbar",cat_day:"Excursión",btn_book:"Reservar",more_safari:"Ver Todos los Safaris",more_trek:"Ver Todos los Treks",more_zan:"Ver Todo Zanzíbar",more_day:"Ver Todas las Excursiones",dest_label:"A Dónde Vamos",dest_title:"Nuestros <em>Destinos</em>",dest_body:"Los paisajes más impresionantes de Tanzania.",dest_np:"Parque Nacional",dest_ip:"Paraíso Insular",dest_kili:"Pico Más Alto",dest_wh:"Patrimonio Mundial",dest_un:"Patrimonio UNESCO",jg_label:"Ahorra hasta 10%",jg_title:"Únete a un <em>Tour en Grupo</em> — 2025",jg_body:"¿Viajero solo? Únete a nuestras salidas grupales y ahorra hasta un 10%.",jg_kili:"Unirse Grupo Kilimanjaro",jg_safari:"Unirse Grupo Safari 2025",jg_join_trek:"Unirse al Grupo de Trek",jg_join_safari:"Unirse al Grupo Safari",testi_label:"Opiniones de Clientes",testi_title:"Lo Que Dicen Nuestros <em>Viajeros</em>",blog_label:"Consejos y Historias",blog_title:"Nuestros Últimos <em>Artículos</em>",blog_cat1:"Fauna",blog_cat2:"Migración",blog_cat3:"Parques Nacionales",blog_read:"Leer Artículo",blog_more:"Leer Más Artículos",about_label:"Nosotros",about_title:"Creamos <em>Viajes Memorables</em>",about_body:"Travel to Tanzania es una empresa local de safaris en Arusha.",about_body2:"Especializados en safaris, trekking, Zanzíbar y excursiones.",about_cta:"Planear Mi Viaje",contact_label:"Contáctenos",contact_title:"Comienza Tu <em>Aventura</em>",contact_body:"¿Listo para explorar Tanzania? Envíanos un mensaje.",social_label:"Síguenos",form_title:"Envíanos un Mensaje",form_name:"Nombre Completo",form_email:"Correo Electrónico",form_phone:"Teléfono / WhatsApp",form_people:"Número de Viajeros",form_tour:"Tour de Interés",form_date:"Fecha Preferida",form_budget:"Presupuesto (USD por persona)",form_msg:"Mensaje",form_submit:"Enviar Consulta",scroll:"Desplazar"},
+it:{topbar_hours:"Lun–Dom: Sempre Aperto",nav_home:"Home",nav_tours:"Tour",nav_destinations:"Destinazioni",nav_group:"Unirsi a Gruppo",nav_reviews:"Recensioni",nav_blog:"Blog",nav_about:"Chi Siamo",nav_contact:"Contatto",nav_book:"Prenota",badge_now:"Ora",badge_op:"Operativo a",tagline_top:"La Tua Avventura.<br><strong>La Nostra Passione.</strong>",s1_tag:"Safari Tanzania",s1_title:"Il <em>Serengeti</em><br>Ti Aspetta",s1_sub:"Testimone della Grande Migrazione",s2_tag:"Trekking in Montagna",s2_title:"Conquista<br><em>il Kilimangiaro</em>",s2_sub:"Il Tetto dell'Africa — 5.895m",s3_tag:"Vacanza a Zanzibar",s3_title:"<em>Zanzibar</em><br>Paradiso Insulare",s3_sub:"Spiagge Bianche e Acque Turchesi",hero_explore:"Esplora Safari",hero_trek:"Esplora Trekking",hero_zanzibar:"Esplora Zanzibar",why_label:"Perché Sceglierci",why_title:"Creiamo <em>Esperienze</em><br>Indimenticabili",why_body:"Travel to Tanzania è un'azienda safari locale con sede ad Arusha.",wc1:"Sicurezza Prima",wc1d:"Garantiamo la sicurezza in ogni viaggio.",wc2:"Viaggio Responsabile",wc2d:"Responsabile ambientalmente e socialmente.",wc3:"Attrezzatura Top",wc3d:"Veicoli 4×4 con tetto apribile.",wc4:"Guide Esperte",wc4d:"Guide appassionate con profonda conoscenza.",stat1:"Viaggiatori Felici",stat2:"Anni di Esperienza",stat3:"Destinazioni",stat4:"Sicuro e Affidabile",tours_label:"I Nostri Pacchetti",tours_title:"Pacchetti <em>Popolari</em>",tours_body:"Scegli tra i nostri pacchetti più popolari.",tab_safari:"Safari Naturalistico",tab_trek:"Trek Kilimangiaro",tab_zan:"Zanzibar",tab_day:"Escursioni",badge_popular:"Popolare",badge_top:"Meglio Votato",badge_best:"Miglior Valore",cat_safari:"Safari",cat_trek:"Kilimangiaro",cat_zan:"Zanzibar",cat_day:"Escursione",btn_book:"Prenota",more_safari:"Vedi Tutti i Safari",more_trek:"Vedi Tutti i Trek",more_zan:"Vedi Tutto Zanzibar",more_day:"Vedi Tutte le Escursioni",dest_label:"Dove Andiamo",dest_title:"Le Nostre <em>Destinazioni</em>",dest_body:"I paesaggi più mozzafiato della Tanzania.",dest_np:"Parco Nazionale",dest_ip:"Paradiso Insulare",dest_kili:"Vetta Più Alta",dest_wh:"Patrimonio Mondiale",dest_un:"Patrimonio UNESCO",jg_label:"Risparmia 10%",jg_title:"Unisciti a un <em>Tour di Gruppo</em> — 2025",jg_body:"Viaggiatore solo? Unisciti alle nostre partenze di gruppo e risparmia fino al 10%.",jg_kili:"Unirsi Gruppo Kilimangiaro",jg_safari:"Unirsi Gruppo Safari 2025",jg_join_trek:"Unirsi al Gruppo Trek",jg_join_safari:"Unirsi al Gruppo Safari",testi_label:"Recensioni Clienti",testi_title:"Cosa Dicono i Nostri <em>Viaggiatori</em>",blog_label:"Consigli e Storie",blog_title:"I Nostri Ultimi <em>Articoli</em>",blog_cat1:"Fauna",blog_cat2:"Migrazione",blog_cat3:"Parchi Nazionali",blog_read:"Leggi Articolo",blog_more:"Leggi Altri Articoli",about_label:"Chi Siamo",about_title:"Creiamo <em>Viaggi Memorabili</em>",about_body:"Travel to Tanzania è un'azienda locale di safari ad Arusha.",about_body2:"Specializzati in safari, trekking, Zanzibar ed escursioni.",about_cta:"Pianifica il Mio Viaggio",contact_label:"Contattaci",contact_title:"Inizia la Tua <em>Avventura</em>",contact_body:"Pronto a esplorare la Tanzania? Inviaci un messaggio.",social_label:"Seguici",form_title:"Inviaci un Messaggio",form_name:"Nome Completo",form_email:"Indirizzo Email",form_phone:"Telefono / WhatsApp",form_people:"N. di Viaggiatori",form_tour:"Tour d'Interesse",form_date:"Data Preferita",form_budget:"Budget (USD a persona)",form_msg:"Messaggio",form_submit:"Invia Richiesta",scroll:"Scorri"},
+pt:{topbar_hours:"Seg–Dom: Sempre Aberto",nav_home:"Início",nav_tours:"Tours",nav_destinations:"Destinos",nav_group:"Entrar no Grupo",nav_reviews:"Avaliações",nav_blog:"Blog",nav_about:"Sobre Nós",nav_contact:"Contato",nav_book:"Reservar",badge_now:"Agora",badge_op:"Operando em",tagline_top:"Sua Aventura.<br><strong>Nossa Paixão.</strong>",s1_tag:"Safari Tanzânia",s1_title:"O <em>Serengeti</em><br>Espera por Você",s1_sub:"Testemunhe a Grande Migração",s2_tag:"Trekking na Montanha",s2_title:"Conquiste<br><em>o Kilimanjaro</em>",s2_sub:"O Teto da África — 5.895m",s3_tag:"Férias em Zanzibar",s3_title:"<em>Zanzibar</em><br>Paraíso Insular",s3_sub:"Praias de Areia Branca e Águas Turquesa",hero_explore:"Explorar Safáris",hero_trek:"Explorar Trekking",hero_zanzibar:"Explorar Zanzibar",why_label:"Por Que Nos Escolher",why_title:"Criamos <em>Experiências</em><br>Inesquecíveis",why_body:"Travel to Tanzania é uma empresa de safari local sediada em Arusha.",wc1:"Segurança em Primeiro",wc1d:"Garantimos a segurança em todas as viagens.",wc2:"Viagem Responsável",wc2d:"Responsável ambiental e socialmente.",wc3:"Equipamento de Ponta",wc3d:"Veículos 4×4 com teto retrátil.",wc4:"Guias Especializados",wc4d:"Guias apaixonados com profundo conhecimento.",stat1:"Viajantes Felizes",stat2:"Anos de Experiência",stat3:"Destinos",stat4:"Seguro e Confiável",tours_label:"Nossos Pacotes",tours_title:"Pacotes <em>Populares</em>",tours_body:"Escolha entre nossos pacotes mais populares.",tab_safari:"Safari de Vida Selvagem",tab_trek:"Trek Kilimanjaro",tab_zan:"Zanzibar",tab_day:"Excursões",badge_popular:"Popular",badge_top:"Mais Avaliado",badge_best:"Melhor Custo",cat_safari:"Safari",cat_trek:"Kilimanjaro",cat_zan:"Zanzibar",cat_day:"Excursão",btn_book:"Reservar",more_safari:"Ver Todos Safáris",more_trek:"Ver Todos Treks",more_zan:"Ver Todo Zanzibar",more_day:"Ver Todas Excursões",dest_label:"Para Onde Vamos",dest_title:"Nossos <em>Destinos</em>",dest_body:"As paisagens mais deslumbrantes da Tanzânia.",dest_np:"Parque Nacional",dest_ip:"Paraíso Insular",dest_kili:"Pico Mais Alto",dest_wh:"Patrimônio Mundial",dest_un:"Patrimônio UNESCO",jg_label:"Economize 10%",jg_title:"Junte-se a um <em>Tour em Grupo</em> — 2025",jg_body:"Viajante solo? Junte-se às nossas partidas em grupo e economize até 10%.",jg_kili:"Entrar Grupo Kilimanjaro",jg_safari:"Entrar Grupo Safari 2025",jg_join_trek:"Entrar no Grupo de Trek",jg_join_safari:"Entrar no Grupo Safari",testi_label:"Avaliações de Clientes",testi_title:"O Que Dizem Nossos <em>Viajantes</em>",blog_label:"Dicas e Histórias",blog_title:"Nossos Últimos <em>Artigos</em>",blog_cat1:"Fauna",blog_cat2:"Migração",blog_cat3:"Parques Nacionais",blog_read:"Ler Artigo",blog_more:"Ler Mais Artigos",about_label:"Sobre Nós",about_title:"Criamos <em>Viagens Memoráveis</em>",about_body:"Travel to Tanzania é uma empresa local de safari em Arusha.",about_body2:"Especializados em safaris, trekking, Zanzibar e excursões.",about_cta:"Planejar Minha Viagem",contact_label:"Entre em Contato",contact_title:"Comece Sua <em>Aventura</em>",contact_body:"Pronto para explorar a Tanzânia? Envie-nos uma mensagem.",social_label:"Siga-nos",form_title:"Envie-nos uma Mensagem",form_name:"Nome Completo",form_email:"Endereço de Email",form_phone:"Telefone / WhatsApp",form_people:"Nº de Viajantes",form_tour:"Tour de Interesse",form_date:"Data Preferida",form_budget:"Orçamento (USD por pessoa)",form_msg:"Mensagem",form_submit:"Enviar Consulta",scroll:"Rolar"},
+zh:{topbar_hours:"周一至周日：全天开放",nav_home:"首页",nav_tours:"旅游套餐",nav_destinations:"目的地",nav_group:"加入团队",nav_reviews:"评价",nav_blog:"博客",nav_about:"关于我们",nav_contact:"联系",nav_book:"立即预订",badge_now:"现在",badge_op:"运营于",tagline_top:"您的冒险。<br><strong>我们的热情。</strong>",s1_tag:"坦桑尼亚野生动物园",s1_title:"<em>塞伦盖蒂</em><br>等待着您",s1_sub:"目睹大规模角马迁徙",s2_tag:"山地徒步",s2_title:"征服<br><em>乞力马扎罗山</em>",s2_sub:"非洲最高峰 — 5895米",s3_tag:"桑给巴尔度假",s3_title:"<em>桑给巴尔</em><br>岛屿天堂",s3_sub:"白沙海滩和蓝绿色海水",hero_explore:"探索野生动物园",hero_trek:"探索徒步",hero_zanzibar:"探索桑给巴尔",why_label:"为什么选择我们",why_title:"我们创造<em>终生难忘</em><br>的体验",why_body:"Travel to Tanzania是一家位于阿鲁沙的本地野生动物园公司。",wc1:"安全第一",wc1d:"我们保证每次旅行的安全。",wc2:"负责任旅行",wc2d:"对环境和社会负责。",wc3:"顶级装备",wc3d:"配备弹出式车顶的4×4越野车。",wc4:"专业向导",wc4d:"充满激情、知识渊博的向导。",stat1:"满意旅客",stat2:"年经验",stat3:"目的地",stat4:"安全可靠",tours_label:"我们的套餐",tours_title:"热门<em>旅游套餐</em>",tours_body:"从我们最受欢迎的套餐中选择。",tab_safari:"野生动物园",tab_trek:"乞力马扎罗徒步",tab_zan:"桑给巴尔",tab_day:"一日游",badge_popular:"热门",badge_top:"评分最高",badge_best:"最佳性价比",cat_safari:"野生动物园",cat_trek:"乞力马扎罗",cat_zan:"桑给巴尔",cat_day:"一日游",btn_book:"立即预订",more_safari:"查看所有野生动物园",more_trek:"查看所有徒步",more_zan:"查看所有桑给巴尔",more_day:"查看所有一日游",dest_label:"我们的目的地",dest_title:"我们的<em>目的地</em>",dest_body:"坦桑尼亚最令人叹为观止的风景。",dest_np:"国家公园",dest_ip:"岛屿天堂",dest_kili:"最高峰",dest_wh:"世界遗产",dest_un:"教科文组织遗产",jg_label:"节省高达10%",jg_title:"加入<em>团队游</em> — 2025",jg_body:"独自旅行？加入我们的团队出发，最多节省10%。",jg_kili:"加入乞力马扎罗团队",jg_safari:"加入2025年野生动物园团队",jg_join_trek:"加入徒步团队",jg_join_safari:"加入野生动物园团队",testi_label:"客户评价",testi_title:"我们的<em>旅客怎么说</em>",blog_label:"旅行技巧与故事",blog_title:"我们最新的<em>博客文章</em>",blog_cat1:"野生动物",blog_cat2:"迁徙",blog_cat3:"国家公园",blog_read:"阅读文章",blog_more:"阅读更多文章",about_label:"关于我们",about_title:"我们创造<em>难忘的旅程</em>",about_body:"Travel to Tanzania是阿鲁沙的本地野生动物园公司。",about_body2:"专注于野生动物园、徒步、桑给巴尔和一日游。",about_cta:"规划我的旅程",contact_label:"联系我们",contact_title:"今天开始您的<em>冒险</em>",contact_body:"准备好探索坦桑尼亚了吗？发送消息给我们。",social_label:"关注我们",form_title:"给我们发消息",form_name:"全名",form_email:"电子邮件地址",form_phone:"电话/WhatsApp",form_people:"旅行人数",form_tour:"感兴趣的旅游",form_date:"首选日期",form_budget:"预算（每人美元）",form_msg:"消息",form_submit:"发送咨询",scroll:"滚动"},
+ar:{topbar_hours:"الإثنين–الأحد: دائماً مفتوح",nav_home:"الرئيسية",nav_tours:"الجولات",nav_destinations:"الوجهات",nav_group:"الانضمام لمجموعة",nav_reviews:"التقييمات",nav_blog:"المدونة",nav_about:"من نحن",nav_contact:"اتصل بنا",nav_book:"احجز الآن",badge_now:"الآن",badge_op:"نعمل في",tagline_top:"مغامرتك.<br><strong>شغفنا.</strong>",s1_tag:"سفاري تنزانيا",s1_title:"<em>سيرنغيتي</em><br>في انتظارك",s1_sub:"شاهد الهجرة الكبرى",s2_tag:"التسلق الجبلي",s2_title:"اتسلق<br><em>كليمنجارو</em>",s2_sub:"أعلى قمة في أفريقيا — 5895م",s3_tag:"عطلة زنجبار",s3_title:"<em>زنجبار</em><br>جنة الجزيرة",s3_sub:"شواطئ رملية بيضاء ومياه فيروزية",hero_explore:"استكشف السفاري",hero_trek:"استكشف التسلق",hero_zanzibar:"استكشف زنجبار",why_label:"لماذا تختارنا",why_title:"نصنع <em>تجارب</em><br>لذكريات دائمة",why_body:"Travel to Tanzania شركة سفاري محلية مقرها أروشا.",wc1:"السلامة أولاً",wc1d:"نضمن سلامة العميل في كل رحلة.",wc2:"سفر مسؤول",wc2d:"مسؤول بيئياً واجتماعياً.",wc3:"أفضل المعدات",wc3d:"مركبات 4×4 بأسطح منبثقة.",wc4:"مرشدون خبراء",wc4d:"مرشدون شغوفون بمعرفة عميقة.",stat1:"مسافر سعيد",stat2:"سنوات خبرة",stat3:"وجهات",stat4:"آمن وموثوق",tours_label:"باقاتنا",tours_title:"باقات <em>سياحية شائعة</em>",tours_body:"اختر من أكثر باقاتنا شعبية.",tab_safari:"سفاري الحياة البرية",tab_trek:"تسلق كليمنجارو",tab_zan:"زنجبار",tab_day:"رحلات يومية",badge_popular:"شائع",badge_top:"الأعلى تقييماً",badge_best:"أفضل قيمة",cat_safari:"سفاري",cat_trek:"كليمنجارو",cat_zan:"زنجبار",cat_day:"رحلة يومية",btn_book:"احجز الآن",more_safari:"عرض كل السفاري",more_trek:"عرض كل التسلق",more_zan:"عرض كل زنجبار",more_day:"عرض كل الرحلات",dest_label:"أين نذهب",dest_title:"وجهاتنا <em>السياحية</em>",dest_body:"أكثر المناظر روعة في تنزانيا.",dest_np:"متنزه وطني",dest_ip:"جنة الجزيرة",dest_kili:"أعلى قمة",dest_wh:"التراث العالمي",dest_un:"تراث اليونسكو",jg_label:"وفر حتى 10%",jg_title:"انضم إلى <em>جولة جماعية</em> — 2025",jg_body:"مسافر منفرد؟ انضم إلى رحلاتنا الجماعية ووفر حتى 10%.",jg_kili:"الانضمام لمجموعة كليمنجارو",jg_safari:"الانضمام لمجموعة سفاري 2025",jg_join_trek:"الانضمام لمجموعة التسلق",jg_join_safari:"الانضمام لمجموعة السفاري",testi_label:"آراء العملاء",testi_title:"ماذا يقول <em>مسافرونا</em>",blog_label:"نصائح وقصص",blog_title:"أحدث <em>مقالاتنا</em>",blog_cat1:"الحياة البرية",blog_cat2:"الهجرة",blog_cat3:"المتنزهات الوطنية",blog_read:"اقرأ المقالة",blog_more:"اقرأ المزيد",about_label:"من نحن",about_title:"نصنع <em>رحلات لا تُنسى</em>",about_body:"Travel to Tanzania شركة سفاري محلية في أروشا.",about_body2:"متخصصون في السفاري والتسلق وزنجبار والرحلات اليومية.",about_cta:"خطط لرحلتي",contact_label:"تواصل معنا",contact_title:"ابدأ <em>مغامرتك</em> اليوم",contact_body:"هل أنت مستعد لاستكشاف تنزانيا؟ أرسل لنا رسالة.",social_label:"تابعنا",form_title:"أرسل لنا رسالة",form_name:"الاسم الكامل",form_email:"عنوان البريد الإلكتروني",form_phone:"الهاتف / واتساب",form_people:"عدد المسافرين",form_tour:"الجولة المطلوبة",form_date:"التاريخ المفضل",form_budget:"الميزانية (دولار لكل شخص)",form_msg:"الرسالة",form_submit:"إرسال الاستفسار",scroll:"التمرير"},
+ja:{topbar_hours:"月〜日：常時営業",nav_home:"ホーム",nav_tours:"ツアー",nav_destinations:"目的地",nav_group:"グループに参加",nav_reviews:"レビュー",nav_blog:"ブログ",nav_about:"私たちについて",nav_contact:"お問合せ",nav_book:"今すぐ予約",badge_now:"現在",badge_op:"運営中",tagline_top:"あなたの冒険。<br><strong>私たちの情熱。</strong>",s1_tag:"タンザニアサファリ",s1_title:"<em>セレンゲティ</em><br>があなたを待っています",s1_sub:"ヌーの大移動を目撃",s2_tag:"山岳トレッキング",s2_title:"<em>キリマンジャロ</em><br>を制覇",s2_sub:"アフリカ最高峰 — 5,895m",s3_tag:"ザンジバル休暇",s3_title:"<em>ザンジバル</em><br>島の楽園",s3_sub:"白砂のビーチとターコイズブルーの海",hero_explore:"サファリを探索",hero_trek:"トレッキングを探索",hero_zanzibar:"ザンジバルを探索",why_label:"なぜ私たちを選ぶのか",why_title:"生涯忘れられない<br><em>体験</em>を創ります",why_body:"Travel to Tanzaniaはアルーシャに拠点を置くローカルサファリ会社です。",wc1:"安全第一",wc1d:"すべての旅行で安全を保証します。",wc2:"責任ある旅行",wc2d:"環境と社会に責任を持っています。",wc3:"最高の装備",wc3d:"ポップアップルーフ付き4×4サファリ車両。",wc4:"専門ガイド",wc4d:"情熱的で知識豊富なガイド。",stat1:"満足した旅行者",stat2:"年の経験",stat3:"目的地",stat4:"安全で信頼性が高い",tours_label:"私たちのパッケージ",tours_title:"人気の<em>ツアーパッケージ</em>",tours_body:"最も人気のあるパッケージからお選びください。",tab_safari:"野生動物サファリ",tab_trek:"キリマンジャロトレッキング",tab_zan:"ザンジバル",tab_day:"日帰り旅行",badge_popular:"人気",badge_top:"最高評価",badge_best:"最高コスパ",cat_safari:"野生動物サファリ",cat_trek:"キリマンジャロ",cat_zan:"ザンジバル",cat_day:"日帰り旅行",btn_book:"今すぐ予約",more_safari:"すべてのサファリを見る",more_trek:"すべてのトレッキングを見る",more_zan:"すべてのザンジバルを見る",more_day:"すべての日帰り旅行を見る",dest_label:"目的地",dest_title:"私たちの<em>目的地</em>",dest_body:"タンザニアの最も息をのむ風景。",dest_np:"国立公園",dest_ip:"島の楽園",dest_kili:"最高峰",dest_wh:"世界遺産",dest_un:"ユネスコ遺産",jg_label:"最大10%割引",jg_title:"<em>グループツアー</em>に参加 — 2025",jg_body:"一人旅？グループ出発に参加して最大10%節約。",jg_kili:"キリマンジャログループに参加",jg_safari:"2025年サファリグループに参加",jg_join_trek:"トレッキンググループに参加",jg_join_safari:"サファリグループに参加",testi_label:"お客様の声",testi_title:"旅行者は<em>何と言っていますか</em>",blog_label:"旅のヒントと物語",blog_title:"最新の<em>ブログ記事</em>",blog_cat1:"野生動物",blog_cat2:"大移動",blog_cat3:"国立公園",blog_read:"記事を読む",blog_more:"もっと読む",about_label:"私たちについて",about_title:"<em>忘れられない旅</em>を創ります",about_body:"Travel to Tanzaniaはアルーシャを拠点とするローカルサファリ会社です。",about_body2:"野生動物サファリ、トレッキング、ザンジバル、日帰り旅行を専門としています。",about_cta:"旅行を計画する",contact_label:"お問い合わせ",contact_title:"今日から<em>冒険</em>を始めよう",contact_body:"タンザニアを探検する準備はできていますか？メッセージを送ってください。",social_label:"フォローしてください",form_title:"メッセージを送る",form_name:"フルネーム",form_email:"メールアドレス",form_phone:"電話/WhatsApp",form_people:"旅行者数",form_tour:"希望するツアー",form_date:"希望日",form_budget:"予算（USD/人）",form_msg:"メッセージ",form_submit:"お問い合わせを送る",scroll:"スクロール"}
+};
+
+function setLang(lang){
+  const t=T[lang];if(!t)return;
+  document.documentElement.dir=(lang==='ar')?'rtl':'ltr';
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(t[k]!==undefined)el.innerHTML=t[k];
+  });
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.classList.toggle('active',b.onclick&&b.onclick.toString().includes(`'${lang}'`));
+  });
+}
+</script>
+</body>
+</html>

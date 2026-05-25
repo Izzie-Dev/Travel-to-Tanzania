@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Travel to Tanzania – Our Story, Team, Vision, Responsibilities and Why Travel With Us.">
+<title>About Us – Travel to Tanzania Adventure & Safaris</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --gold:#C8920A;--gold-light:#F0B429;--gold-pale:#FDE68A;
+  --dg:#1A3A2A;--mg:#2D5A3D;--lg:#3D7A52;
+  --cream:#F5EDD8;--warm:#FBF7EF;--dark:#0E1E16;
+  --muted:#6B7B70;--white:#fff;
+  --radius:8px;--shadow:0 4px 24px rgba(14,30,22,.13);
+  --trans:.3s ease;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:var(--warm);color:var(--dark);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--dg);padding:.45rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.topbar-left{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+.topbar-left a{color:rgba(255,255,255,.75);font-size:.72rem;display:flex;align-items:center;gap:.4rem;transition:color var(--trans);}
+.topbar-left a:hover{color:var(--gold-light);}
+.topbar-left i{color:var(--gold-light);}
+.topbar-right{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
+.lang-btn{background:none;border:1px solid rgba(200,146,10,.3);color:rgba(255,255,255,.7);padding:.18rem .5rem;border-radius:2px;font-size:.6rem;font-weight:600;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .2s;}
+.lang-btn.active,.lang-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:250;background:rgba(14,30,22,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(200,146,10,.25);}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:.85rem 4rem;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--gold-light);letter-spacing:1px;}
+.nav-logo span{color:#fff;font-style:italic;}
+.nav-menu{display:flex;list-style:none;gap:.25rem;align-items:center;}
+.nav-menu>li>a{color:rgba(255,255,255,.82);font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:.55rem .85rem;border-radius:3px;display:flex;align-items:center;gap:.35rem;transition:all .2s;}
+.nav-menu>li>a:hover,.nav-menu>li.active>a{color:var(--gold-light);background:rgba(200,146,10,.08);}
+.nav-cta{background:var(--gold);color:#fff!important;padding:.55rem 1.4rem!important;border-radius:3px!important;}
+.nav-cta:hover{background:var(--gold-light)!important;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:.4rem;}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;}
+
+/* ── PAGE HERO ── */
+.page-hero{position:relative;height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-top:0;}
+.page-hero-bg{position:absolute;inset:0;background:linear-gradient(rgba(14,30,22,.65),rgba(14,30,22,.65)),url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=80') center/cover no-repeat;}
+.page-hero-content{position:relative;z-index:2;text-align:center;color:#fff;}
+.breadcrumb{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.8rem;}
+.breadcrumb a{color:var(--gold-light);}
+.breadcrumb i{font-size:.5rem;}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1;}
+.page-hero h1 em{font-style:italic;color:var(--gold-light);}
+.page-hero p{font-size:.9rem;color:rgba(255,255,255,.75);margin-top:.8rem;letter-spacing:2px;}
+
+/* ── COMMON ── */
+.sec-label{font-size:.62rem;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;color:var(--dg);}
+.sec-title em{font-style:italic;color:var(--gold);}
+.sec-body{font-size:.9rem;color:var(--muted);line-height:1.85;}
+.orn{display:flex;align-items:center;gap:1rem;margin:1.2rem 0;color:var(--gold);}
+.orn.center{justify-content:center;}
+.orn-line{width:50px;height:1px;background:currentColor;opacity:.5;}
+.orn-dia{width:7px;height:7px;background:currentColor;transform:rotate(45deg);}
+
+/* ── INTRO ── */
+.about-intro{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;padding:5.5rem 6rem;max-width:1300px;margin:0 auto;}
+.intro-text blockquote{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--dg);border-left:4px solid var(--gold);padding-left:1.4rem;margin:1.5rem 0;line-height:1.7;}
+.intro-text .sec-body{margin-top:1rem;}
+.intro-img{position:relative;}
+.intro-img img{border-radius:var(--radius);box-shadow:0 20px 60px rgba(14,30,22,.2);}
+.intro-badge{position:absolute;bottom:-1.5rem;left:-1.5rem;background:var(--dg);color:var(--gold-light);padding:1.2rem 1.6rem;border-radius:var(--radius);text-align:center;box-shadow:var(--shadow);}
+.intro-badge .num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;line-height:1;}
+.intro-badge .lbl{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(245,237,216,.65);margin-top:.2rem;}
+
+/* ── ACCORDION SECTIONS ── */
+.accordion-sec{background:var(--cream);padding:5rem 6rem;}
+.accordion-sec .inner{max-width:1100px;margin:0 auto;}
+.acc-item{background:#fff;border-radius:var(--radius);margin-bottom:1rem;box-shadow:var(--shadow);overflow:hidden;}
+.acc-header{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 2rem;cursor:pointer;transition:background .2s;}
+.acc-header:hover{background:#faf7f0;}
+.acc-header.open{background:var(--dg);}
+.acc-header.open .acc-title{color:var(--gold-light);}
+.acc-header.open .acc-icon{color:var(--gold-light);transform:rotate(45deg);}
+.acc-title{display:flex;align-items:center;gap:1rem;font-size:.82rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dg);}
+.acc-title i{font-size:1.2rem;color:var(--gold);}
+.acc-header.open .acc-title i{color:var(--gold-light);}
+.acc-icon{font-size:1.2rem;color:var(--muted);transition:transform .3s,color .2s;}
+.acc-body{display:none;padding:2rem;border-top:1px solid #f0ebe0;}
+.acc-body.open{display:block;}
+
+/* story layout */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.story-grid img{border-radius:var(--radius);box-shadow:var(--shadow);}
+.story-grid .sec-body{margin-top:.8rem;}
+
+/* vision layout */
+.vision-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1rem;}
+.vision-card{background:var(--warm);border:1px solid #e5ddd0;border-radius:var(--radius);padding:1.8rem;text-align:center;transition:all .3s;}
+.vision-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+.vision-card i{font-size:2rem;color:var(--gold);margin-bottom:1rem;}
+.vision-card h4{font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dg);margin-bottom:.6rem;}
+.vision-card p{font-size:.82rem;color:var(--muted);line-height:1.7;}
+
+/* responsibilities */
+.resp-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem;}
+.resp-list li{display:flex;align-items:flex-start;gap:.8rem;font-size:.86rem;color:var(--dark);padding:.5rem;background:var(--warm);border-radius:5px;}
+.resp-list li i{color:var(--gold);margin-top:.15rem;font-size:.85rem;flex-shrink:0;}
+
+/* team */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:1rem;}
+.team-card{background:var(--warm);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);text-align:center;transition:all .3s;}
+.team-card:hover{transform:translateY(-5px);}
+.team-card img{width:100%;height:190px;object-fit:cover;object-position:top;}
+.team-body{padding:1.2rem;}
+.team-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--dg);}
+.team-role{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:.3rem;}
+.team-bio{font-size:.75rem;color:var(--muted);margin-top:.5rem;line-height:1.6;}
+.team-soc{display:flex;justify-content:center;gap:.5rem;margin-top:.8rem;}
+.team-soc a{width:28px;height:28px;border-radius:50%;background:var(--dg);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:.7rem;transition:background .2s;}
+.team-soc a:hover{background:var(--gold);}
+
+/* ── WHY TREK / WHY SAFARI ── */
+.why-sec{padding:5rem 6rem;background:#fff;}
+.why-sec .inner{max-width:1100px;margin:0 auto;}
+.why-tabs{display:flex;gap:.6rem;margin-bottom:2.5rem;flex-wrap:wrap;}
+.why-tab{padding:.6rem 1.6rem;border-radius:30px;border:2px solid #e0d8c8;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .25s;color:var(--muted);}
+.why-tab.active,.why-tab:hover{background:var(--dg);border-color:var(--dg);color:#fff;}
+.why-panel{display:none;}
+.why-panel.active{display:block;}
+.why-cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.why-block{border-left:3px solid var(--gold);padding-left:1.2rem;margin-bottom:1.8rem;}
+.why-block h4{font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dg);margin-bottom:.6rem;}
+.why-block ul{list-style:none;}
+.why-block ul li{font-size:.83rem;color:var(--muted);padding:.3rem 0;border-bottom:1px solid #f5f0ea;display:flex;align-items:flex-start;gap:.6rem;}
+.why-block ul li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;}
+
+/* ── COMMUNITY ── */
+.community{background:var(--dg);padding:5rem 6rem;}
+.community .inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.community .sec-title{color:var(--cream);}
+.community .sec-body{color:rgba(245,237,216,.72);margin-top:1rem;}
+.community-imgs{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+.community-imgs img{border-radius:5px;height:160px;object-fit:cover;width:100%;}
+
+/* ── STATS BANNER ── */
+.stats-banner{background:linear-gradient(135deg,var(--dg),var(--mg));padding:3.5rem 4rem;}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
+.s-box{text-align:center;padding:1.5rem;border:1px solid rgba(200,146,10,.25);border-radius:var(--radius);}
+.s-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--gold-light);line-height:1;}
+.s-lbl{font-size:.62rem;letter-spacing:2px;text-transform:uppercase;color:rgba(245,237,216,.55);margin-top:.4rem;}
+
+/* ── PARTNERS ── */
+.partners{background:var(--cream);padding:4rem 4rem;text-align:center;}
+.partners .inner{max-width:900px;margin:0 auto;}
+.partner-logos{display:flex;justify-content:center;align-items:center;gap:3rem;flex-wrap:wrap;margin-top:2rem;opacity:.65;}
+.partner-logos span{font-size:.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dg);}
+
+/* ── FOOTER MINI ── */
+footer{background:var(--dark);color:rgba(255,255,255,.55);padding:2.5rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.f-logo{font-family:'Playfair Display',serif;font-size:1rem;color:var(--gold-light);}
+.f-logo span{color:#fff;font-style:italic;}
+footer p{font-size:.72rem;}
+.f-links{display:flex;gap:1.5rem;}
+.f-links a{font-size:.7rem;color:rgba(255,255,255,.38);transition:color .2s;}
+.f-links a:hover{color:var(--gold-light);}
+
+/* FLOAT WA */
+.float-wa{position:fixed;bottom:2rem;right:2rem;z-index:500;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 6px 25px rgba(37,211,102,.45);animation:waPulse 2.5s ease-in-out infinite;}
+@keyframes waPulse{0%,100%{box-shadow:0 6px 25px rgba(37,211,102,.45)}50%{box-shadow:0 6px 35px rgba(37,211,102,.75)}}
+
+/* MOBILE */
+.mobile-nav{position:fixed;top:0;left:0;bottom:0;width:290px;background:var(--dg);z-index:400;transform:translateX(-100%);transition:transform .35s;overflow-y:auto;padding:2rem 1.5rem;}
+.mobile-nav.open{transform:translateX(0);}
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:350;opacity:0;pointer-events:none;transition:opacity .3s;}
+.mobile-overlay.show{opacity:1;pointer-events:all;}
+.mob-close{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;margin-bottom:1.5rem;}
+.mobile-nav ul{list-style:none;}
+.mobile-nav ul li a{display:block;color:rgba(255,255,255,.82);font-size:.85rem;font-weight:600;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.08);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .topbar{padding:.4rem 1.5rem;}.topbar-left{display:none;}
+  .nav-inner{padding:.75rem 1.5rem;}
+  .nav-menu{display:none;}.hamburger{display:flex;}
+  .about-intro{grid-template-columns:1fr;padding:4rem 2rem;}
+  .accordion-sec{padding:4rem 2rem;}
+  .story-grid{grid-template-columns:1fr;}
+  .vision-cards{grid-template-columns:1fr 1fr;}
+  .team-grid{grid-template-columns:1fr 1fr;}
+  .resp-list{grid-template-columns:1fr;}
+  .why-sec{padding:4rem 2rem;}
+  .why-cols{grid-template-columns:1fr;}
+  .community{padding:4rem 2rem;}.community .inner{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:1fr 1fr;}
+  footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;}
+}
+@media(max-width:600px){
+  .vision-cards{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:1fr 1fr;}
+  .acc-header{padding:1rem 1.2rem;}
+  .intro-badge{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMob()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
+  <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);margin-bottom:1.5rem;"><span style="color:#fff;font-style:italic;">Travel to</span> Tanzania</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#tours">Tour Packages</a></li>
+    <li><a href="index.html#destinations">Destinations</a></li>
+    <li><a href="index.html#group">Join a Group</a></li>
+    <li><a href="index.html#testimonials">Reviews</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="about.html" style="color:var(--gold-light);">About Us</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div style="margin-top:2rem;">
+    <a href="https://wa.me/255625342924" target="_blank" style="display:flex;align-items:center;gap:.6rem;background:#25D366;color:#fff;padding:.85rem 1.2rem;border-radius:4px;font-size:.78rem;font-weight:700;">
+      <i class="fab fa-whatsapp" style="font-size:1.1rem;"></i> Book via WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="tel:+255754794844"><i class="fas fa-phone"></i>+255 754 794 844</a>
+    <a href="https://wa.me/255625342924" target="_blank"><i class="fab fa-whatsapp"></i>+255 625 342 924</a>
+    <a href="mailto:info@traveltotanzania.com"><i class="fas fa-envelope"></i>info@traveltotanzania.com</a>
+    <a href="#"><i class="fas fa-clock"></i>Mon–Sun: Always Open</a>
+  </div>
+  <div class="topbar-right">
+    <span style="font-size:.6rem;color:rgba(255,255,255,.45);">🌍</span>
+    <button class="lang-btn active">EN</button>
+    <button class="lang-btn">SW</button>
+    <button class="lang-btn">FR</button>
+    <button class="lang-btn">DE</button>
+    <button class="lang-btn">ES</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span>Travel to</span> Tanzania</a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#tours">Safaris</a></li>
+      <li><a href="index.html#destinations">Destinations</a></li>
+      <li><a href="index.html#group">Join Group</a></li>
+      <li class="active"><a href="about.html" style="color:var(--gold-light);">About Us</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="hamburger" onclick="openMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>About Us</span>
+    </div>
+    <h1>About <em>Us</em></h1>
+    <p>Your Adventure. Our Passion. Our Story.</p>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div style="background:var(--warm);">
+  <div class="about-intro">
+    <div class="intro-text">
+      <p class="sec-label">Who We Are</p>
+      <h2 class="sec-title">Welcome to<br><em>Travel to Tanzania</em></h2>
+      <div class="orn"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+      <blockquote>Travel to Tanzania Adventure & Safaris is a locally owned safari and trekking tour company based in Arusha, Tanzania — made up of a team of travel professionals with passion and commitment towards adventure.</blockquote>
+      <p class="sec-body">Over the years, we have provided countless remarkable experiences of authentic Africa. We have changed thousands of lives by introducing tourists to a continent that brings happiness, learning and priceless memories.</p>
+      <p class="sec-body" style="margin-top:.8rem;">We are proud of our highly successful rate of client satisfaction for flexible packages which suit all budgets and preferences. Safaris are a once-in-a-lifetime experience — so it makes sense to travel with the best.</p>
+      <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;">
+        <a href="index.html#contact" style="background:var(--dg);color:var(--gold-light);padding:.85rem 2rem;border-radius:4px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:all .3s;border:2px solid var(--dg);">Plan My Trip</a>
+        <a href="https://wa.me/255625342924" target="_blank" style="background:transparent;color:var(--dg);padding:.85rem 2rem;border-radius:4px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:all .3s;border:2px solid var(--dg);display:flex;align-items:center;gap:.5rem;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+    <div class="intro-img">
+      <img src="img/destination-4.jpg" alt="Travel to Tanzania Team" style="width:100%;border-radius:var(--radius);">
+      <div class="intro-badge">
+        <div class="num">10+</div>
+        <div class="lbl">Years of<br>Experience</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BANNER -->
+<div class="stats-banner">
+  <div class="stats-inner">
+    <div class="s-box"><div class="s-num">500+</div><div class="s-lbl">Happy Travelers</div></div>
+    <div class="s-box"><div class="s-num">10+</div><div class="s-lbl">Years Experience</div></div>
+    <div class="s-box"><div class="s-num">20+</div><div class="s-lbl">Destinations</div></div>
+    <div class="s-box"><div class="s-num">100%</div><div class="s-lbl">Safe & Reliable</div></div>
+  </div>
+</div>
+
+<!-- ACCORDION: Our Story / Vision / Responsibilities / Team -->
+<section class="accordion-sec">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <p class="sec-label">Get to Know Us</p>
+      <h2 class="sec-title">Our <em>Story, Vision & Team</em></h2>
+      <div class="orn center"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+    </div>
+
+    <!-- Our Story -->
+    <div class="acc-item">
+      <div class="acc-header open" onclick="toggleAcc(this)">
+        <div class="acc-title"><i class="fas fa-book-open"></i> Our Story</div>
+        <i class="fas fa-plus acc-icon"></i>
+      </div>
+      <div class="acc-body open">
+        <div class="story-grid">
+          <div>
+            <p class="sec-body">Travel to Tanzania Adventure & Safaris was born from a deep love for the wild beauty of East Africa. Our founder started this journey with a simple dream — to share the magic of Tanzania with the world.</p>
+            <p class="sec-body" style="margin-top:.9rem;">Starting as a professional safari guide and Kilimanjaro guide, our founder gained years of hands-on experience learning how the best tour operators work, what travelers truly want, and how to deliver authentic, life-changing experiences.</p>
+            <p class="sec-body" style="margin-top:.9rem;">The company was officially registered in Tanzania as a licensed tour operator, and from that very first day, the response from travelers was overwhelming — positive remarks and repeat visits became the norm. Today, Travel to Tanzania is a top-rated company serving hundreds of travelers each year from every corner of the world.</p>
+            <p class="sec-body" style="margin-top:.9rem;">Our focus is tailor-made tours with a responsible approach — personalized, enriching experiences that benefit the local community, wildlife and conservation efforts of Tanzania.</p>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80" alt="Our Story - Serengeti Safari" style="width:100%;border-radius:var(--radius);margin-bottom:1rem;">
+            <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&q=80" alt="Kilimanjaro" style="width:100%;border-radius:var(--radius);">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Vision -->
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-title"><i class="fas fa-eye"></i> Our Vision</div>
+        <i class="fas fa-plus acc-icon"></i>
+      </div>
+      <div class="acc-body">
+        <p class="sec-body" style="margin-bottom:1.5rem;">To maintain the highest standards of operating efficiency and customer care — to build upon our achievements and become the very best Destination Management Company in Tanzania and East Africa.</p>
+        <div class="vision-cards">
+          <div class="vision-card">
+            <i class="fas fa-star"></i>
+            <h4>Excellence</h4>
+            <p>Delivering world-class safari and trekking experiences that exceed every expectation, every time.</p>
+          </div>
+          <div class="vision-card">
+            <i class="fas fa-leaf"></i>
+            <h4>Sustainability</h4>
+            <p>Operating responsibly to protect Tanzania's breathtaking wildlife, ecosystems and local communities.</p>
+          </div>
+          <div class="vision-card">
+            <i class="fas fa-heart"></i>
+            <h4>Authenticity</h4>
+            <p>Offering genuine, off-the-beaten-path African experiences that create lifelong memories.</p>
+          </div>
+          <div class="vision-card">
+            <i class="fas fa-users"></i>
+            <h4>Community</h4>
+            <p>Giving back to local communities through fair wages, education support and charitable outreach.</p>
+          </div>
+          <div class="vision-card">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Safety</h4>
+            <p>Prioritizing the health, safety and comfort of every traveler on every single journey.</p>
+          </div>
+          <div class="vision-card">
+            <i class="fas fa-globe-africa"></i>
+            <h4>Global Reach</h4>
+            <p>Welcoming adventurers from every corner of the world to discover the wonders of Tanzania.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Responsibilities -->
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-title"><i class="fas fa-hand-holding-heart"></i> Our Responsibilities</div>
+        <i class="fas fa-plus acc-icon"></i>
+      </div>
+      <div class="acc-body">
+        <p class="sec-body" style="margin-bottom:1.2rem;">We operate with a strong sense of duty — to our clients, our crew, our community and our environment.</p>
+        <ul class="resp-list">
+          <li><i class="fas fa-check-circle"></i> Ensure client satisfaction on every trip</li>
+          <li><i class="fas fa-check-circle"></i> Offer flexible packages for all budgets and preferences</li>
+          <li><i class="fas fa-check-circle"></i> Prioritize safety and high standards of service</li>
+          <li><i class="fas fa-check-circle"></i> Fair and ethical treatment of all porters, cooks and guides</li>
+          <li><i class="fas fa-check-circle"></i> Customize trips to give each client their ideal experience</li>
+          <li><i class="fas fa-check-circle"></i> Guarantee punctual departures regardless of group size</li>
+          <li><i class="fas fa-check-circle"></i> Respect nature, environment and wildlife conservation</li>
+          <li><i class="fas fa-check-circle"></i> Support local communities through volunteering and education</li>
+          <li><i class="fas fa-check-circle"></i> Leave no waste behind on any trek or safari</li>
+          <li><i class="fas fa-check-circle"></i> Create local employment opportunities for guides and porters</li>
+        </ul>
+        <div style="margin-top:2rem;padding:1.5rem;background:var(--warm);border-radius:var(--radius);border-left:4px solid var(--gold);">
+          <h4 style="font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dg);margin-bottom:.6rem;">Giving Back to the Community</h4>
+          <p class="sec-body">Travel to Tanzania has always been aware of the need to share the benefits of tourism with the Tanzanian community. We support local communities through fair wages, healthcare, education, food relief, environmental conservation and charitable outreach programs. By booking with us, you directly help improve the lives of people in the communities we operate in.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Team -->
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-title"><i class="fas fa-users"></i> Our Team</div>
+        <i class="fas fa-plus acc-icon"></i>
+      </div>
+      <div class="acc-body">
+        <p class="sec-body" style="margin-bottom:1.8rem;">Travel to Tanzania takes pride in having professional, first-class tour guides and company staff who work together for a common cause. Our team has excellent knowledge and experience in various safari destinations and is trained in Wilderness First Aid Response. From our team you will get a first-hand experience of authentic African hospitality.</p>
+        <div class="team-grid">
+          <div class="team-card">
+            <img src="" alt="Safari Guide">
+            <div class="team-body">
+              <div class="team-name">Willison Pokela</div>
+              <div class="team-role">Lead Safari Guide</div>
+              <div class="team-bio">15+ years guiding wildlife safaris in Serengeti, Ngorongoro and Tarangire.</div>
+              <div class="team-soc">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="" alt="Kilimanjaro Guide">
+            <div class="team-body">
+              <div class="team-name">Willison Pokela</div>
+              <div class="team-role">Head Kilimanjaro Guide</div>
+              <div class="team-bio">Certified Wilderness First Responder. 500+ Kilimanjaro summits achieved.</div>
+              <div class="team-soc">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="" alt="Operations Manager">
+            <div class="team-body">
+              <div class="team-name">Willison Pokela</div>
+              <div class="team-role">Operations Manager</div>
+              <div class="team-bio">Expert in itinerary planning, logistics and ensuring every trip runs perfectly.</div>
+              <div class="team-soc">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="" alt="Zanzibar Specialist">
+            <div class="team-body">
+              <div class="team-name">Willison Pokela</div>
+              <div class="team-role">Zanzibar Specialist</div>
+              <div class="team-bio">Zanzibar-born expert with deep knowledge of the island's culture, beaches and history.</div>
+              <div class="team-soc">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY TREK / WHY SAFARI -->
+<section class="why-sec">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <p class="sec-label">Our Expertise</p>
+      <h2 class="sec-title">Why <em>Travel With Us?</em></h2>
+      <div class="orn center"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+    </div>
+    <div class="why-tabs">
+      <div class="why-tab active" onclick="switchWhy('trek',this)"><i class="fas fa-mountain" style="margin-right:.4rem;"></i> Why Trek With Us</div>
+      <div class="why-tab" onclick="switchWhy('safari',this)"><i class="fas fa-paw" style="margin-right:.4rem;"></i> Why Safari With Us</div>
+    </div>
+
+    <!-- Trek Panel -->
+    <div class="why-panel active" id="why-trek">
+      <div class="why-cols">
+        <div>
+          <div class="why-block">
+            <h4> Health & Safety Is Our Top Priority</h4>
+            <ul>
+              <li>Guides certified as Wilderness First Responders</li>
+              <li>Twice daily health monitoring on all climbs</li>
+              <li>Pulse oximeter and emergency oxygen on every climb</li>
+              <li>High summit success rate above industry average</li>
+            </ul>
+          </div>
+          <div class="why-block">
+            <h4> We Travel Responsibly</h4>
+            <ul>
+              <li>Socially and environmentally responsible operations</li>
+              <li>Fair and ethical treatment of all mountain crew</li>
+              <li>No waste left behind on any trek</li>
+              <li>Support for local porter welfare programs</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="why-block">
+            <h4> We Use Top-Notch Equipment</h4>
+            <ul>
+              <li>Expedition-grade alpine sleeping tents</li>
+              <li>Stand-up dining tents with tables and chairs</li>
+              <li>Hygienic private toilet tents on every route</li>
+              <li>Four-season warm cozy sleeping bags</li>
+            </ul>
+          </div>
+          <div class="why-block">
+            <h4> You'll Trek With Experts</h4>
+            <ul>
+              <li>Licensed, professional and trained guides</li>
+              <li>Ratio of 1 guide per every 2 travelers</li>
+              <li>Years of experience on Kilimanjaro's routes</li>
+              <li>Social, fun-loving personalities for great company</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="index.html#tours" style="background:var(--dg);color:var(--gold-light);padding:.9rem 2.5rem;border-radius:4px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:inline-block;transition:all .3s;border:2px solid var(--dg);">View Trekking Packages</a>
+      </div>
+    </div>
+
+    <!-- Safari Panel -->
+    <div class="why-panel" id="why-safari">
+      <div class="why-cols">
+        <div>
+          <div class="why-block">
+            <h4>🦁 Guided by Safari Specialists</h4>
+            <ul>
+              <li>Comprehensive knowledge, skill and passion</li>
+              <li>Experts in wildlife, ecosystems and locations</li>
+              <li>Years of practical safari experience</li>
+              <li>Trained to take you off the beaten path</li>
+            </ul>
+          </div>
+          <div class="why-block">
+            <h4>🗺️ Trips Designed With Every Detail in Mind</h4>
+            <ul>
+              <li>Tailor-made itineraries for each traveler</li>
+              <li>Flexible and customizable to your budget</li>
+              <li>Itineraries catered to the season</li>
+              <li>Unbiased expert advice on where to stay</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="why-block">
+            <h4>🚙 Private Safari Vehicles</h4>
+            <ul>
+              <li>Maximum flexibility, comfort and wildlife viewing</li>
+              <li>360° viewing through pop-up roof hatch</li>
+              <li>Outfitted with charging stations and cooler box</li>
+              <li>Vehicles built for rough safari roads with spare tyres</li>
+            </ul>
+          </div>
+          <div class="why-block">
+            <h4>🔭 Unlimited Game Drives</h4>
+            <ul>
+              <li>No mileage restrictions on any safari</li>
+              <li>Access to quiet, less-crowded areas of the parks</li>
+              <li>Spend time away from the most populated spots</li>
+              <li>Early morning and late afternoon drives included</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="index.html#tours" style="background:var(--dg);color:var(--gold-light);padding:.9rem 2.5rem;border-radius:4px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:inline-block;transition:all .3s;border:2px solid var(--dg);">View Safari Packages</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY / GIVING BACK -->
+<section class="community">
+  <div class="inner">
+    <div>
+      <p class="sec-label" style="color:var(--gold-light);">Giving Back</p>
+      <h2 class="sec-title" style="color:var(--cream);">Community <em style="color:var(--gold-light);">& Conservation</em></h2>
+      <div class="orn"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+      <p class="sec-body" style="color:rgba(245,237,216,.72);">Travel to Tanzania has always been aware of the need to share the benefits of tourism with the Tanzanian community. We support local communities through fair wages, healthcare, education, food relief and environmental conservation.</p>
+      <p class="sec-body" style="color:rgba(245,237,216,.72);margin-top:.9rem;">Our support is directed towards fair wages and charitable outreach programs including healthcare, education, drinking water, food relief and environment conservation. The company also works to create employment opportunities for local porters and guides to eradicate poverty.</p>
+      <div style="margin-top:2rem;">
+        <a href="index.html#contact" style="background:var(--gold);color:#fff;padding:.9rem 2.2rem;border-radius:4px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:inline-block;border:2px solid var(--gold);transition:all .3s;">Book & Give Back</a>
+      </div>
+    </div>
+    <div class="community-imgs">
+      <img src="img/ngorongoro image.jpg" alt="Community">
+      <img src="img/zanzibar tour.jpg" alt="Zanzibar">
+      <img src="img/ngorongoro park 2.jpg" alt="Safari">
+      <img src="img/ngorongoro park 1.jpg" alt="Ngorongoro">
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS 
+<section class="partners">
+  <div class="inner">
+    <p class="sec-label" style="text-align:center;">Trusted Partners</p>
+    <h2 class="sec-title" style="text-align:center;">We Are <em>Recognized By</em></h2>
+    <div class="orn center"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+    <div class="partner-logos">
+      <span>🏆 TripAdvisor</span>
+      <span>🌍 SafariBookings</span>
+      <span>✈️ Tanzania Tourism</span>
+      <span>⭐ Google Reviews</span>
+      <span>🦁 TATO Member</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Travel to Tanzania Adventure & Safaris. All rights reserved.</p>
+  <p>Designed and developed by isaac , +255 755 054 750, isackisack578@gmail.com</p>
+  <div class="f-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/255625342924" target="_blank" class="float-wa" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+// Accordion
+function toggleAcc(header){
+  const body=header.nextElementSibling;
+  const isOpen=header.classList.contains('open');
+  document.querySelectorAll('.acc-header').forEach(h=>{h.classList.remove('open');h.nextElementSibling.classList.remove('open');});
+  if(!isOpen){header.classList.add('open');body.classList.add('open');}
+}
+
+// Why tabs
+function switchWhy(id,el){
+  document.querySelectorAll('.why-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.why-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('why-'+id).classList.add('active');
+  el.classList.add('active');
+}
+
+// Mobile nav
+function openMob(){document.getElementById('mobileNav').classList.add('open');document.getElementById('mobileOverlay').classList.add('show');document.body.style.overflow='hidden';}
+function closeMob(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('mobileOverlay').classList.remove('show');document.body.style.overflow='';}
+
+// Scroll animation
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});
+},{threshold:0.1});
+document.querySelectorAll('.acc-item,.team-card,.vision-card,.s-box,.why-block').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .6s ease, transform .6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
